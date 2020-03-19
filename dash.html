@@ -1,22 +1,29 @@
 <html>
 	<table id=schedule>
 		<tr>
-			<input type=number id=score1/>
-			<input type=number id=score2/>
+			<td>
+				Romania
+				<input type=number id=score1/>
+				Moldova
+				<input type=number id=score2/>
+			</td>
 
-			<button type=submit onclick="submitScore(document.getElementById('score1').value,document.getElementById('score2').value)">Upload</button>
+			<td>
+				<button type=submit onclick="submitScore(document.getElementById('score1').value,document.getElementById('score2').value)">Upload</button>
+			</td>
 		</tr>
-
-
 		<tr>
-			<input type=number id=score3/>
-			<input type=number id=score4/>
-
-			<button type=submit onclick="submitScore(document.getElementById('score3').value,document.getElementById('score4').value)">Upload</button>
+			<td>
+				Bolivia
+				<input type=number id=score3/>
+				Macedonia
+				<input type=number id=score4/>
+			</td>
+			<td>
+				<button type=submit onclick="submitScore(document.getElementById('score3').value,document.getElementById('score4').value)">Upload</button>
+			</td>
 		</tr>
-		
 	</table>
-
 
 	<table id=standings>
 		<tr>
@@ -46,6 +53,7 @@
 </html>
 
 
+<!-- doesn't work. throws an exception for null , line 23 -->
 
 <script>
   var team1 = ["Romania", 0];
@@ -53,7 +61,33 @@
 	var team3 = ["Bolivia", 0];
 	var team4 = ["Macedonia", 0];
 
-	// .... in progress
+	document.getElementById('team1').innerHTML = team1[0];
+	document.getElementById('team2').innerHTML = team2[0];
+	document.getElementById('team3').innerHTML = team3[0];
+	document.getElementById('team4').innerHTML = team4[0];
+
+	document.getElementById('team1Pts').innerHTML = team1[1];
+	document.getElementById('team2Pts').innerHTML = team2[1];
+	document.getElementById('team3Pts').innerHTML = team3[1];
+	document.getElementById('team4Pts').innerHTML = team4[1];
+
+	function submitScore(sc1, sc2) {
+		if (sc1>sc2) {
+			console.log('team1 won');
+		} else {
+			console.log('team2 won');
+		}
+	}
+
+
+
+</script>
+
+
+
+
+
+<!-- // .... in progress
 	// add input boxes
 	// try to make team names show either through javascript or something else (php?)
 	// write function submitScore()
@@ -62,13 +96,4 @@
 
 	// data points: team1, team2, score1, score2 
 
-	// button onclick="submitScore(document.getElementById('first').value,document.getElementById('second').value)"
-
-	document.getElementById('team1').innerHTML = team1[0];
-	document.getElementById('team2').innerHTML = team2[0];
-	document.getElementById('team3').innerHTML = team3[0];
-	document.getElementById('team4').innerHTML = team4[0];
-
-
-
-</script>
+	// button onclick="submitScore(document.getElementById('first').value,document.getElementById('second').value)" -->
