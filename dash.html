@@ -1,0 +1,72 @@
+<html>
+	<table id=schedule>
+		<tr>
+			<input type=number id=score1/>
+			<input type=number id=score2/>
+
+			<button type=submit onclick="submitScore(document.getElementById('score1').value,document.getElementById('score2').value)">Upload</button>
+		</tr>
+
+
+		<tr>
+			<input type=number id=score3/>
+			<input type=number id=score4/>
+
+			<button type=submit onclick="submitScore(document.getElementById('score3').value,document.getElementById('score4').value)">Upload</button>
+		</tr>
+		
+	</table>
+
+
+	<table id=standings>
+		<tr>
+			<th>Name</th>
+			<th>Pts</th>
+		</tr>
+
+		<tr>
+			<td id=team1></td>
+			<td id=team1Pts></td>
+		</tr>
+		<tr>
+			<td id=team2></td>
+			<td id=team2Pts></td>
+		</tr>
+		<tr>
+			<td id=team3></td>
+			<td id=team3Pts></td>
+		</tr>
+		<tr>
+			<td id=team4></td>
+			<td id=team4Pts></td>
+		</tr>
+		
+	</table>
+
+</html>
+
+
+
+<script>
+  var team1 = ["Romania", 0];
+	var team2 = ["Moldova", 0];
+	var team3 = ["Bolivia", 0];
+	var team4 = ["Macedonia", 0];
+
+	// .... in progress
+	// add input boxes
+	// try to make team names show either through javascript or something else (php?)
+	// write function submitScore()
+	// 2 input boxes per submit button. 12 submit buttons.
+	// data points: team1, team2, score1, score2 
+
+	// button onclick="submitScore(document.getElementById('first').value,document.getElementById('second').value)"
+
+	document.getElementById('team1').innerHTML = team1[0];
+	document.getElementById('team2').innerHTML = team2[0];
+	document.getElementById('team3').innerHTML = team3[0];
+	document.getElementById('team4').innerHTML = team4[0];
+
+
+
+</script>
