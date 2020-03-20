@@ -1,201 +1,686 @@
-<html>
-	<table id=schedule>
-		<tr>
-			<td>
-				<table id=compartment> 
-					<tr>
-						<td><p id=team11></p></td>
-						<td><input type=text id=score1 required></input></td>
-						<td><input type=text id=score2 required></input></td>
-						<td><p id=team22></p></td>		
-					</tr>
-				</table>
-			</td>
+<table id=schedule>
+  <tr>
+    <td>
+      <table id=compartment> 
+        <tr>
+          <td><p id=team11></p></td>
+          <td><input type=text id=score1 required></input></td>
+          <td><input type=text id=score2 required></input></td>
+          <td><p id=team22></p></td>		
+        </tr>
+      </table>
+    </td>
 
-			<td>
-				<button type=submit id=submit1 onclick="submitScore(document.getElementById('score1').value,
-																								 document.getElementById('score2').value,
-																								 'team1','team2');
-																								 disappear1();">Upload</button>
-			</td>
+    <td>
+      <button type=submit id=submit1 onclick="submitScore(document.getElementById('score1').value,
+                                               document.getElementById('score2').value,
+                                               'team1','team2');
+                                               disappear1();">Upload</button>
+    </td>
 
-		</tr>
-		<tr>
-			<td>
-				<table id=compartment> 
-					<tr>
-						<td><p id=team33></p></td>
-						<td><input type=text id=score3 required></input></td>
-						<td><input type=text id=score4 required></input></td>
-						<td><p id=team44></p></td>
-						
-					</tr>
-				</table>
-			</td>
-			<td>
-				<button type=submit id=submit2 onclick="submitScore(document.getElementById('score3').value,
-																								 document.getElementById('score4').value,
-																								'team3','team4');
-																								disappear2();">Upload</button>
-			</td>
+  </tr>
+  <tr>
+    <td>
+      <table id=compartment> 
+        <tr>
+          <td><p id=team33></p></td>
+          <td><input type=text id=score3 required></input></td>
+          <td><input type=text id=score4 required></input></td>
+          <td><p id=team44></p></td>
+          
+        </tr>
+      </table>
+    </td>
+    <td>
+      <button type=submit id=submit2 onclick="submitScore(document.getElementById('score3').value,
+                                               document.getElementById('score4').value,
+                                              'team3','team4');
+                                              disappear2();">Upload</button>
+    </td>
 
-		</tr>
+  </tr>
 
-		
-		<tr>
-			<td>
-				<table id=compartment> 
-					<tr>
-						<td><p id=team111></p></td>
-						<td><input type=text id=score5 required></input></td>
-						<td><input type=text id=score6 required></input></td>
-						<td><p id=team333></p></td>
-						
-					</tr>
-				</table>
-			</td>
+  
+  <tr>
+    <td>
+      <table id=compartment> 
+        <tr>
+          <td><p id=team111></p></td>
+          <td><input type=text id=score5 required></input></td>
+          <td><input type=text id=score6 required></input></td>
+          <td><p id=team333></p></td>
+          
+        </tr>
+      </table>
+    </td>
 
-			<td>
-				<button type=submit id=submit3 onclick="submitScore(document.getElementById('score5').value,
-																								 document.getElementById('score6').value,
-																								 'team1','team3');
-																								 disappear3();">Upload</button>
-			</td>
-
+    <td>
+      <button type=submit id=submit3 onclick="submitScore(document.getElementById('score5').value,
+                                               document.getElementById('score6').value,
+                                               'team1','team3');
+                                               disappear3();">Upload</button>
+    </td>
 
 
-		</tr>
-		<tr>
-			<td>
-				<table id=compartment> 
-					<tr>
-						<td><p id=team222></p></td>
-						<td><input type=text id=score7 required></input></td>
-						<td><input type=text id=score8 required></input></td>
-						<td><p id=team444></p></td>
-						
-					</tr>
-				</table>
-			</td>
-			<td>
-				<button type=submit id=submit4 onclick="submitScore(document.getElementById('score7').value,
-																								 document.getElementById('score8').value,
-																								'team2','team4');
-																								disappear4();">Upload</button>
-			</td>
 
-		</tr>
+  </tr>
+  <tr>
+    <td>
+      <table id=compartment> 
+        <tr>
+          <td><p id=team222></p></td>
+          <td><input type=text id=score7 required></input></td>
+          <td><input type=text id=score8 required></input></td>
+          <td><p id=team444></p></td>
+          
+        </tr>
+      </table>
+    </td>
+    <td>
+      <button type=submit id=submit4 onclick="submitScore(document.getElementById('score7').value,
+                                               document.getElementById('score8').value,
+                                              'team2','team4');
+                                              disappear4();">Upload</button>
+    </td>
 
-		<tr>
-			<td>
-				<table id=compartment> 
-					<tr>
-						<td><p id=team1111></p></td>
-						<td><input type=text id=score9 required></input></td>
-						<td><input type=text id=score10 required></input></td>
-						<td><p id=team4444></p></td>
-						
-					</tr>
-				</table>
-			</td>
+  </tr>
 
-			<td>
-				<button type=submit id=submit5 onclick="submitScore(document.getElementById('score9').value,
-																								 document.getElementById('score10').value,
-																								 'team1','team4');
-																								 disappear5();">Upload</button>
-			</td>
+  <tr>
+    <td>
+      <table id=compartment> 
+        <tr>
+          <td><p id=team1111></p></td>
+          <td><input type=text id=score9 required></input></td>
+          <td><input type=text id=score10 required></input></td>
+          <td><p id=team4444></p></td>
+          
+        </tr>
+      </table>
+    </td>
 
-			
+    <td>
+      <button type=submit id=submit5 onclick="submitScore(document.getElementById('score9').value,
+                                               document.getElementById('score10').value,
+                                               'team1','team4');
+                                               disappear5();">Upload</button>
+    </td>
 
-		</tr>
-		<tr>
-			<td>
-				<table id=compartment> 
-					<tr>
-						<td><p id=team2222></p></td>
-						<td><input type=text id=score11 required></input></td>
-						<td><input type=text id=score12 required></input></td>
-						<td><p id=team3333></p></td>
-						
-					</tr>
-				</table>
-			</td>
-			<td>
-				<button type=submit id=submit6 onclick="submitScore(document.getElementById('score11').value,
-																								 document.getElementById('score12').value,
-																								'team2','team3');																					
-																								disappear6();">Upload</button>
-			</td>
-	
-		</tr>
+    
 
-	</table>
+  </tr>
+  <tr>
+    <td>
+      <table id=compartment> 
+        <tr>
+          <td><p id=team2222></p></td>
+          <td><input type=text id=score11 required></input></td>
+          <td><input type=text id=score12 required></input></td>
+          <td><p id=team3333></p></td>
+          
+        </tr>
+      </table>
+    </td>
+    <td>
+      <button type=submit id=submit6 onclick="submitScore(document.getElementById('score11').value,
+                                               document.getElementById('score12').value,
+                                              'team2','team3');																					
+                                              disappear6();">Upload</button>
+    </td>
 
-	<br></br>
-	<table id=standings>
-		<tr>
-			<th>Name</th>
-			<th>Pts</th>
-			<th>GF</th>
-			<th>GA</th>
-		</tr>
+  </tr>
 
-		<tr>
-			<td id=team1></td>
-			<td id=team1Pts></td>
-			<td id=team1GF></td>
-			<td id=team1GA></td>
-		</tr>
-		<tr>
-			<td id=team2></td>
-			<td id=team2Pts></td>
-			<td id=team2GF></td>
-			<td id=team2GA></td>
-		</tr>
-		<tr>
-			<td id=team3></td>
-			<td id=team3Pts></td>
-			<td id=team3GF></td>
-			<td id=team3GA></td>
-		</tr>
-		<tr>
-			<td id=team4></td>
-			<td id=team4Pts></td>
-			<td id=team4GF></td>
-			<td id=team4GA></td>
-		</tr>
-	</table>
+</table>
 
-</html>
+<br></br>
+<table id=standings>
+  <tr>
+    <th>Name</th>
+    <th>Pts</th>
+    <th>GD</th>
+    <th>GF</th>
+    <th>GA</th>
+  </tr>
+
+  <tr>
+    <td id=team1></td>
+    <td id=team1Pts></td>
+    <td id=team1GD></td>
+    <td id=team1GF></td>
+    <td id=team1GA></td>
+  </tr>
+  <tr>
+    <td id=team2></td>
+    <td id=team2Pts></td>
+    <td id=team2GD></td>
+    <td id=team2GF></td>
+    <td id=team2GA></td>
+  </tr>
+  <tr>
+    <td id=team3></td>
+    <td id=team3Pts></td>
+    <td id=team3GD></td>
+    <td id=team3GF></td>
+    <td id=team3GA></td>
+  </tr>
+  <tr>
+    <td id=team4></td>
+    <td id=team4Pts></td>
+    <td id=team4GD></td>
+    <td id=team4GF></td>
+    <td id=team4GA></td>
+  </tr>
+</table>
 
 
-<!-- doesn't work. throws an exception for null , line 23 -->
+
+
 
 <script>
+var team1 = ["SBVP FC", 0, 0, 0, 0];
+var team2 = ["International FC", 0, 0 ,0, 0];
+var team3 = ["Gluten Free", 0, 0 ,0, 0];
+var team4 = ["FC Harul", 0, 0 ,0 ,0];
+
+document.getElementById('team1').innerHTML = team1[0];
+document.getElementById('team11').innerHTML = team1[0];
+document.getElementById('team111').innerHTML = team1[0];
+document.getElementById('team1111').innerHTML = team1[0];
+
+document.getElementById('team2').innerHTML = team2[0];
+document.getElementById('team22').innerHTML = team2[0];
+document.getElementById('team222').innerHTML = team2[0];
+document.getElementById('team2222').innerHTML = team2[0];
+
+document.getElementById('team3').innerHTML = team3[0];
+document.getElementById('team33').innerHTML = team3[0];
+document.getElementById('team333').innerHTML = team3[0];
+document.getElementById('team3333').innerHTML = team3[0];
+
+document.getElementById('team4').innerHTML = team4[0];
+document.getElementById('team44').innerHTML = team4[0];
+document.getElementById('team444').innerHTML = team4[0];
+document.getElementById('team4444').innerHTML = team4[0];
+
+document.getElementById('team1Pts').innerHTML = team1[1];
+document.getElementById('team2Pts').innerHTML = team2[1];
+document.getElementById('team3Pts').innerHTML = team3[1];
+document.getElementById('team4Pts').innerHTML = team4[1];
+
+document.getElementById('team1GD').innerHTML = team1[2];
+document.getElementById('team1GF').innerHTML = team1[3];
+document.getElementById('team1GA').innerHTML = team1[4];
+
+document.getElementById('team2GD').innerHTML = team2[2];
+document.getElementById('team2GF').innerHTML = team2[3];
+document.getElementById('team2GA').innerHTML = team2[4];
+
+document.getElementById('team3GD').innerHTML = team3[2];
+document.getElementById('team3GF').innerHTML = team3[3];
+document.getElementById('team3GA').innerHTML = team3[4];
+
+document.getElementById('team4GD').innerHTML = team4[2];
+document.getElementById('team4GF').innerHTML = team4[3];
+document.getElementById('team4GA').innerHTML = team4[4];
 
 
-const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
-
-const comparer = (idx, asc) => (a, b) => ((v1, v2) => 
-    v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
-    )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
-
-// do the work...
-document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
-    const table = th.closest('table');
-    Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
-        .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
-        .forEach(tr => table.appendChild(tr) );
-})));
-
-
-
+function submitScore(sc1,sc2,teamA,teamB) {
+	if (sc1>sc2) {
+		console.log(teamA+' won');
+		compileNumbersIfFirstInputWins(teamA, teamB,sc1,sc2);
+  }
+  else if (sc2>sc1) {
+    console.log(teamB+' won');
+    compileNumbersIfSecondInputWins(teamA, teamB,sc1,sc2);
+  }
+	else {
+    console.log("it's a tie");
+    compileNumbersIfTie(teamA, teamB,sc1,sc2);
+	}
+}
 
 
 
+function compileNumbersIfFirstInputWins(A,B,s1,s2) {
+	if (A.includes("team1") && B.includes("team2")) {
+    console.log("it got here");
+
+    // PTS
+    team1[1] += 3; 
+
+    // GF and GA
+		team1[3] += parseInt(s1); team1[4] += parseInt(s2);
+		team2[3] += parseInt(s2);	team2[4] += parseInt(s1);
+
+     // GD 
+    team1[2] = team1[3] - team1[4];
+    team2[2] = team2[3] - team2[4];
+
+    // display
+		document.getElementById('team1Pts').innerHTML = team1[1];
+		document.getElementById('team1GD').innerHTML = team1[2];
+		document.getElementById('team1GF').innerHTML = team1[3];
+    document.getElementById('team1GA').innerHTML = team1[4];
+    document.getElementById('team2Pts').innerHTML = team2[1];
+		document.getElementById('team2GD').innerHTML = team2[2];
+		document.getElementById('team2GF').innerHTML = team2[3];
+		document.getElementById('team2GA').innerHTML = team2[4];
+  }
+  else if (A.includes("team1") && B.includes("team3")) {
+    // PTS
+    team1[1] += 3; 
+
+    // GF and GA
+		team1[3] += parseInt(s1); team1[4] += parseInt(s2);
+		team3[3] += parseInt(s2);	team3[4] += parseInt(s1);
+
+     // GD 
+    team1[2] = team1[3] - team1[4];
+    team3[2] = team3[3] - team3[4];
+
+    // display
+		document.getElementById('team1Pts').innerHTML = team1[1];
+		document.getElementById('team1GD').innerHTML = team1[2];
+		document.getElementById('team1GF').innerHTML = team1[3];
+    document.getElementById('team1GA').innerHTML = team1[4];
+    document.getElementById('team3Pts').innerHTML = team3[1];
+		document.getElementById('team3GD').innerHTML = team3[2];
+		document.getElementById('team3GF').innerHTML = team3[3];
+		document.getElementById('team3GA').innerHTML = team3[4];
+
+  }
+  else if (A.includes("team1") && B.includes("team4")) {
+    // PTS
+    team1[1] += 3; 
+
+    // GF and GA
+		team1[3] += parseInt(s1); team1[4] += parseInt(s2);
+		team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
+
+     // GD 
+    team1[2] = team1[3] - team1[4];
+    team4[2] = team4[3] - team4[4];
+
+    // display
+		document.getElementById('team1Pts').innerHTML = team1[1];
+		document.getElementById('team1GD').innerHTML = team1[2];
+		document.getElementById('team1GF').innerHTML = team1[3];
+    document.getElementById('team1GA').innerHTML = team1[4];
+    document.getElementById('team4Pts').innerHTML = team4[1];
+		document.getElementById('team4GD').innerHTML = team4[2];
+		document.getElementById('team4GF').innerHTML = team4[3];
+		document.getElementById('team4GA').innerHTML = team4[4];
+
+  }
+  else if (A.includes("team2") && B.includes("team3")) {
+    // PTS
+    team2[1] += 3; 
+
+    // GF and GA
+		team2[3] += parseInt(s1); team2[4] += parseInt(s2);
+		team3[3] += parseInt(s2);	team3[4] += parseInt(s1);
+
+     // GD 
+    team2[2] = team2[3] - team2[4];
+    team3[2] = team3[3] - team3[4];
+
+    // display
+		document.getElementById('team2Pts').innerHTML = team2[1];
+		document.getElementById('team2GD').innerHTML = team2[2];
+		document.getElementById('team2GF').innerHTML = team2[3];
+    document.getElementById('team2GA').innerHTML = team2[4];
+    document.getElementById('team3Pts').innerHTML = team3[1];
+		document.getElementById('team3GD').innerHTML = team3[2];
+		document.getElementById('team3GF').innerHTML = team3[3];
+		document.getElementById('team3GA').innerHTML = team3[4];
+
+  }
+  else if (A.includes("team2") && B.includes("team4")) {
+    // PTS
+    team2[1] += 3; 
+
+    // GF and GA
+		team2[3] += parseInt(s1); team2[4] += parseInt(s2);
+		team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
+
+     // GD  
+    team2[2] = team2[3] - team2[4];
+    team4[2] = team4[3] - team4[4];
+
+    // display
+		document.getElementById('team2Pts').innerHTML = team2[1];
+		document.getElementById('team2GD').innerHTML = team2[2];
+		document.getElementById('team2GF').innerHTML = team2[3];
+    document.getElementById('team2GA').innerHTML = team2[4];
+    document.getElementById('team4Pts').innerHTML = team4[1];
+		document.getElementById('team4GD').innerHTML = team4[2];
+		document.getElementById('team4GF').innerHTML = team4[3];
+		document.getElementById('team4GA').innerHTML = team4[4];
+
+  }
+  else if (A.includes("team3") && B.includes("team4")) {
+    // PTS
+    team3[1] += 3; 
+
+    // GF and GA
+		team3[3] += parseInt(s1); team3[4] += parseInt(s2);
+		team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
+
+     // GD  
+    team3[2] = team3[3] - team3[4];
+    team4[2] = team4[3] - team4[4];
+
+    // display
+		document.getElementById('team3Pts').innerHTML = team3[1];
+		document.getElementById('team3GD').innerHTML = team3[2];
+		document.getElementById('team3GF').innerHTML = team3[3];
+    document.getElementById('team3GA').innerHTML = team3[4];
+    document.getElementById('team4Pts').innerHTML = team4[1];
+		document.getElementById('team4GD').innerHTML = team4[2];
+		document.getElementById('team4GF').innerHTML = team4[3];
+		document.getElementById('team4GA').innerHTML = team4[4];
+
+  }
+	else {
+		console.log('something didnt work');
+	}
+}
+
+function compileNumbersIfSecondInputWins(A,B,s1,s2) {
+  if (A.includes("team1") && B.includes("team2")) {
+
+    // PTS
+    team2[1] += 3; 
+
+    // GF and GA
+		team1[3] += parseInt(s1); team1[4] += parseInt(s2);
+		team2[3] += parseInt(s2);	team2[4] += parseInt(s1);
+
+     // GD  
+    team1[2] = team1[3] - team1[4];
+    team2[2] = team2[3] - team2[4];
+
+    // display
+		document.getElementById('team1Pts').innerHTML = team1[1];
+		document.getElementById('team1GD').innerHTML = team1[2];
+		document.getElementById('team1GF').innerHTML = team1[3];
+    document.getElementById('team1GA').innerHTML = team1[4];
+    document.getElementById('team2Pts').innerHTML = team2[1];
+		document.getElementById('team2GD').innerHTML = team2[2];
+		document.getElementById('team2GF').innerHTML = team2[3];
+		document.getElementById('team2GA').innerHTML = team2[4];
+  }
+  else if (A.includes("team1") && B.includes("team3")) {
+    // PTS
+    team3[1] += 3; 
+
+    // GF and GA
+		team1[3] += parseInt(s1); team1[4] += parseInt(s2);
+		team3[3] += parseInt(s2);	team3[4] += parseInt(s1);
+
+     // GD  
+    team1[2] = team1[3] - team1[4];
+    team3[2] = team3[3] - team3[4];
+
+    // display
+		document.getElementById('team1Pts').innerHTML = team1[1];
+		document.getElementById('team1GD').innerHTML = team1[2];
+		document.getElementById('team1GF').innerHTML = team1[3];
+    document.getElementById('team1GA').innerHTML = team1[4];
+    document.getElementById('team3Pts').innerHTML = team3[1];
+		document.getElementById('team3GD').innerHTML = team3[2];
+		document.getElementById('team3GF').innerHTML = team3[3];
+		document.getElementById('team3GA').innerHTML = team3[4];
+
+  }
+  else if (A.includes("team1") && B.includes("team4")) {
+    // PTS
+    team4[1] += 3; 
+
+    // GF and GA
+		team1[3] += parseInt(s1); team1[4] += parseInt(s2);
+		team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
+
+     // GD  
+    team1[2] = team1[3] - team1[4];
+    team4[2] = team4[3] - team4[4];
+
+    // display
+		document.getElementById('team1Pts').innerHTML = team1[1];
+		document.getElementById('team1GD').innerHTML = team1[2];
+		document.getElementById('team1GF').innerHTML = team1[3];
+    document.getElementById('team1GA').innerHTML = team1[4];
+    document.getElementById('team4Pts').innerHTML = team4[1];
+		document.getElementById('team4GD').innerHTML = team4[2];
+		document.getElementById('team4GF').innerHTML = team4[3];
+		document.getElementById('team4GA').innerHTML = team4[4];
+
+  }
+  else if (A.includes("team2") && B.includes("team3")) {
+    // PTS
+    team3[1] += 3; 
+
+    // GF and GA
+		team2[3] += parseInt(s1); team2[4] += parseInt(s2);
+		team3[3] += parseInt(s2);	team3[4] += parseInt(s1);
+
+     // GD  
+    team2[2] = team2[3] - team2[4];
+    team3[2] = team3[3] - team3[4];
+
+    // display
+		document.getElementById('team2Pts').innerHTML = team2[1];
+		document.getElementById('team2GD').innerHTML = team2[2];
+		document.getElementById('team2GF').innerHTML = team2[3];
+    document.getElementById('team2GA').innerHTML = team2[4];
+    document.getElementById('team3Pts').innerHTML = team3[1];
+		document.getElementById('team3GD').innerHTML = team3[2];
+		document.getElementById('team3GF').innerHTML = team3[3];
+		document.getElementById('team3GA').innerHTML = team3[4];
+
+  }
+  else if (A.includes("team2") && B.includes("team4")) {
+    // PTS
+    team4[1] += 3; 
+
+    // GF and GA
+		team2[3] += parseInt(s1); team2[4] += parseInt(s2);
+		team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
+
+     // GD  
+    team2[2] = team2[3] - team2[4];
+    team4[2] = team4[3] - team4[4];
+
+    // display
+		document.getElementById('team2Pts').innerHTML = team2[1];
+		document.getElementById('team2GD').innerHTML = team2[2];
+		document.getElementById('team2GF').innerHTML = team2[3];
+    document.getElementById('team2GA').innerHTML = team2[4];
+    document.getElementById('team4Pts').innerHTML = team4[1];
+		document.getElementById('team4GD').innerHTML = team4[2];
+		document.getElementById('team4GF').innerHTML = team4[3];
+		document.getElementById('team4GA').innerHTML = team4[4];
+
+  }
+  else if (A.includes("team3") && B.includes("team4")) {
+    // PTS
+    team4[1] += 3; 
+
+    // GF and GA
+		team3[3] += parseInt(s1); team3[4] += parseInt(s2);
+		team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
+
+     // GD  
+    team3[2] = team3[3] - team3[4];
+    team4[2] = team4[3] - team4[4];
+
+    // display
+		document.getElementById('team3Pts').innerHTML = team3[1];
+		document.getElementById('team3GD').innerHTML = team3[2];
+		document.getElementById('team3GF').innerHTML = team3[3];
+    document.getElementById('team3GA').innerHTML = team3[4];
+    document.getElementById('team4Pts').innerHTML = team4[1];
+		document.getElementById('team4GD').innerHTML = team4[2];
+		document.getElementById('team4GF').innerHTML = team4[3];
+		document.getElementById('team4GA').innerHTML = team4[4];
+
+  }
+	else {
+		console.log('something didnt work');
+	}
+}
+
+function compileNumbersIfTie(A,B,s1,s2) {
+  if (A.includes("team1") && B.includes("team2")) {
+
+    // PTS
+    team1[1] += 1;
+    team2[1] += 1; 
+
+    // GF and GA
+		team1[3] += parseInt(s1); team1[4] += parseInt(s2);
+		team2[3] += parseInt(s2);	team2[4] += parseInt(s1);
+
+     // GD  
+    team1[2] = team1[3] - team1[4];
+    team2[2] = team2[3] - team2[4];
+
+    // display
+		document.getElementById('team1Pts').innerHTML = team1[1];
+		document.getElementById('team1GD').innerHTML = team1[2];
+		document.getElementById('team1GF').innerHTML = team1[3];
+    document.getElementById('team1GA').innerHTML = team1[4];
+    document.getElementById('team2Pts').innerHTML = team2[1];
+		document.getElementById('team2GD').innerHTML = team2[2];
+		document.getElementById('team2GF').innerHTML = team2[3];
+		document.getElementById('team2GA').innerHTML = team2[4];
+  }
+  else if (A.includes("team1") && B.includes("team3")) {
+    // PTS
+    team1[1] += 1; 
+    team3[1] += 1; 
+
+    // GF and GA
+		team1[3] += parseInt(s1); team1[4] += parseInt(s2);
+		team3[3] += parseInt(s2);	team3[4] += parseInt(s1);
+
+     // GD  
+    team1[2] = team1[3] - team1[4];
+    team3[2] = team3[3] - team3[4];
+
+    // display
+		document.getElementById('team1Pts').innerHTML = team1[1];
+		document.getElementById('team1GD').innerHTML = team1[2];
+		document.getElementById('team1GF').innerHTML = team1[3];
+    document.getElementById('team1GA').innerHTML = team1[4];
+    document.getElementById('team3Pts').innerHTML = team3[1];
+		document.getElementById('team3GD').innerHTML = team3[2];
+		document.getElementById('team3GF').innerHTML = team3[3];
+		document.getElementById('team3GA').innerHTML = team3[4];
+
+  }
+  else if (A.includes("team1") && B.includes("team4")) {
+    // PTS
+    team1[1] += 1; 
+    team4[1] += 1; 
+
+    // GF and GA
+		team1[3] += parseInt(s1); team1[4] += parseInt(s2);
+		team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
+
+     // GD  
+    team1[2] = team1[3] - team1[4];
+    team4[2] = team4[3] - team4[4];
+
+    // display
+		document.getElementById('team1Pts').innerHTML = team1[1];
+		document.getElementById('team1GD').innerHTML = team1[2];
+		document.getElementById('team1GF').innerHTML = team1[3];
+    document.getElementById('team1GA').innerHTML = team1[4];
+    document.getElementById('team4Pts').innerHTML = team4[1];
+		document.getElementById('team4GD').innerHTML = team4[2];
+		document.getElementById('team4GF').innerHTML = team4[3];
+		document.getElementById('team4GA').innerHTML = team4[4];
+
+  }
+  else if (A.includes("team2") && B.includes("team3")) {
+    // PTS
+    team2[1] += 1; 
+    team3[1] += 1; 
+
+    // GF and GA
+		team2[3] += parseInt(s1); team2[4] += parseInt(s2);
+		team3[3] += parseInt(s2);	team3[4] += parseInt(s1);
+
+     // GD  
+    team2[2] = team2[3] - team2[4];
+    team3[2] = team3[3] - team3[4];
+
+    // display
+		document.getElementById('team2Pts').innerHTML = team2[1];
+		document.getElementById('team2GD').innerHTML = team2[2];
+		document.getElementById('team2GF').innerHTML = team2[3];
+    document.getElementById('team2GA').innerHTML = team2[4];
+    document.getElementById('team3Pts').innerHTML = team3[1];
+		document.getElementById('team3GD').innerHTML = team3[2];
+		document.getElementById('team3GF').innerHTML = team3[3];
+		document.getElementById('team3GA').innerHTML = team3[4];
+
+  }
+  else if (A.includes("team2") && B.includes("team4")) {
+    // PTS
+    team2[1] += 1; 
+    team4[1] += 1; 
+
+    // GF and GA
+		team2[3] += parseInt(s1); team2[4] += parseInt(s2);
+		team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
+
+     // GD  
+    team2[2] = team2[3] - team2[4];
+    team4[2] = team4[3] - team4[4];
+
+    // display
+		document.getElementById('team2Pts').innerHTML = team2[1];
+		document.getElementById('team2GD').innerHTML = team2[2];
+		document.getElementById('team2GF').innerHTML = team2[3];
+    document.getElementById('team2GA').innerHTML = team2[4];
+    document.getElementById('team4Pts').innerHTML = team4[1];
+		document.getElementById('team4GD').innerHTML = team4[2];
+		document.getElementById('team4GF').innerHTML = team4[3];
+		document.getElementById('team4GA').innerHTML = team4[4];
+
+  }
+  else if (A.includes("team3") && B.includes("team4")) {
+    // PTS
+    team3[1] += 1; 
+    team4[1] += 1; 
+
+    // GF and GA
+		team3[3] += parseInt(s1); team3[4] += parseInt(s2);
+		team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
+
+     // GD  
+    team3[2] = team3[3] - team3[4];
+    team4[2] = team4[3] - team4[4];
+
+    // display
+		document.getElementById('team3Pts').innerHTML = team3[1];
+		document.getElementById('team3GD').innerHTML = team3[2];
+		document.getElementById('team3GF').innerHTML = team3[3];
+    document.getElementById('team3GA').innerHTML = team3[4];
+    document.getElementById('team4Pts').innerHTML = team4[1];
+		document.getElementById('team4GD').innerHTML = team4[2];
+		document.getElementById('team4GF').innerHTML = team4[3];
+		document.getElementById('team4GA').innerHTML = team4[4];
+
+  }
+	else {
+		console.log('something didnt work');
+	}
+}
 
 
+// make UPLOAD button disappear
 function disappear1() {
 	document.getElementById("submit1").style.visibility = "hidden";
 }
@@ -215,213 +700,28 @@ function disappear6() {
 	document.getElementById("submit6").style.visibility = "hidden";
 }
 
-// function onClick1() {
-// 	clicks1 += 1; 
-// 	if (clicks1 > 0 && clicks1 < 2) {
-// 		document.getElementById("counter1").style.border = "10px solid lightgreen";
-// 	}
-// 	else if (clicks1 > 1) {
-// 		document.getElementById("counter1").style.border = "10px solid red";
-// 	}
-// 	else {
-// 		console.log('yo');
-// 	}
-// };
-// function onClick2() {
-// 	clicks2 += 1; 
-// 		if (clicks2 > 0 && clicks2 < 2) {
-// 			document.getElementById("counter2").style.border = "10px solid lightgreen";
-// 		}
-// 		else if (clicks2 > 1) {
-// 			document.getElementById("counter2").style.border = "10px solid red";
-// 		}
-// 		else {
-// 			console.log('yo');
-// 		}
-// };
 
 
+// SORTING
+const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
 
+const comparer = (idx, asc) => (a, b) => ((v1, v2) => 
+    v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
+    )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
 
-	// team name | pts | gd | gf | ga | 
-
-  var team1 = ["FC Harul", 0, 0, 0];
-	var team2 = ["SBVP FC", 0, 0 ,0];
-	var team3 = ["Croatia", 0, 0 ,0];
-	var team4 = ["Red Bull New Life", 0, 0 ,0];
-
-	document.getElementById('team1').innerHTML = team1[0];
-	document.getElementById('team11').innerHTML = team1[0];
-	document.getElementById('team111').innerHTML = team1[0];
-	document.getElementById('team1111').innerHTML = team1[0];
-
-	document.getElementById('team2').innerHTML = team2[0];
-	document.getElementById('team22').innerHTML = team2[0];
-	document.getElementById('team222').innerHTML = team2[0];
-	document.getElementById('team2222').innerHTML = team2[0];
-
-	document.getElementById('team3').innerHTML = team3[0];
-	document.getElementById('team33').innerHTML = team3[0];
-	document.getElementById('team333').innerHTML = team3[0];
-	document.getElementById('team3333').innerHTML = team3[0];
-
-	document.getElementById('team4').innerHTML = team4[0];
-	document.getElementById('team44').innerHTML = team4[0];
-	document.getElementById('team444').innerHTML = team4[0];
-	document.getElementById('team4444').innerHTML = team4[0];
-
-	document.getElementById('team1Pts').innerHTML = team1[1];
-	document.getElementById('team2Pts').innerHTML = team2[1];
-	document.getElementById('team3Pts').innerHTML = team3[1];
-	document.getElementById('team4Pts').innerHTML = team4[1];
-
-	document.getElementById('team1GF').innerHTML = team1[2];
-	document.getElementById('team1GA').innerHTML = team1[3];
-
-	document.getElementById('team2GF').innerHTML = team2[2];
-	document.getElementById('team2GA').innerHTML = team2[3];
-
-	document.getElementById('team3GF').innerHTML = team3[2];
-	document.getElementById('team3GA').innerHTML = team3[3];
-
-	document.getElementById('team4GF').innerHTML = team4[2];
-	document.getElementById('team4GA').innerHTML = team4[3];
-
-	function submitScore(sc1, sc2, teamA, teamB) {
-
-		if (sc1 > sc2) {
-			console.log(teamA+' won');
-			// console.log(teamA[1]);
-			
-			if (teamA.includes("team1")) {
-				team1[1] += 3;
-				team1[2] += parseInt(sc1);
-				team1[3] += parseInt(sc2);
-				document.getElementById('team1Pts').innerHTML = team1[1];
-				document.getElementById('team1GF').innerHTML = team1[2];
-				document.getElementById('team1GA').innerHTML = team1[3];
-			} 
-			else if (teamA.includes("team2")) {
-				team2[1] += 3;
-				team2[2] += parseInt(sc1);
-				team2[3] += parseInt(sc2);
-				document.getElementById('team2Pts').innerHTML = team2[1];
-			} 
-			else if (teamA.includes("team3")) {
-				team3[1] += 3;
-				team3[2] += parseInt(sc1);
-				team3[3] += parseInt(sc2);
-				document.getElementById('team3Pts').innerHTML = team3[1];
-			} 
-			else if (teamA.includes("team4")) {
-				team4[1] += 3;
-				team4[2] += parseInt(sc1);
-				team4[3] += parseInt(sc2);
-				document.getElementById('team4Pts').innerHTML = team4[1];
-			} 
-			
-
-		} else if (sc2 > sc1) {
-			console.log(teamB+' won');
-
-
-			if (teamB.includes("team1")) {
-				team1[1] += 3;
-				team1[2] += parseInt(sc2);
-				team1[3] += parseInt(sc1);
-				document.getElementById('team1Pts').innerHTML = team1[1];
-			} 
-			else if (teamB.includes("team2")) {
-				team2[1] += 3;
-				team2[2] += parseInt(sc2);
-				team2[3] += parseInt(sc1);
-				document.getElementById('team2Pts').innerHTML = team2[1];
-			} 
-			else if (teamB.includes("team3")) {
-				team3[1] += 3;
-				team3[2] += parseInt(sc2);
-				team3[3] += parseInt(sc1);
-				document.getElementById('team3Pts').innerHTML = team3[1];
-			} 
-			else if (teamB.includes("team4")) {
-				team4[1] += 3;
-				team4[2] += parseInt(sc2);
-				team4[3] += parseInt(sc1);
-				document.getElementById('team4Pts').innerHTML = team4[1];
-			} 
-		} else {
-				console.log("it's a tie");
-
-				if (teamA.includes("team1") && teamB.includes("team2")) {
-					team1[1] += 1;
-					team2[1] += 1;
-					team1[2] += parseInt(sc1);
-					team2[2] += parseInt(sc1);
-					team1[3] += parseInt(sc1);
-					team2[3] += parseInt(sc1);
-					document.getElementById('team1Pts').innerHTML = team1[1];
-					document.getElementById('team2Pts').innerHTML = team2[1];
-				}
-				else if (teamA.includes("team1") && teamB.includes("team3")) {
-					team1[1] += 1;
-					team3[1] += 1;
-					team1[2] += parseInt(sc1);
-					team3[2] += parseInt(sc1);
-					team1[3] += parseInt(sc1);
-					team3[3] += parseInt(sc1);
-					document.getElementById('team1Pts').innerHTML = team1[1];
-					document.getElementById('team3Pts').innerHTML = team3[1];
-				}
-				else if (teamA.includes("team1") && teamB.includes("team4")) {
-					team1[1] += 1;
-					team4[1] += 1;
-					team1[2] += parseInt(sc1);
-					team4[2] += parseInt(sc1);
-					team1[3] += parseInt(sc1);
-					team4[3] += parseInt(sc1);
-					document.getElementById('team1Pts').innerHTML = team1[1];
-					document.getElementById('team4Pts').innerHTML = team4[1];
-				}
-				else if (teamA.includes("team2") && teamB.includes("team3")) {
-					team2[1] += 1;
-					team3[1] += 1;
-					team2[2] += parseInt(sc1);
-					team3[2] += parseInt(sc1);
-					team2[3] += parseInt(sc1);
-					team3[3] += parseInt(sc1);
-					document.getElementById('team2Pts').innerHTML = team2[1];
-					document.getElementById('team3Pts').innerHTML = team3[1];
-				}
-				else if (teamA.includes("team2") && teamB.includes("team4")) {
-					team2[1] += 1;
-					team4[1] += 1;
-					team2[2] += parseInt(sc1);
-					team4[2] += parseInt(sc1);
-					team2[3] += parseInt(sc1);
-					team4[3] += parseInt(sc1);
-					document.getElementById('team2Pts').innerHTML = team2[1];
-					document.getElementById('team4Pts').innerHTML = team4[1];
-				}
-				else if (teamA.includes("team3") && teamB.includes("team4")) {
-					team3[1] += 1;
-					team4[1] += 1;
-					team3[2] += parseInt(sc1);
-					team4[2] += parseInt(sc1);
-					team3[3] += parseInt(sc1);
-					team4
-					[3] += parseInt(sc1);
-					document.getElementById('team3Pts').innerHTML = team3[1];
-					document.getElementById('team4Pts').innerHTML = team4[1];
-				}
-
-				
-		}
-
-	}
-
+// do the work...
+document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
+    const table = th.closest('table');
+    Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
+        .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+        .forEach(tr => table.appendChild(tr) );
+})));
 
 
 </script>
+
+
+
 
 
 <style>
@@ -441,18 +741,3 @@ function disappear6() {
 			cursor: pointer;
 	}
 </style>
-
-
-<!-- // .... in progress
-	// add input boxes
-	// try to make team names show either through javascript or something else (php?)
-	// write function submitScore()
-	// 2 input boxes per submit button. 12 submit buttons (or ideally, the scores update after both input boxes have numbers in them)
-	// -- like this site does it -> https://goodcalculators.com/league-table-creator/
-
-	// data points: team1, team2, score1, score2 
-
-	// button onclick="submitScore(document.getElementById('first').value,document.getElementById('second').value)" -->
-
-
-	<!-- remove upload button after click -->
