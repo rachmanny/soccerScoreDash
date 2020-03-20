@@ -137,23 +137,33 @@
 		<tr>
 			<th>Name</th>
 			<th>Pts</th>
+			<th>GF</th>
+			<th>GA</th>
 		</tr>
 
 		<tr>
 			<td id=team1></td>
 			<td id=team1Pts></td>
+			<td id=team1GF></td>
+			<td id=team1GA></td>
 		</tr>
 		<tr>
 			<td id=team2></td>
 			<td id=team2Pts></td>
+			<td id=team2GF></td>
+			<td id=team2GA></td>
 		</tr>
 		<tr>
 			<td id=team3></td>
 			<td id=team3Pts></td>
+			<td id=team3GF></td>
+			<td id=team3GA></td>
 		</tr>
 		<tr>
 			<td id=team4></td>
 			<td id=team4Pts></td>
+			<td id=team4GF></td>
+			<td id=team4GA></td>
 		</tr>
 	</table>
 
@@ -233,6 +243,7 @@ function disappear6() {
 
 
 
+	// team name | pts | gd | gf | ga | 
 
   var team1 = ["FC Harul", 0, 0, 0];
 	var team2 = ["SBVP FC", 0, 0 ,0];
@@ -264,6 +275,18 @@ function disappear6() {
 	document.getElementById('team3Pts').innerHTML = team3[1];
 	document.getElementById('team4Pts').innerHTML = team4[1];
 
+	document.getElementById('team1GF').innerHTML = team1[2];
+	document.getElementById('team1GA').innerHTML = team1[3];
+
+	document.getElementById('team2GF').innerHTML = team2[2];
+	document.getElementById('team2GA').innerHTML = team2[3];
+
+	document.getElementById('team3GF').innerHTML = team3[2];
+	document.getElementById('team3GA').innerHTML = team3[3];
+
+	document.getElementById('team4GF').innerHTML = team4[2];
+	document.getElementById('team4GA').innerHTML = team4[3];
+
 	function submitScore(sc1, sc2, teamA, teamB) {
 
 		if (sc1 > sc2) {
@@ -272,18 +295,28 @@ function disappear6() {
 			
 			if (teamA.includes("team1")) {
 				team1[1] += 3;
+				team1[2] += parseInt(sc1);
+				team1[3] += parseInt(sc2);
 				document.getElementById('team1Pts').innerHTML = team1[1];
+				document.getElementById('team1GF').innerHTML = team1[2];
+				document.getElementById('team1GA').innerHTML = team1[3];
 			} 
 			else if (teamA.includes("team2")) {
 				team2[1] += 3;
+				team2[2] += parseInt(sc1);
+				team2[3] += parseInt(sc2);
 				document.getElementById('team2Pts').innerHTML = team2[1];
 			} 
 			else if (teamA.includes("team3")) {
 				team3[1] += 3;
+				team3[2] += parseInt(sc1);
+				team3[3] += parseInt(sc2);
 				document.getElementById('team3Pts').innerHTML = team3[1];
 			} 
 			else if (teamA.includes("team4")) {
 				team4[1] += 3;
+				team4[2] += parseInt(sc1);
+				team4[3] += parseInt(sc2);
 				document.getElementById('team4Pts').innerHTML = team4[1];
 			} 
 			
@@ -294,18 +327,26 @@ function disappear6() {
 
 			if (teamB.includes("team1")) {
 				team1[1] += 3;
+				team1[2] += parseInt(sc2);
+				team1[3] += parseInt(sc1);
 				document.getElementById('team1Pts').innerHTML = team1[1];
 			} 
 			else if (teamB.includes("team2")) {
 				team2[1] += 3;
+				team2[2] += parseInt(sc2);
+				team2[3] += parseInt(sc1);
 				document.getElementById('team2Pts').innerHTML = team2[1];
 			} 
 			else if (teamB.includes("team3")) {
 				team3[1] += 3;
+				team3[2] += parseInt(sc2);
+				team3[3] += parseInt(sc1);
 				document.getElementById('team3Pts').innerHTML = team3[1];
 			} 
 			else if (teamB.includes("team4")) {
 				team4[1] += 3;
+				team4[2] += parseInt(sc2);
+				team4[3] += parseInt(sc1);
 				document.getElementById('team4Pts').innerHTML = team4[1];
 			} 
 		} else {
@@ -314,36 +355,61 @@ function disappear6() {
 				if (teamA.includes("team1") && teamB.includes("team2")) {
 					team1[1] += 1;
 					team2[1] += 1;
+					team1[2] += parseInt(sc1);
+					team2[2] += parseInt(sc1);
+					team1[3] += parseInt(sc1);
+					team2[3] += parseInt(sc1);
 					document.getElementById('team1Pts').innerHTML = team1[1];
 					document.getElementById('team2Pts').innerHTML = team2[1];
 				}
 				else if (teamA.includes("team1") && teamB.includes("team3")) {
 					team1[1] += 1;
 					team3[1] += 1;
+					team1[2] += parseInt(sc1);
+					team3[2] += parseInt(sc1);
+					team1[3] += parseInt(sc1);
+					team3[3] += parseInt(sc1);
 					document.getElementById('team1Pts').innerHTML = team1[1];
 					document.getElementById('team3Pts').innerHTML = team3[1];
 				}
 				else if (teamA.includes("team1") && teamB.includes("team4")) {
 					team1[1] += 1;
 					team4[1] += 1;
+					team1[2] += parseInt(sc1);
+					team4[2] += parseInt(sc1);
+					team1[3] += parseInt(sc1);
+					team4[3] += parseInt(sc1);
 					document.getElementById('team1Pts').innerHTML = team1[1];
 					document.getElementById('team4Pts').innerHTML = team4[1];
 				}
 				else if (teamA.includes("team2") && teamB.includes("team3")) {
 					team2[1] += 1;
 					team3[1] += 1;
+					team2[2] += parseInt(sc1);
+					team3[2] += parseInt(sc1);
+					team2[3] += parseInt(sc1);
+					team3[3] += parseInt(sc1);
 					document.getElementById('team2Pts').innerHTML = team2[1];
 					document.getElementById('team3Pts').innerHTML = team3[1];
 				}
 				else if (teamA.includes("team2") && teamB.includes("team4")) {
 					team2[1] += 1;
 					team4[1] += 1;
+					team2[2] += parseInt(sc1);
+					team4[2] += parseInt(sc1);
+					team2[3] += parseInt(sc1);
+					team4[3] += parseInt(sc1);
 					document.getElementById('team2Pts').innerHTML = team2[1];
 					document.getElementById('team4Pts').innerHTML = team4[1];
 				}
 				else if (teamA.includes("team3") && teamB.includes("team4")) {
 					team3[1] += 1;
 					team4[1] += 1;
+					team3[2] += parseInt(sc1);
+					team4[2] += parseInt(sc1);
+					team3[3] += parseInt(sc1);
+					team4
+					[3] += parseInt(sc1);
 					document.getElementById('team3Pts').innerHTML = team3[1];
 					document.getElementById('team4Pts').innerHTML = team4[1];
 				}
