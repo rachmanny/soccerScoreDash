@@ -2,11 +2,14 @@
 	<table id=schedule>
 		<tr>
 			<td>
-				Romania
-				<input type=text id=score1 required></input>
-				Moldova
-				<input type=text id=score2 required></input>
-				
+				<table id=compartment> 
+					<tr>
+						<td><p id=team11></p></td>
+						<td><input type=text id=score1 required></input></td>
+						<td><input type=text id=score2 required></input></td>
+						<td><p id=team22></p></td>		
+					</tr>
+				</table>
 			</td>
 
 			<td>
@@ -16,15 +19,18 @@
 																								 disappear1();">Upload</button>
 			</td>
 
-			<td><div id=counter1></div></td>
-
 		</tr>
 		<tr>
 			<td>
-				Bolivia
-				<input type=text id=score3></input>
-				Macedonia
-				<input type=text id=score4></input>
+				<table id=compartment> 
+					<tr>
+						<td><p id=team33></p></td>
+						<td><input type=text id=score3 required></input></td>
+						<td><input type=text id=score4 required></input></td>
+						<td><p id=team44></p></td>
+						
+					</tr>
+				</table>
 			</td>
 			<td>
 				<button type=submit id=submit2 onclick="submitScore(document.getElementById('score3').value,
@@ -32,16 +38,21 @@
 																								'team3','team4');
 																								disappear2();">Upload</button>
 			</td>
-			<td><div id=counter2></div></td>
+
 		</tr>
 
 		
 		<tr>
 			<td>
-				Romania
-				<input type=text id=score5></input>
-				Bolivia
-				<input type=text id=score6></input>
+				<table id=compartment> 
+					<tr>
+						<td><p id=team111></p></td>
+						<td><input type=text id=score5 required></input></td>
+						<td><input type=text id=score6 required></input></td>
+						<td><p id=team333></p></td>
+						
+					</tr>
+				</table>
 			</td>
 
 			<td>
@@ -51,15 +62,20 @@
 																								 disappear3();">Upload</button>
 			</td>
 
-			<td><div id=counter3></div></td>
+
 
 		</tr>
 		<tr>
 			<td>
-				Moldova
-				<input type=text id=score7></input>
-				Macedonia
-				<input type=text id=score8></input>
+				<table id=compartment> 
+					<tr>
+						<td><p id=team222></p></td>
+						<td><input type=text id=score7 required></input></td>
+						<td><input type=text id=score8 required></input></td>
+						<td><p id=team444></p></td>
+						
+					</tr>
+				</table>
 			</td>
 			<td>
 				<button type=submit id=submit4 onclick="submitScore(document.getElementById('score7').value,
@@ -67,15 +83,20 @@
 																								'team2','team4');
 																								disappear4();">Upload</button>
 			</td>
-			<td><div id=counter4></div></td>
+
 		</tr>
 
 		<tr>
 			<td>
-				Romania
-				<input type=text id=score9></input>
-				Macedonia
-				<input type=text id=score10></input>
+				<table id=compartment> 
+					<tr>
+						<td><p id=team1111></p></td>
+						<td><input type=text id=score9 required></input></td>
+						<td><input type=text id=score10 required></input></td>
+						<td><p id=team4444></p></td>
+						
+					</tr>
+				</table>
 			</td>
 
 			<td>
@@ -85,15 +106,20 @@
 																								 disappear5();">Upload</button>
 			</td>
 
-			<td><div id=counter5></div></td>
+			
 
 		</tr>
 		<tr>
 			<td>
-				Moldova
-				<input type=text id=score11></input>
-				Bolivia
-				<input type=text id=score12></input>
+				<table id=compartment> 
+					<tr>
+						<td><p id=team2222></p></td>
+						<td><input type=text id=score11 required></input></td>
+						<td><input type=text id=score12 required></input></td>
+						<td><p id=team3333></p></td>
+						
+					</tr>
+				</table>
 			</td>
 			<td>
 				<button type=submit id=submit6 onclick="submitScore(document.getElementById('score11').value,
@@ -101,11 +127,12 @@
 																								'team2','team3');																					
 																								disappear6();">Upload</button>
 			</td>
-			<td><div id=counter6></div></td>
+	
 		</tr>
 
 	</table>
 
+	<br></br>
 	<table id=standings>
 		<tr>
 			<th>Name</th>
@@ -128,7 +155,6 @@
 			<td id=team4></td>
 			<td id=team4Pts></td>
 		</tr>
-		
 	</table>
 
 </html>
@@ -137,6 +163,28 @@
 <!-- doesn't work. throws an exception for null , line 23 -->
 
 <script>
+
+
+const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
+
+const comparer = (idx, asc) => (a, b) => ((v1, v2) => 
+    v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
+    )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+
+// do the work...
+document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
+    const table = th.closest('table');
+    Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
+        .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+        .forEach(tr => table.appendChild(tr) );
+})));
+
+
+
+
+
+
+
 
 function disappear1() {
 	document.getElementById("submit1").style.visibility = "hidden";
@@ -186,15 +234,30 @@ function disappear6() {
 
 
 
-  var team1 = ["Romania", 0, 0, 0];
-	var team2 = ["Moldova", 0, 0 ,0];
-	var team3 = ["Bolivia", 0, 0 ,0];
-	var team4 = ["Macedonia", 0, 0 ,0];
+  var team1 = ["FC Harul", 0, 0, 0];
+	var team2 = ["SBVP FC", 0, 0 ,0];
+	var team3 = ["Croatia", 0, 0 ,0];
+	var team4 = ["Red Bull New Life", 0, 0 ,0];
 
 	document.getElementById('team1').innerHTML = team1[0];
+	document.getElementById('team11').innerHTML = team1[0];
+	document.getElementById('team111').innerHTML = team1[0];
+	document.getElementById('team1111').innerHTML = team1[0];
+
 	document.getElementById('team2').innerHTML = team2[0];
+	document.getElementById('team22').innerHTML = team2[0];
+	document.getElementById('team222').innerHTML = team2[0];
+	document.getElementById('team2222').innerHTML = team2[0];
+
 	document.getElementById('team3').innerHTML = team3[0];
+	document.getElementById('team33').innerHTML = team3[0];
+	document.getElementById('team333').innerHTML = team3[0];
+	document.getElementById('team3333').innerHTML = team3[0];
+
 	document.getElementById('team4').innerHTML = team4[0];
+	document.getElementById('team44').innerHTML = team4[0];
+	document.getElementById('team444').innerHTML = team4[0];
+	document.getElementById('team4444').innerHTML = team4[0];
 
 	document.getElementById('team1Pts').innerHTML = team1[1];
 	document.getElementById('team2Pts').innerHTML = team2[1];
@@ -300,6 +363,17 @@ function disappear6() {
 		width: 30px;
 	}
 
+	#compartment tr td p{
+		width: 150px;
+		margin-left: 20px;
+		text-align:center;
+	}
+
+
+	th {
+			border: 1px solid black;
+			cursor: pointer;
+	}
 </style>
 
 
