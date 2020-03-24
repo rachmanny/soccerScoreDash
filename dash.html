@@ -1,1406 +1,1378 @@
+<link rel=stylesheet href=styles.css></link>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script> 
 
-<table id=schedule>
-  <tr>
-    <td>
-      <table id=compartment> 
-        <tr>
-          <td><p id=team11></p></td>
-          <td><input type=text id=score1 required></input></td>
-          <td><input type=text id=score2 required></input></td>
-          <td><p id=team22></p></td>		
-        </tr>
-      </table>
-    </td>
+<div class=wrapper>
+	<div class="one">
+		<table id=schedule>
+			<tr>
+				<td>
+					<table id=compartment class=groupAgames> 
+						<tr>
+							<td><p id=team11></p></td>
+							<td><input type=text id=score1 required></input></td>
+							<td><input type=text id=score2 required></input></td>
+							<td><p id=team22></p></td>		
+						</tr>
+					</table>
+				</td>
+		
+				<td>
+					<button type=submit id=submit1 onclick="submitScore(document.getElementById('score1').value,
+																									 document.getElementById('score2').value,
+																									 'team1','team2');
+																									 disappear1();">Upload</button>
+				</td>
+		
+			</tr>
+			<tr>
+				<td>
+					<table id=compartment class=groupAgames> 
+						<tr>
+							<td><p id=team33></p></td>
+							<td><input type=text id=score3 required></input></td>
+							<td><input type=text id=score4 required></input></td>
+							<td><p id=team44></p></td>
+							
+						</tr>
+					</table>
+				</td>
+				<td>
+					<button type=submit id=submit2 onclick="submitScore(document.getElementById('score3').value,
+																									 document.getElementById('score4').value,
+																									'team3','team4');
+																									disappear2();">Upload</button>
+				</td>
+		
+			</tr>
+		
+			<tr>
+				<td>
+					<table id=compartment class=groupBgames> 
+						<tr>
+							<td><p id=team55></p></td>
+							<td><input type=text id=score13 required></input></td>
+							<td><input type=text id=score14 required></input></td>
+							<td><p id=team66></p></td>		
+						</tr>
+					</table>
+				</td>
+		
+				<td>
+					<button type=submit id=submit7 onclick="submitScore(document.getElementById('score13').value,
+																									 document.getElementById('score14').value,
+																									 'team5','team6');
+																									 disappear7();">Upload</button>
+				</td>
+		
+			</tr>
+			<tr>
+				<td>
+					<table id=compartment class=groupBgames> 
+						<tr>
+							<td><p id=team77></p></td>
+							<td><input type=text id=score15 required></input></td>
+							<td><input type=text id=score16 required></input></td>
+							<td><p id=team88></p></td>
+							
+						</tr>
+					</table>
+				</td>
+				<td>
+					<button type=submit id=submit8 onclick="submitScore(document.getElementById('score15').value,
+																									 document.getElementById('score16').value,
+																									'team7','team8');
+																									disappear8();">Upload</button>
+				</td>
+		
+			</tr>
+			
+			<tr>
+				<td>
+					<table id=compartment class=groupAgames> 
+						<tr>
+							<td><p id=team111></p></td>
+							<td><input type=text id=score5 required></input></td>
+							<td><input type=text id=score6 required></input></td>
+							<td><p id=team333></p></td>
+							
+						</tr>
+					</table>
+				</td>
+		
+				<td>
+					<button type=submit id=submit3 onclick="submitScore(document.getElementById('score5').value,
+																									 document.getElementById('score6').value,
+																									 'team1','team3');
+																									 disappear3();">Upload</button>
+				</td>
+		
+		
+		
+			</tr>
+			<tr>
+				<td>
+					<table id=compartment class=groupAgames> 
+						<tr>
+							<td><p id=team222></p></td>
+							<td><input type=text id=score7 required></input></td>
+							<td><input type=text id=score8 required></input></td>
+							<td><p id=team444></p></td>
+							
+						</tr>
+					</table>
+				</td>
+				<td>
+					<button type=submit id=submit4 onclick="submitScore(document.getElementById('score7').value,
+																									 document.getElementById('score8').value,
+																									'team2','team4');
+																									disappear4();">Upload</button>
+				</td>
+		
+			</tr>
+		
+			<tr>
+				<td>
+					<table id=compartment class=groupBgames> 
+						<tr>
+							<td><p id=team555></p></td>
+							<td><input type=text id=score17 required></input></td>
+							<td><input type=text id=score18 required></input></td>
+							<td><p id=team777></p></td>
+							
+						</tr>
+					</table>
+				</td>
+		
+				<td>
+					<button type=submit id=submit9 onclick="submitScore(document.getElementById('score17').value,
+																									 document.getElementById('score18').value,
+																									 'team5','team7');
+																									 disappear9();">Upload</button>
+				</td>
+		
+		
+		
+			</tr>
+			<tr>
+				<td>
+					<table id=compartment class=groupBgames> 
+						<tr>
+							<td><p id=team666></p></td>
+							<td><input type=text id=score19 required></input></td>
+							<td><input type=text id=score20 required></input></td>
+							<td><p id=team888></p></td>
+							
+						</tr>
+					</table>
+				</td>
+				<td>
+					<button type=submit id=submit10 onclick="submitScore(document.getElementById('score19').value,
+																									 document.getElementById('score20').value,
+																									'team6','team8');
+																									disappear10();">Upload</button>
+				</td>
+		
+			</tr>
 
-    <td>
-      <button type=submit id=submit1 onclick="submitScore(document.getElementById('score1').value,
-                                               document.getElementById('score2').value,
-                                               'team1','team2');
-                                               disappear1();">Upload</button>
-    </td>
+			<tr>
+				<td>
+					<table id=compartment class=groupAgames> 
+						<tr>
+							<td><p id=team1111></p></td>
+							<td><input type=text id=score9 required></input></td>
+							<td><input type=text id=score10 required></input></td>
+							<td><p id=team4444></p></td>
+							
+						</tr>
+					</table>
+				</td>
+		
+				<td>
+					<button type=submit id=submit5 onclick="submitScore(document.getElementById('score9').value,
+																									 document.getElementById('score10').value,
+																									 'team1','team4');
+																									 disappear5();">Upload</button>
+				</td>
+		
+				
+		
+			</tr>
+			<tr>
+				<td>
+					<table id=compartment class=groupAgames> 
+						<tr>
+							<td><p id=team2222></p></td>
+							<td><input type=text id=score11 required></input></td>
+							<td><input type=text id=score12 required></input></td>
+							<td><p id=team3333></p></td>
+							
+						</tr>
+					</table>
+				</td>
+				<td>
+					<button type=submit id=submit6 onclick="submitScore(document.getElementById('score11').value,
+																									 document.getElementById('score12').value,
+																									'team2','team3');																					
+																									disappear6();">Upload</button>
+				</td>
+		
+			</tr>
 
-  </tr>
-  <tr>
-    <td>
-      <table id=compartment> 
-        <tr>
-          <td><p id=team33></p></td>
-          <td><input type=text id=score3 required></input></td>
-          <td><input type=text id=score4 required></input></td>
-          <td><p id=team44></p></td>
-          
-        </tr>
-      </table>
-    </td>
-    <td>
-      <button type=submit id=submit2 onclick="submitScore(document.getElementById('score3').value,
-                                               document.getElementById('score4').value,
-                                              'team3','team4');
-                                              disappear2();">Upload</button>
-    </td>
+			
+		
+			
+			
+		
+			<tr>
+				<td>
+					<table id=compartment class=groupBgames> 
+						<tr>
+							<td><p id=team5555></p></td>
+							<td><input type=text id=score21 required></input></td>
+							<td><input type=text id=score22 required></input></td>
+							<td><p id=team8888></p></td>
+							
+						</tr>
+					</table>
+				</td>
+		
+				<td>
+					<button type=submit id=submit11 onclick="submitScore(document.getElementById('score21').value,
+																									 document.getElementById('score22').value,
+																									 'team5','team8');
+																									 disappear11();">Upload</button>
+				</td>
+		
+				
+		
+			</tr>
+			<tr>
+				<td>
+					<table id=compartment class=groupBgames> 
+						<tr>
+							<td><p id=team6666></p></td>
+							<td><input type=text id=score23 required></input></td>
+							<td><input type=text id=score24 required></input></td>
+							<td><p id=team7777></p></td>
+							
+						</tr>
+					</table>
+				</td>
+				<td>
+					<button type=submit id=submit12 onclick="submitScore(document.getElementById('score23').value,
+																									 document.getElementById('score24').value,
+																									'team6','team7');																					
+																									disappear12();">Upload</button>
+				</td>
+		
+			</tr>
+		
+		</table>
 
-  </tr>
+	</div>
 
-  
-  <tr>
-    <td>
-      <table id=compartment> 
-        <tr>
-          <td><p id=team111></p></td>
-          <td><input type=text id=score5 required></input></td>
-          <td><input type=text id=score6 required></input></td>
-          <td><p id=team333></p></td>
-          
-        </tr>
-      </table>
-    </td>
+	<div class="two">
+		<table id=standings>
+			<tr>
+				<th>Name</th>
+				<th>Pts</th>
+				<th>GD</th>
+				<th>GF</th>
+				<th>GA</th>
+			</tr>
+		
+			<tbody>
+			<tr>
+				<td id=team1></td>
+				<td id=team1Pts></td>
+				<td id=team1GD></td>
+				<td id=team1GF></td>
+				<td id=team1GA></td>
+			</tr>
+			<tr>
+				<td id=team2></td>
+				<td id=team2Pts></td>
+				<td id=team2GD></td>
+				<td id=team2GF></td>
+				<td id=team2GA></td>
+			</tr>
+			<tr>
+				<td id=team3></td>
+				<td id=team3Pts></td>
+				<td id=team3GD></td>
+				<td id=team3GF></td>
+				<td id=team3GA></td>
+			</tr>
+			<tr>
+				<td id=team4></td>
+				<td id=team4Pts></td>
+				<td id=team4GD></td>
+				<td id=team4GF></td>
+				<td id=team4GA></td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
 
-    <td>
-      <button type=submit id=submit3 onclick="submitScore(document.getElementById('score5').value,
-                                               document.getElementById('score6').value,
-                                               'team1','team3');
-                                               disappear3();">Upload</button>
-    </td>
-
-
-
-  </tr>
-  <tr>
-    <td>
-      <table id=compartment> 
-        <tr>
-          <td><p id=team222></p></td>
-          <td><input type=text id=score7 required></input></td>
-          <td><input type=text id=score8 required></input></td>
-          <td><p id=team444></p></td>
-          
-        </tr>
-      </table>
-    </td>
-    <td>
-      <button type=submit id=submit4 onclick="submitScore(document.getElementById('score7').value,
-                                               document.getElementById('score8').value,
-                                              'team2','team4');
-                                              disappear4();">Upload</button>
-    </td>
-
-  </tr>
-
-  <tr>
-    <td>
-      <table id=compartment> 
-        <tr>
-          <td><p id=team1111></p></td>
-          <td><input type=text id=score9 required></input></td>
-          <td><input type=text id=score10 required></input></td>
-          <td><p id=team4444></p></td>
-          
-        </tr>
-      </table>
-    </td>
-
-    <td>
-      <button type=submit id=submit5 onclick="submitScore(document.getElementById('score9').value,
-                                               document.getElementById('score10').value,
-                                               'team1','team4');
-                                               disappear5();">Upload</button>
-    </td>
-
-    
-
-  </tr>
-  <tr>
-    <td>
-      <table id=compartment> 
-        <tr>
-          <td><p id=team2222></p></td>
-          <td><input type=text id=score11 required></input></td>
-          <td><input type=text id=score12 required></input></td>
-          <td><p id=team3333></p></td>
-          
-        </tr>
-      </table>
-    </td>
-    <td>
-      <button type=submit id=submit6 onclick="submitScore(document.getElementById('score11').value,
-                                               document.getElementById('score12').value,
-                                              'team2','team3');																					
-                                              disappear6();">Upload</button>
-    </td>
-
-  </tr>
-
-</table>
-
-<br></br>
-<table id=standings>
-  <tr>
-    <th>Name</th>
-    <th>Pts</th>
-    <th>GD</th>
-    <th>GF</th>
-    <th>GA</th>
-  </tr>
-
-  <tbody>
-  <tr>
-    <td id=team1></td>
-    <td id=team1Pts></td>
-    <td id=team1GD></td>
-    <td id=team1GF></td>
-    <td id=team1GA></td>
-  </tr>
-  <tr>
-    <td id=team2></td>
-    <td id=team2Pts></td>
-    <td id=team2GD></td>
-    <td id=team2GF></td>
-    <td id=team2GA></td>
-  </tr>
-  <tr>
-    <td id=team3></td>
-    <td id=team3Pts></td>
-    <td id=team3GD></td>
-    <td id=team3GF></td>
-    <td id=team3GA></td>
-  </tr>
-  <tr>
-    <td id=team4></td>
-    <td id=team4Pts></td>
-    <td id=team4GD></td>
-    <td id=team4GF></td>
-    <td id=team4GA></td>
-  </tr>
-  </tbody>
-</table>
-
-
-
-
-
-<table id=schedule>
-  <tr>
-    <td>
-      <table id=compartment> 
-        <tr>
-          <td><p id=team55></p></td>
-          <td><input type=text id=score13 required></input></td>
-          <td><input type=text id=score14 required></input></td>
-          <td><p id=team66></p></td>		
-        </tr>
-      </table>
-    </td>
-
-    <td>
-      <button type=submit id=submit7 onclick="submitScore(document.getElementById('score13').value,
-                                               document.getElementById('score14').value,
-                                               'team5','team6');
-                                               disappear7();">Upload</button>
-    </td>
-
-  </tr>
-  <tr>
-    <td>
-      <table id=compartment> 
-        <tr>
-          <td><p id=team77></p></td>
-          <td><input type=text id=score15 required></input></td>
-          <td><input type=text id=score16 required></input></td>
-          <td><p id=team88></p></td>
-          
-        </tr>
-      </table>
-    </td>
-    <td>
-      <button type=submit id=submit8 onclick="submitScore(document.getElementById('score15').value,
-                                               document.getElementById('score16').value,
-                                              'team7','team8');
-                                              disappear8();">Upload</button>
-    </td>
-
-  </tr>
-
-  
-  <tr>
-    <td>
-      <table id=compartment> 
-        <tr>
-          <td><p id=team555></p></td>
-          <td><input type=text id=score17 required></input></td>
-          <td><input type=text id=score18 required></input></td>
-          <td><p id=team777></p></td>
-          
-        </tr>
-      </table>
-    </td>
-
-    <td>
-      <button type=submit id=submit9 onclick="submitScore(document.getElementById('score17').value,
-                                               document.getElementById('score18').value,
-                                               'team5','team7');
-                                               disappear9();">Upload</button>
-    </td>
-
-
-
-  </tr>
-  <tr>
-    <td>
-      <table id=compartment> 
-        <tr>
-          <td><p id=team666></p></td>
-          <td><input type=text id=score19 required></input></td>
-          <td><input type=text id=score20 required></input></td>
-          <td><p id=team888></p></td>
-          
-        </tr>
-      </table>
-    </td>
-    <td>
-      <button type=submit id=submit10 onclick="submitScore(document.getElementById('score19').value,
-                                               document.getElementById('score20').value,
-                                              'team6','team8');
-                                              disappear10();">Upload</button>
-    </td>
-
-  </tr>
-
-  <tr>
-    <td>
-      <table id=compartment> 
-        <tr>
-          <td><p id=team5555></p></td>
-          <td><input type=text id=score21 required></input></td>
-          <td><input type=text id=score22 required></input></td>
-          <td><p id=team8888></p></td>
-          
-        </tr>
-      </table>
-    </td>
-
-    <td>
-      <button type=submit id=submit11 onclick="submitScore(document.getElementById('score21').value,
-                                               document.getElementById('score22').value,
-                                               'team5','team8');
-                                               disappear11();">Upload</button>
-    </td>
-
-    
-
-  </tr>
-  <tr>
-    <td>
-      <table id=compartment> 
-        <tr>
-          <td><p id=team6666></p></td>
-          <td><input type=text id=score23 required></input></td>
-          <td><input type=text id=score24 required></input></td>
-          <td><p id=team7777></p></td>
-          
-        </tr>
-      </table>
-    </td>
-    <td>
-      <button type=submit id=submit12 onclick="submitScore(document.getElementById('score23').value,
-                                               document.getElementById('score24').value,
-                                              'team6','team7');																					
-                                              disappear12();">Upload</button>
-    </td>
-
-  </tr>
-
-</table>
-
-
-
-<br></br>
-<table id=standings>
-  <tr>
-    <th>Name</th>
-    <th>Pts</th>
-    <th>GD</th>
-    <th>GF</th>
-    <th>GA</th>
-  </tr>
-
-  <tbody>
-  <tr>
-    <td id=team5></td>
-    <td id=team5Pts></td>
-    <td id=team5GD></td>
-    <td id=team5GF></td>
-    <td id=team5GA></td>
-  </tr>
-  <tr>
-    <td id=team6></td>
-    <td id=team6Pts></td>
-    <td id=team6GD></td>
-    <td id=team6GF></td>
-    <td id=team6GA></td>
-  </tr>
-  <tr>
-    <td id=team7></td>
-    <td id=team7Pts></td>
-    <td id=team7GD></td>
-    <td id=team7GF></td>
-    <td id=team7GA></td>
-  </tr>
-  <tr>
-    <td id=team8></td>
-    <td id=team8Pts></td>
-    <td id=team8GD></td>
-    <td id=team8GF></td>
-    <td id=team8GA></td>
-  </tr>
-  </tbody>
-</table>
-
+	<div class="three">
+		<table id=standings>
+			<tr>
+				<th>Name</th>
+				<th>Pts</th>
+				<th>GD</th>
+				<th>GF</th>
+				<th>GA</th>
+			</tr>
+		
+			<tbody>
+			<tr>
+				<td id=team5></td>
+				<td id=team5Pts></td>
+				<td id=team5GD></td>
+				<td id=team5GF></td>
+				<td id=team5GA></td>
+			</tr>
+			<tr>
+				<td id=team6></td>
+				<td id=team6Pts></td>
+				<td id=team6GD></td>
+				<td id=team6GF></td>
+				<td id=team6GA></td>
+			</tr>
+			<tr>
+				<td id=team7></td>
+				<td id=team7Pts></td>
+				<td id=team7GD></td>
+				<td id=team7GF></td>
+				<td id=team7GA></td>
+			</tr>
+			<tr>
+				<td id=team8></td>
+				<td id=team8Pts></td>
+				<td id=team8GD></td>
+				<td id=team8GF></td>
+				<td id=team8GA></td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
 
 
 
 <script>
-var team1 = ["SBVP FC", 0, 0, 0, 0];
-var team2 = ["International FC", 0, 0 ,0, 0];
-var team3 = ["Gluten Free", 0, 0 ,0, 0];
-var team4 = ["FC Harul", 0, 0 ,0 ,0];
-
-var team5 = ["Colombia", 0, 0, 0, 0];
-var team6 = ["Brazil", 0, 0 ,0, 0];
-var team7 = ["England", 0, 0 ,0, 0];
-var team8 = ["Spain", 0, 0 ,0 ,0];
-
-document.getElementById('team1').innerHTML = team1[0];
-document.getElementById('team11').innerHTML = team1[0];
-document.getElementById('team111').innerHTML = team1[0];
-document.getElementById('team1111').innerHTML = team1[0];
-
-document.getElementById('team2').innerHTML = team2[0];
-document.getElementById('team22').innerHTML = team2[0];
-document.getElementById('team222').innerHTML = team2[0];
-document.getElementById('team2222').innerHTML = team2[0];
-
-document.getElementById('team3').innerHTML = team3[0];
-document.getElementById('team33').innerHTML = team3[0];
-document.getElementById('team333').innerHTML = team3[0];
-document.getElementById('team3333').innerHTML = team3[0];
-
-document.getElementById('team4').innerHTML = team4[0];
-document.getElementById('team44').innerHTML = team4[0];
-document.getElementById('team444').innerHTML = team4[0];
-document.getElementById('team4444').innerHTML = team4[0];
-
-document.getElementById('team1Pts').innerHTML = team1[1];
-document.getElementById('team2Pts').innerHTML = team2[1];
-document.getElementById('team3Pts').innerHTML = team3[1];
-document.getElementById('team4Pts').innerHTML = team4[1];
-
-document.getElementById('team1GD').innerHTML = team1[2];
-document.getElementById('team1GF').innerHTML = team1[3];
-document.getElementById('team1GA').innerHTML = team1[4];
-
-document.getElementById('team2GD').innerHTML = team2[2];
-document.getElementById('team2GF').innerHTML = team2[3];
-document.getElementById('team2GA').innerHTML = team2[4];
-
-document.getElementById('team3GD').innerHTML = team3[2];
-document.getElementById('team3GF').innerHTML = team3[3];
-document.getElementById('team3GA').innerHTML = team3[4];
-
-document.getElementById('team4GD').innerHTML = team4[2];
-document.getElementById('team4GF').innerHTML = team4[3];
-document.getElementById('team4GA').innerHTML = team4[4];
-
-
-document.getElementById('team5').innerHTML = team5[0];
-document.getElementById('team55').innerHTML = team5[0];
-document.getElementById('team555').innerHTML = team5[0];
-document.getElementById('team5555').innerHTML = team5[0];
-
-document.getElementById('team6').innerHTML = team6[0];
-document.getElementById('team66').innerHTML = team6[0];
-document.getElementById('team666').innerHTML = team6[0];
-document.getElementById('team6666').innerHTML = team6[0];
-
-document.getElementById('team7').innerHTML = team7[0];
-document.getElementById('team77').innerHTML = team7[0];
-document.getElementById('team777').innerHTML = team7[0];
-document.getElementById('team7777').innerHTML = team7[0];
-
-document.getElementById('team8').innerHTML = team8[0];
-document.getElementById('team88').innerHTML = team8[0];
-document.getElementById('team888').innerHTML = team8[0];
-document.getElementById('team8888').innerHTML = team8[0];
-
-document.getElementById('team5Pts').innerHTML = team5[1];
-document.getElementById('team6Pts').innerHTML = team6[1];
-document.getElementById('team7Pts').innerHTML = team7[1];
-document.getElementById('team8Pts').innerHTML = team8[1];
-
-document.getElementById('team5GD').innerHTML = team5[2];
-document.getElementById('team5GF').innerHTML = team5[3];
-document.getElementById('team5GA').innerHTML = team5[4];
-
-document.getElementById('team6GD').innerHTML = team6[2];
-document.getElementById('team6GF').innerHTML = team6[3];
-document.getElementById('team6GA').innerHTML = team6[4];
-
-document.getElementById('team7GD').innerHTML = team7[2];
-document.getElementById('team7GF').innerHTML = team7[3];
-document.getElementById('team7GA').innerHTML = team7[4];
-
-document.getElementById('team8GD').innerHTML = team8[2];
-document.getElementById('team8GF').innerHTML = team8[3];
-document.getElementById('team8GA').innerHTML = team8[4];
-
-
-$('tbody').sortable();
-
-function submitScore(sc1,sc2,teamA,teamB) {
-	if (sc1>sc2) {
-		console.log(teamA+' won');
-		compileNumbersIfFirstInputWins(teamA, teamB,sc1,sc2);
-  }
-  else if (sc2>sc1) {
-    console.log(teamB+' won');
-    compileNumbersIfSecondInputWins(teamA, teamB,sc1,sc2);
-  }
-	else {
-    console.log("it's a tie");
-    compileNumbersIfTie(teamA, teamB,sc1,sc2);
+	var team1 = ["SBVP FC", 0, 0, 0, 0];
+	var team2 = ["International FC", 0, 0 ,0, 0];
+	var team3 = ["Gluten Free", 0, 0 ,0, 0];
+	var team4 = ["FC Harul", 0, 0 ,0 ,0];
+	
+	var team5 = ["Colombia", 0, 0, 0, 0];
+	var team6 = ["Brazil", 0, 0 ,0, 0];
+	var team7 = ["England", 0, 0 ,0, 0];
+	var team8 = ["Spain", 0, 0 ,0 ,0];
+	
+	document.getElementById('team1').innerHTML = team1[0];
+	document.getElementById('team11').innerHTML = team1[0];
+	document.getElementById('team111').innerHTML = team1[0];
+	document.getElementById('team1111').innerHTML = team1[0];
+	
+	document.getElementById('team2').innerHTML = team2[0];
+	document.getElementById('team22').innerHTML = team2[0];
+	document.getElementById('team222').innerHTML = team2[0];
+	document.getElementById('team2222').innerHTML = team2[0];
+	
+	document.getElementById('team3').innerHTML = team3[0];
+	document.getElementById('team33').innerHTML = team3[0];
+	document.getElementById('team333').innerHTML = team3[0];
+	document.getElementById('team3333').innerHTML = team3[0];
+	
+	document.getElementById('team4').innerHTML = team4[0];
+	document.getElementById('team44').innerHTML = team4[0];
+	document.getElementById('team444').innerHTML = team4[0];
+	document.getElementById('team4444').innerHTML = team4[0];
+	
+	document.getElementById('team1Pts').innerHTML = team1[1];
+	document.getElementById('team2Pts').innerHTML = team2[1];
+	document.getElementById('team3Pts').innerHTML = team3[1];
+	document.getElementById('team4Pts').innerHTML = team4[1];
+	
+	document.getElementById('team1GD').innerHTML = team1[2];
+	document.getElementById('team1GF').innerHTML = team1[3];
+	document.getElementById('team1GA').innerHTML = team1[4];
+	
+	document.getElementById('team2GD').innerHTML = team2[2];
+	document.getElementById('team2GF').innerHTML = team2[3];
+	document.getElementById('team2GA').innerHTML = team2[4];
+	
+	document.getElementById('team3GD').innerHTML = team3[2];
+	document.getElementById('team3GF').innerHTML = team3[3];
+	document.getElementById('team3GA').innerHTML = team3[4];
+	
+	document.getElementById('team4GD').innerHTML = team4[2];
+	document.getElementById('team4GF').innerHTML = team4[3];
+	document.getElementById('team4GA').innerHTML = team4[4];
+	
+	
+	document.getElementById('team5').innerHTML = team5[0];
+	document.getElementById('team55').innerHTML = team5[0];
+	document.getElementById('team555').innerHTML = team5[0];
+	document.getElementById('team5555').innerHTML = team5[0];
+	
+	document.getElementById('team6').innerHTML = team6[0];
+	document.getElementById('team66').innerHTML = team6[0];
+	document.getElementById('team666').innerHTML = team6[0];
+	document.getElementById('team6666').innerHTML = team6[0];
+	
+	document.getElementById('team7').innerHTML = team7[0];
+	document.getElementById('team77').innerHTML = team7[0];
+	document.getElementById('team777').innerHTML = team7[0];
+	document.getElementById('team7777').innerHTML = team7[0];
+	
+	document.getElementById('team8').innerHTML = team8[0];
+	document.getElementById('team88').innerHTML = team8[0];
+	document.getElementById('team888').innerHTML = team8[0];
+	document.getElementById('team8888').innerHTML = team8[0];
+	
+	document.getElementById('team5Pts').innerHTML = team5[1];
+	document.getElementById('team6Pts').innerHTML = team6[1];
+	document.getElementById('team7Pts').innerHTML = team7[1];
+	document.getElementById('team8Pts').innerHTML = team8[1];
+	
+	document.getElementById('team5GD').innerHTML = team5[2];
+	document.getElementById('team5GF').innerHTML = team5[3];
+	document.getElementById('team5GA').innerHTML = team5[4];
+	
+	document.getElementById('team6GD').innerHTML = team6[2];
+	document.getElementById('team6GF').innerHTML = team6[3];
+	document.getElementById('team6GA').innerHTML = team6[4];
+	
+	document.getElementById('team7GD').innerHTML = team7[2];
+	document.getElementById('team7GF').innerHTML = team7[3];
+	document.getElementById('team7GA').innerHTML = team7[4];
+	
+	document.getElementById('team8GD').innerHTML = team8[2];
+	document.getElementById('team8GF').innerHTML = team8[3];
+	document.getElementById('team8GA').innerHTML = team8[4];
+	
+	
+	$('tbody').sortable();
+	
+	function submitScore(sc1,sc2,teamA,teamB) {
+		if (sc1>sc2) {
+			console.log(teamA+' won');
+			compileNumbersIfFirstInputWins(teamA, teamB,sc1,sc2);
+		}
+		else if (sc2>sc1) {
+			console.log(teamB+' won');
+			compileNumbersIfSecondInputWins(teamA, teamB,sc1,sc2);
+		}
+		else {
+			console.log("it's a tie");
+			compileNumbersIfTie(teamA, teamB,sc1,sc2);
+		}
 	}
-}
-
-
-
-function compileNumbersIfFirstInputWins(A,B,s1,s2) {
-	if (A.includes("team1") && B.includes("team2")) {
-    console.log("it got here");
-
-    // PTS
-    team1[1] += 3; 
-
-    // GF and GA
-		team1[3] += parseInt(s1); team1[4] += parseInt(s2);
-		team2[3] += parseInt(s2);	team2[4] += parseInt(s1);
-
-     // GD 
-    team1[2] = team1[3] - team1[4];
-    team2[2] = team2[3] - team2[4];
-
-    // display
-		document.getElementById('team1Pts').innerHTML = team1[1];
-		document.getElementById('team1GD').innerHTML = team1[2];
-		document.getElementById('team1GF').innerHTML = team1[3];
-    document.getElementById('team1GA').innerHTML = team1[4];
-    document.getElementById('team2Pts').innerHTML = team2[1];
-		document.getElementById('team2GD').innerHTML = team2[2];
-		document.getElementById('team2GF').innerHTML = team2[3];
-		document.getElementById('team2GA').innerHTML = team2[4];
-  }
-  else if (A.includes("team1") && B.includes("team3")) {
-    // PTS
-    team1[1] += 3; 
-
-    // GF and GA
-		team1[3] += parseInt(s1); team1[4] += parseInt(s2);
-		team3[3] += parseInt(s2);	team3[4] += parseInt(s1);
-
-     // GD 
-    team1[2] = team1[3] - team1[4];
-    team3[2] = team3[3] - team3[4];
-
-    // display
-		document.getElementById('team1Pts').innerHTML = team1[1];
-		document.getElementById('team1GD').innerHTML = team1[2];
-		document.getElementById('team1GF').innerHTML = team1[3];
-    document.getElementById('team1GA').innerHTML = team1[4];
-    document.getElementById('team3Pts').innerHTML = team3[1];
-		document.getElementById('team3GD').innerHTML = team3[2];
-		document.getElementById('team3GF').innerHTML = team3[3];
-		document.getElementById('team3GA').innerHTML = team3[4];
-
-  }
-  else if (A.includes("team1") && B.includes("team4")) {
-    // PTS
-    team1[1] += 3; 
-
-    // GF and GA
-		team1[3] += parseInt(s1); team1[4] += parseInt(s2);
-		team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
-
-     // GD 
-    team1[2] = team1[3] - team1[4];
-    team4[2] = team4[3] - team4[4];
-
-    // display
-		document.getElementById('team1Pts').innerHTML = team1[1];
-		document.getElementById('team1GD').innerHTML = team1[2];
-		document.getElementById('team1GF').innerHTML = team1[3];
-    document.getElementById('team1GA').innerHTML = team1[4];
-    document.getElementById('team4Pts').innerHTML = team4[1];
-		document.getElementById('team4GD').innerHTML = team4[2];
-		document.getElementById('team4GF').innerHTML = team4[3];
-		document.getElementById('team4GA').innerHTML = team4[4];
-
-  }
-  else if (A.includes("team2") && B.includes("team3")) {
-    // PTS
-    team2[1] += 3; 
-
-    // GF and GA
-		team2[3] += parseInt(s1); team2[4] += parseInt(s2);
-		team3[3] += parseInt(s2);	team3[4] += parseInt(s1);
-
-     // GD 
-    team2[2] = team2[3] - team2[4];
-    team3[2] = team3[3] - team3[4];
-
-    // display
-		document.getElementById('team2Pts').innerHTML = team2[1];
-		document.getElementById('team2GD').innerHTML = team2[2];
-		document.getElementById('team2GF').innerHTML = team2[3];
-    document.getElementById('team2GA').innerHTML = team2[4];
-    document.getElementById('team3Pts').innerHTML = team3[1];
-		document.getElementById('team3GD').innerHTML = team3[2];
-		document.getElementById('team3GF').innerHTML = team3[3];
-		document.getElementById('team3GA').innerHTML = team3[4];
-
-  }
-  else if (A.includes("team2") && B.includes("team4")) {
-    // PTS
-    team2[1] += 3; 
-
-    // GF and GA
-		team2[3] += parseInt(s1); team2[4] += parseInt(s2);
-		team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
-
-     // GD  
-    team2[2] = team2[3] - team2[4];
-    team4[2] = team4[3] - team4[4];
-
-    // display
-		document.getElementById('team2Pts').innerHTML = team2[1];
-		document.getElementById('team2GD').innerHTML = team2[2];
-		document.getElementById('team2GF').innerHTML = team2[3];
-    document.getElementById('team2GA').innerHTML = team2[4];
-    document.getElementById('team4Pts').innerHTML = team4[1];
-		document.getElementById('team4GD').innerHTML = team4[2];
-		document.getElementById('team4GF').innerHTML = team4[3];
-		document.getElementById('team4GA').innerHTML = team4[4];
-
-  }
-  else if (A.includes("team3") && B.includes("team4")) {
-    // PTS
-    team3[1] += 3; 
-
-    // GF and GA
-		team3[3] += parseInt(s1); team3[4] += parseInt(s2);
-		team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
-
-     // GD  
-    team3[2] = team3[3] - team3[4];
-    team4[2] = team4[3] - team4[4];
-
-    // display
-		document.getElementById('team3Pts').innerHTML = team3[1];
-		document.getElementById('team3GD').innerHTML = team3[2];
-		document.getElementById('team3GF').innerHTML = team3[3];
-    document.getElementById('team3GA').innerHTML = team3[4];
-    document.getElementById('team4Pts').innerHTML = team4[1];
-		document.getElementById('team4GD').innerHTML = team4[2];
-		document.getElementById('team4GF').innerHTML = team4[3];
-		document.getElementById('team4GA').innerHTML = team4[4];
-
-  }
-
-  else if (A.includes("team5") && B.includes("team6")) {
-
-// PTS
-team5[1] += 3; 
-
-// GF and GA
-team5[3] += parseInt(s1); team5[4] += parseInt(s2);
-team6[3] += parseInt(s2);	team6[4] += parseInt(s1);
-
-// GD  
-team5[2] = team5[3] - team5[4];
-team6[2] = team6[3] - team6[4];
-
-// display
-document.getElementById('team5Pts').innerHTML = team5[1];
-document.getElementById('team5GD').innerHTML = team5[2];
-document.getElementById('team5GF').innerHTML = team5[3];
-document.getElementById('team5GA').innerHTML = team5[4];
-document.getElementById('team6Pts').innerHTML = team6[1];
-document.getElementById('team6GD').innerHTML = team6[2];
-document.getElementById('team6GF').innerHTML = team6[3];
-document.getElementById('team6GA').innerHTML = team6[4];
-}
-else if (A.includes("team5") && B.includes("team7")) {
-// PTS
-team5[1] += 3; 
-
-// GF and GA
-team5[3] += parseInt(s1); team5[4] += parseInt(s2);
-team7[3] += parseInt(s2);	team7[4] += parseInt(s1);
-
-// GD  
-team5[2] = team5[3] - team5[4];
-team7[2] = team7[3] - team7[4];
-
-// display
-document.getElementById('team5Pts').innerHTML = team5[1];
-document.getElementById('team5GD').innerHTML = team5[2];
-document.getElementById('team5GF').innerHTML = team5[3];
-document.getElementById('team5GA').innerHTML = team5[4];
-document.getElementById('team7Pts').innerHTML = team7[1];
-document.getElementById('team7GD').innerHTML = team7[2];
-document.getElementById('team7GF').innerHTML = team7[3];
-document.getElementById('team7GA').innerHTML = team7[4];
-
-}
-else if (A.includes("team5") && B.includes("team8")) {
-// PTS
-team5[1] += 3; 
-
-// GF and GA
-team5[3] += parseInt(s1); team5[4] += parseInt(s2);
-team8[3] += parseInt(s2);	team8[4] += parseInt(s1);
-
-// GD  
-team5[2] = team5[3] - team5[4];
-team8[2] = team8[3] - team8[4];
-
-// display
-document.getElementById('team5Pts').innerHTML = team5[1];
-document.getElementById('team5GD').innerHTML = team5[2];
-document.getElementById('team5GF').innerHTML = team5[3];
-document.getElementById('team5GA').innerHTML = team5[4];
-document.getElementById('team8Pts').innerHTML = team8[1];
-document.getElementById('team8GD').innerHTML = team8[2];
-document.getElementById('team8GF').innerHTML = team8[3];
-document.getElementById('team8GA').innerHTML = team8[4];
-
-}
-else if (A.includes("team6") && B.includes("team7")) {
-// PTS
-team6[1] += 3; 
-
-// GF and GA
-team6[3] += parseInt(s1); team6[4] += parseInt(s2);
-team7[3] += parseInt(s2);	team7[4] += parseInt(s1);
-
-// GD  
-team6[2] = team6[3] - team6[4];
-team7[2] = team7[3] - team7[4];
-
-// display
-document.getElementById('team6Pts').innerHTML = team6[1];
-document.getElementById('team6GD').innerHTML = team6[2];
-document.getElementById('team6GF').innerHTML = team6[3];
-document.getElementById('team6GA').innerHTML = team6[4];
-document.getElementById('team7Pts').innerHTML = team7[1];
-document.getElementById('team7GD').innerHTML = team7[2];
-document.getElementById('team7GF').innerHTML = team7[3];
-document.getElementById('team7GA').innerHTML = team7[4];
-
-}
-else if (A.includes("team6") && B.includes("team8")) {
-// PTS
-team6[1] += 3; 
-
-// GF and GA
-team6[3] += parseInt(s1); team6[4] += parseInt(s2);
-team8[3] += parseInt(s2);	team8[4] += parseInt(s1);
-
-// GD  
-team6[2] = team6[3] - team6[4];
-team8[2] = team8[3] - team8[4];
-
-// display
-document.getElementById('team6Pts').innerHTML = team6[1];
-document.getElementById('team6GD').innerHTML = team6[2];
-document.getElementById('team6GF').innerHTML = team6[3];
-document.getElementById('team6GA').innerHTML = team6[4];
-document.getElementById('team8Pts').innerHTML = team8[1];
-document.getElementById('team8GD').innerHTML = team8[2];
-document.getElementById('team8GF').innerHTML = team8[3];
-document.getElementById('team8GA').innerHTML = team8[4];
-
-}
-else if (A.includes("team7") && B.includes("team8")) {
-// PTS
-team7[1] += 3; 
-
-// GF and GA
-team7[3] += parseInt(s1); team7[4] += parseInt(s2);
-team8[3] += parseInt(s2);	team8[4] += parseInt(s1);
-
-// GD  
-team7[2] = team7[3] - team7[4];
-team8[2] = team8[3] - team8[4];
-
-// display
-document.getElementById('team7Pts').innerHTML = team7[1];
-document.getElementById('team7GD').innerHTML = team7[2];
-document.getElementById('team7GF').innerHTML = team7[3];
-document.getElementById('team7GA').innerHTML = team7[4];
-document.getElementById('team8Pts').innerHTML = team8[1];
-document.getElementById('team8GD').innerHTML = team8[2];
-document.getElementById('team8GF').innerHTML = team8[3];
-document.getElementById('team8GA').innerHTML = team8[4];
-
-}
-  
-	else {
-		console.log('something didnt work');
+	
+	
+	
+	function compileNumbersIfFirstInputWins(A,B,s1,s2) {
+		if (A.includes("team1") && B.includes("team2")) {
+			console.log("it got here");
+	
+			// PTS
+			team1[1] += 3; 
+	
+			// GF and GA
+			team1[3] += parseInt(s1); team1[4] += parseInt(s2);
+			team2[3] += parseInt(s2);	team2[4] += parseInt(s1);
+	
+			 // GD 
+			team1[2] = team1[3] - team1[4];
+			team2[2] = team2[3] - team2[4];
+	
+			// display
+			document.getElementById('team1Pts').innerHTML = team1[1];
+			document.getElementById('team1GD').innerHTML = team1[2];
+			document.getElementById('team1GF').innerHTML = team1[3];
+			document.getElementById('team1GA').innerHTML = team1[4];
+			document.getElementById('team2Pts').innerHTML = team2[1];
+			document.getElementById('team2GD').innerHTML = team2[2];
+			document.getElementById('team2GF').innerHTML = team2[3];
+			document.getElementById('team2GA').innerHTML = team2[4];
+		}
+		else if (A.includes("team1") && B.includes("team3")) {
+			// PTS
+			team1[1] += 3; 
+	
+			// GF and GA
+			team1[3] += parseInt(s1); team1[4] += parseInt(s2);
+			team3[3] += parseInt(s2);	team3[4] += parseInt(s1);
+	
+			 // GD 
+			team1[2] = team1[3] - team1[4];
+			team3[2] = team3[3] - team3[4];
+	
+			// display
+			document.getElementById('team1Pts').innerHTML = team1[1];
+			document.getElementById('team1GD').innerHTML = team1[2];
+			document.getElementById('team1GF').innerHTML = team1[3];
+			document.getElementById('team1GA').innerHTML = team1[4];
+			document.getElementById('team3Pts').innerHTML = team3[1];
+			document.getElementById('team3GD').innerHTML = team3[2];
+			document.getElementById('team3GF').innerHTML = team3[3];
+			document.getElementById('team3GA').innerHTML = team3[4];
+	
+		}
+		else if (A.includes("team1") && B.includes("team4")) {
+			// PTS
+			team1[1] += 3; 
+	
+			// GF and GA
+			team1[3] += parseInt(s1); team1[4] += parseInt(s2);
+			team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
+	
+			 // GD 
+			team1[2] = team1[3] - team1[4];
+			team4[2] = team4[3] - team4[4];
+	
+			// display
+			document.getElementById('team1Pts').innerHTML = team1[1];
+			document.getElementById('team1GD').innerHTML = team1[2];
+			document.getElementById('team1GF').innerHTML = team1[3];
+			document.getElementById('team1GA').innerHTML = team1[4];
+			document.getElementById('team4Pts').innerHTML = team4[1];
+			document.getElementById('team4GD').innerHTML = team4[2];
+			document.getElementById('team4GF').innerHTML = team4[3];
+			document.getElementById('team4GA').innerHTML = team4[4];
+	
+		}
+		else if (A.includes("team2") && B.includes("team3")) {
+			// PTS
+			team2[1] += 3; 
+	
+			// GF and GA
+			team2[3] += parseInt(s1); team2[4] += parseInt(s2);
+			team3[3] += parseInt(s2);	team3[4] += parseInt(s1);
+	
+			 // GD 
+			team2[2] = team2[3] - team2[4];
+			team3[2] = team3[3] - team3[4];
+	
+			// display
+			document.getElementById('team2Pts').innerHTML = team2[1];
+			document.getElementById('team2GD').innerHTML = team2[2];
+			document.getElementById('team2GF').innerHTML = team2[3];
+			document.getElementById('team2GA').innerHTML = team2[4];
+			document.getElementById('team3Pts').innerHTML = team3[1];
+			document.getElementById('team3GD').innerHTML = team3[2];
+			document.getElementById('team3GF').innerHTML = team3[3];
+			document.getElementById('team3GA').innerHTML = team3[4];
+	
+		}
+		else if (A.includes("team2") && B.includes("team4")) {
+			// PTS
+			team2[1] += 3; 
+	
+			// GF and GA
+			team2[3] += parseInt(s1); team2[4] += parseInt(s2);
+			team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
+	
+			 // GD  
+			team2[2] = team2[3] - team2[4];
+			team4[2] = team4[3] - team4[4];
+	
+			// display
+			document.getElementById('team2Pts').innerHTML = team2[1];
+			document.getElementById('team2GD').innerHTML = team2[2];
+			document.getElementById('team2GF').innerHTML = team2[3];
+			document.getElementById('team2GA').innerHTML = team2[4];
+			document.getElementById('team4Pts').innerHTML = team4[1];
+			document.getElementById('team4GD').innerHTML = team4[2];
+			document.getElementById('team4GF').innerHTML = team4[3];
+			document.getElementById('team4GA').innerHTML = team4[4];
+	
+		}
+		else if (A.includes("team3") && B.includes("team4")) {
+			// PTS
+			team3[1] += 3; 
+	
+			// GF and GA
+			team3[3] += parseInt(s1); team3[4] += parseInt(s2);
+			team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
+	
+			 // GD  
+			team3[2] = team3[3] - team3[4];
+			team4[2] = team4[3] - team4[4];
+	
+			// display
+			document.getElementById('team3Pts').innerHTML = team3[1];
+			document.getElementById('team3GD').innerHTML = team3[2];
+			document.getElementById('team3GF').innerHTML = team3[3];
+			document.getElementById('team3GA').innerHTML = team3[4];
+			document.getElementById('team4Pts').innerHTML = team4[1];
+			document.getElementById('team4GD').innerHTML = team4[2];
+			document.getElementById('team4GF').innerHTML = team4[3];
+			document.getElementById('team4GA').innerHTML = team4[4];
+	
+		}
+	
+		else if (A.includes("team5") && B.includes("team6")) {
+	
+	// PTS
+	team5[1] += 3; 
+	
+	// GF and GA
+	team5[3] += parseInt(s1); team5[4] += parseInt(s2);
+	team6[3] += parseInt(s2);	team6[4] += parseInt(s1);
+	
+	// GD  
+	team5[2] = team5[3] - team5[4];
+	team6[2] = team6[3] - team6[4];
+	
+	// display
+	document.getElementById('team5Pts').innerHTML = team5[1];
+	document.getElementById('team5GD').innerHTML = team5[2];
+	document.getElementById('team5GF').innerHTML = team5[3];
+	document.getElementById('team5GA').innerHTML = team5[4];
+	document.getElementById('team6Pts').innerHTML = team6[1];
+	document.getElementById('team6GD').innerHTML = team6[2];
+	document.getElementById('team6GF').innerHTML = team6[3];
+	document.getElementById('team6GA').innerHTML = team6[4];
 	}
-}
-
-function compileNumbersIfSecondInputWins(A,B,s1,s2) {
-  if (A.includes("team1") && B.includes("team2")) {
-
-    // PTS
-    team2[1] += 3; 
-
-    // GF and GA
-		team1[3] += parseInt(s1); team1[4] += parseInt(s2);
-		team2[3] += parseInt(s2);	team2[4] += parseInt(s1);
-
-     // GD  
-    team1[2] = team1[3] - team1[4];
-    team2[2] = team2[3] - team2[4];
-
-    // display
-		document.getElementById('team1Pts').innerHTML = team1[1];
-		document.getElementById('team1GD').innerHTML = team1[2];
-		document.getElementById('team1GF').innerHTML = team1[3];
-    document.getElementById('team1GA').innerHTML = team1[4];
-    document.getElementById('team2Pts').innerHTML = team2[1];
-		document.getElementById('team2GD').innerHTML = team2[2];
-		document.getElementById('team2GF').innerHTML = team2[3];
-		document.getElementById('team2GA').innerHTML = team2[4];
-  }
-  else if (A.includes("team1") && B.includes("team3")) {
-    // PTS
-    team3[1] += 3; 
-
-    // GF and GA
-		team1[3] += parseInt(s1); team1[4] += parseInt(s2);
-		team3[3] += parseInt(s2);	team3[4] += parseInt(s1);
-
-     // GD  
-    team1[2] = team1[3] - team1[4];
-    team3[2] = team3[3] - team3[4];
-
-    // display
-		document.getElementById('team1Pts').innerHTML = team1[1];
-		document.getElementById('team1GD').innerHTML = team1[2];
-		document.getElementById('team1GF').innerHTML = team1[3];
-    document.getElementById('team1GA').innerHTML = team1[4];
-    document.getElementById('team3Pts').innerHTML = team3[1];
-		document.getElementById('team3GD').innerHTML = team3[2];
-		document.getElementById('team3GF').innerHTML = team3[3];
-		document.getElementById('team3GA').innerHTML = team3[4];
-
-  }
-  else if (A.includes("team1") && B.includes("team4")) {
-    // PTS
-    team4[1] += 3; 
-
-    // GF and GA
-		team1[3] += parseInt(s1); team1[4] += parseInt(s2);
-		team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
-
-     // GD  
-    team1[2] = team1[3] - team1[4];
-    team4[2] = team4[3] - team4[4];
-
-    // display
-		document.getElementById('team1Pts').innerHTML = team1[1];
-		document.getElementById('team1GD').innerHTML = team1[2];
-		document.getElementById('team1GF').innerHTML = team1[3];
-    document.getElementById('team1GA').innerHTML = team1[4];
-    document.getElementById('team4Pts').innerHTML = team4[1];
-		document.getElementById('team4GD').innerHTML = team4[2];
-		document.getElementById('team4GF').innerHTML = team4[3];
-		document.getElementById('team4GA').innerHTML = team4[4];
-
-  }
-  else if (A.includes("team2") && B.includes("team3")) {
-    // PTS
-    team3[1] += 3; 
-
-    // GF and GA
-		team2[3] += parseInt(s1); team2[4] += parseInt(s2);
-		team3[3] += parseInt(s2);	team3[4] += parseInt(s1);
-
-     // GD  
-    team2[2] = team2[3] - team2[4];
-    team3[2] = team3[3] - team3[4];
-
-    // display
-		document.getElementById('team2Pts').innerHTML = team2[1];
-		document.getElementById('team2GD').innerHTML = team2[2];
-		document.getElementById('team2GF').innerHTML = team2[3];
-    document.getElementById('team2GA').innerHTML = team2[4];
-    document.getElementById('team3Pts').innerHTML = team3[1];
-		document.getElementById('team3GD').innerHTML = team3[2];
-		document.getElementById('team3GF').innerHTML = team3[3];
-		document.getElementById('team3GA').innerHTML = team3[4];
-
-  }
-  else if (A.includes("team2") && B.includes("team4")) {
-    // PTS
-    team4[1] += 3; 
-
-    // GF and GA
-		team2[3] += parseInt(s1); team2[4] += parseInt(s2);
-		team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
-
-     // GD  
-    team2[2] = team2[3] - team2[4];
-    team4[2] = team4[3] - team4[4];
-
-    // display
-		document.getElementById('team2Pts').innerHTML = team2[1];
-		document.getElementById('team2GD').innerHTML = team2[2];
-		document.getElementById('team2GF').innerHTML = team2[3];
-    document.getElementById('team2GA').innerHTML = team2[4];
-    document.getElementById('team4Pts').innerHTML = team4[1];
-		document.getElementById('team4GD').innerHTML = team4[2];
-		document.getElementById('team4GF').innerHTML = team4[3];
-		document.getElementById('team4GA').innerHTML = team4[4];
-
-  }
-  else if (A.includes("team3") && B.includes("team4")) {
-    // PTS
-    team4[1] += 3; 
-
-    // GF and GA
-		team3[3] += parseInt(s1); team3[4] += parseInt(s2);
-		team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
-
-     // GD  
-    team3[2] = team3[3] - team3[4];
-    team4[2] = team4[3] - team4[4];
-
-    // display
-		document.getElementById('team3Pts').innerHTML = team3[1];
-		document.getElementById('team3GD').innerHTML = team3[2];
-		document.getElementById('team3GF').innerHTML = team3[3];
-    document.getElementById('team3GA').innerHTML = team3[4];
-    document.getElementById('team4Pts').innerHTML = team4[1];
-		document.getElementById('team4GD').innerHTML = team4[2];
-		document.getElementById('team4GF').innerHTML = team4[3];
-		document.getElementById('team4GA').innerHTML = team4[4];
-
-  }
-  else if (A.includes("team5") && B.includes("team6")) {
-
-    // PTS
-    team6[1] += 3; 
-
-    // GF and GA
-    team5[3] += parseInt(s1); team5[4] += parseInt(s2);
-    team6[3] += parseInt(s2);	team6[4] += parseInt(s1);
-
-    // GD  
-    team5[2] = team5[3] - team5[4];
-    team6[2] = team6[3] - team6[4];
-
-    // display
-    document.getElementById('team5Pts').innerHTML = team5[1];
-    document.getElementById('team5GD').innerHTML = team5[2];
-    document.getElementById('team5GF').innerHTML = team5[3];
-    document.getElementById('team5GA').innerHTML = team5[4];
-    document.getElementById('team6Pts').innerHTML = team6[1];
-    document.getElementById('team6GD').innerHTML = team6[2];
-    document.getElementById('team6GF').innerHTML = team6[3];
-    document.getElementById('team6GA').innerHTML = team6[4];
-  }
-else if (A.includes("team5") && B.includes("team7")) {
-// PTS
-team7[1] += 3; 
-
-// GF and GA
-team5[3] += parseInt(s1); team5[4] += parseInt(s2);
-team7[3] += parseInt(s2);	team7[4] += parseInt(s1);
-
- // GD  
-team5[2] = team5[3] - team5[4];
-team7[2] = team7[3] - team7[4];
-
-// display
-document.getElementById('team5Pts').innerHTML = team5[1];
-document.getElementById('team5GD').innerHTML = team5[2];
-document.getElementById('team5GF').innerHTML = team5[3];
-document.getElementById('team5GA').innerHTML = team5[4];
-document.getElementById('team7Pts').innerHTML = team7[1];
-document.getElementById('team7GD').innerHTML = team7[2];
-document.getElementById('team7GF').innerHTML = team7[3];
-document.getElementById('team7GA').innerHTML = team7[4];
-
-}
-else if (A.includes("team5") && B.includes("team8")) {
-// PTS
-team8[1] += 3; 
-
-// GF and GA
-team5[3] += parseInt(s1); team5[4] += parseInt(s2);
-team8[3] += parseInt(s2);	team8[4] += parseInt(s1);
-
- // GD  
-team5[2] = team5[3] - team5[4];
-team8[2] = team8[3] - team8[4];
-
-// display
-document.getElementById('team5Pts').innerHTML = team5[1];
-document.getElementById('team5GD').innerHTML = team5[2];
-document.getElementById('team5GF').innerHTML = team5[3];
-document.getElementById('team5GA').innerHTML = team5[4];
-document.getElementById('team8Pts').innerHTML = team8[1];
-document.getElementById('team8GD').innerHTML = team8[2];
-document.getElementById('team8GF').innerHTML = team8[3];
-document.getElementById('team8GA').innerHTML = team8[4];
-
-}
-else if (A.includes("team6") && B.includes("team7")) {
-// PTS
-team7[1] += 3; 
-
-// GF and GA
-team6[3] += parseInt(s1); team6[4] += parseInt(s2);
-team7[3] += parseInt(s2);	team7[4] += parseInt(s1);
-
- // GD  
-team6[2] = team6[3] - team6[4];
-team7[2] = team7[3] - team7[4];
-
-// display
-document.getElementById('team6Pts').innerHTML = team6[1];
-document.getElementById('team6GD').innerHTML = team6[2];
-document.getElementById('team6GF').innerHTML = team6[3];
-document.getElementById('team6GA').innerHTML = team6[4];
-document.getElementById('team7Pts').innerHTML = team7[1];
-document.getElementById('team7GD').innerHTML = team7[2];
-document.getElementById('team7GF').innerHTML = team7[3];
-document.getElementById('team7GA').innerHTML = team7[4];
-
-}
-else if (A.includes("team6") && B.includes("team8")) {
-// PTS
-team8[1] += 3; 
-
-// GF and GA
-team6[3] += parseInt(s1); team6[4] += parseInt(s2);
-team8[3] += parseInt(s2);	team8[4] += parseInt(s1);
-
- // GD  
-team6[2] = team6[3] - team6[4];
-team8[2] = team8[3] - team8[4];
-
-// display
-document.getElementById('team6Pts').innerHTML = team6[1];
-document.getElementById('team6GD').innerHTML = team6[2];
-document.getElementById('team6GF').innerHTML = team6[3];
-document.getElementById('team6GA').innerHTML = team6[4];
-document.getElementById('team8Pts').innerHTML = team8[1];
-document.getElementById('team8GD').innerHTML = team8[2];
-document.getElementById('team8GF').innerHTML = team8[3];
-document.getElementById('team8GA').innerHTML = team8[4];
-
-}
-else if (A.includes("team7") && B.includes("team8")) {
-// PTS
-team8[1] += 3; 
-
-// GF and GA
-team7[3] += parseInt(s1); team7[4] += parseInt(s2);
-team8[3] += parseInt(s2);	team8[4] += parseInt(s1);
-
- // GD  
-team7[2] = team7[3] - team7[4];
-team8[2] = team8[3] - team8[4];
-
-// display
-document.getElementById('team7Pts').innerHTML = team7[1];
-document.getElementById('team7GD').innerHTML = team7[2];
-document.getElementById('team7GF').innerHTML = team7[3];
-document.getElementById('team7GA').innerHTML = team7[4];
-document.getElementById('team8Pts').innerHTML = team8[1];
-document.getElementById('team8GD').innerHTML = team8[2];
-document.getElementById('team8GF').innerHTML = team8[3];
-document.getElementById('team8GA').innerHTML = team8[4];
-
-}
-	else {
-		console.log('something didnt work');
+	else if (A.includes("team5") && B.includes("team7")) {
+	// PTS
+	team5[1] += 3; 
+	
+	// GF and GA
+	team5[3] += parseInt(s1); team5[4] += parseInt(s2);
+	team7[3] += parseInt(s2);	team7[4] += parseInt(s1);
+	
+	// GD  
+	team5[2] = team5[3] - team5[4];
+	team7[2] = team7[3] - team7[4];
+	
+	// display
+	document.getElementById('team5Pts').innerHTML = team5[1];
+	document.getElementById('team5GD').innerHTML = team5[2];
+	document.getElementById('team5GF').innerHTML = team5[3];
+	document.getElementById('team5GA').innerHTML = team5[4];
+	document.getElementById('team7Pts').innerHTML = team7[1];
+	document.getElementById('team7GD').innerHTML = team7[2];
+	document.getElementById('team7GF').innerHTML = team7[3];
+	document.getElementById('team7GA').innerHTML = team7[4];
+	
 	}
-}
-
-function compileNumbersIfTie(A,B,s1,s2) {
-  if (A.includes("team1") && B.includes("team2")) {
-
-    // PTS
-    team1[1] += 1;
-    team2[1] += 1; 
-
-    // GF and GA
-		team1[3] += parseInt(s1); team1[4] += parseInt(s2);
-		team2[3] += parseInt(s2);	team2[4] += parseInt(s1);
-
-     // GD  
-    team1[2] = team1[3] - team1[4];
-    team2[2] = team2[3] - team2[4];
-
-    // display
-		document.getElementById('team1Pts').innerHTML = team1[1];
-		document.getElementById('team1GD').innerHTML = team1[2];
-		document.getElementById('team1GF').innerHTML = team1[3];
-    document.getElementById('team1GA').innerHTML = team1[4];
-    document.getElementById('team2Pts').innerHTML = team2[1];
-		document.getElementById('team2GD').innerHTML = team2[2];
-		document.getElementById('team2GF').innerHTML = team2[3];
-		document.getElementById('team2GA').innerHTML = team2[4];
-  }
-  else if (A.includes("team1") && B.includes("team3")) {
-    // PTS
-    team1[1] += 1; 
-    team3[1] += 1; 
-
-    // GF and GA
-		team1[3] += parseInt(s1); team1[4] += parseInt(s2);
-		team3[3] += parseInt(s2);	team3[4] += parseInt(s1);
-
-     // GD  
-    team1[2] = team1[3] - team1[4];
-    team3[2] = team3[3] - team3[4];
-
-    // display
-		document.getElementById('team1Pts').innerHTML = team1[1];
-		document.getElementById('team1GD').innerHTML = team1[2];
-		document.getElementById('team1GF').innerHTML = team1[3];
-    document.getElementById('team1GA').innerHTML = team1[4];
-    document.getElementById('team3Pts').innerHTML = team3[1];
-		document.getElementById('team3GD').innerHTML = team3[2];
-		document.getElementById('team3GF').innerHTML = team3[3];
-		document.getElementById('team3GA').innerHTML = team3[4];
-
-  }
-  else if (A.includes("team1") && B.includes("team4")) {
-    // PTS
-    team1[1] += 1; 
-    team4[1] += 1; 
-
-    // GF and GA
-		team1[3] += parseInt(s1); team1[4] += parseInt(s2);
-		team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
-
-     // GD  
-    team1[2] = team1[3] - team1[4];
-    team4[2] = team4[3] - team4[4];
-
-    // display
-		document.getElementById('team1Pts').innerHTML = team1[1];
-		document.getElementById('team1GD').innerHTML = team1[2];
-		document.getElementById('team1GF').innerHTML = team1[3];
-    document.getElementById('team1GA').innerHTML = team1[4];
-    document.getElementById('team4Pts').innerHTML = team4[1];
-		document.getElementById('team4GD').innerHTML = team4[2];
-		document.getElementById('team4GF').innerHTML = team4[3];
-		document.getElementById('team4GA').innerHTML = team4[4];
-
-  }
-  else if (A.includes("team2") && B.includes("team3")) {
-    // PTS
-    team2[1] += 1; 
-    team3[1] += 1; 
-
-    // GF and GA
-		team2[3] += parseInt(s1); team2[4] += parseInt(s2);
-		team3[3] += parseInt(s2);	team3[4] += parseInt(s1);
-
-     // GD  
-    team2[2] = team2[3] - team2[4];
-    team3[2] = team3[3] - team3[4];
-
-    // display
-		document.getElementById('team2Pts').innerHTML = team2[1];
-		document.getElementById('team2GD').innerHTML = team2[2];
-		document.getElementById('team2GF').innerHTML = team2[3];
-    document.getElementById('team2GA').innerHTML = team2[4];
-    document.getElementById('team3Pts').innerHTML = team3[1];
-		document.getElementById('team3GD').innerHTML = team3[2];
-		document.getElementById('team3GF').innerHTML = team3[3];
-		document.getElementById('team3GA').innerHTML = team3[4];
-
-  }
-  else if (A.includes("team2") && B.includes("team4")) {
-    // PTS
-    team2[1] += 1; 
-    team4[1] += 1; 
-
-    // GF and GA
-		team2[3] += parseInt(s1); team2[4] += parseInt(s2);
-		team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
-
-     // GD  
-    team2[2] = team2[3] - team2[4];
-    team4[2] = team4[3] - team4[4];
-
-    // display
-		document.getElementById('team2Pts').innerHTML = team2[1];
-		document.getElementById('team2GD').innerHTML = team2[2];
-		document.getElementById('team2GF').innerHTML = team2[3];
-    document.getElementById('team2GA').innerHTML = team2[4];
-    document.getElementById('team4Pts').innerHTML = team4[1];
-		document.getElementById('team4GD').innerHTML = team4[2];
-		document.getElementById('team4GF').innerHTML = team4[3];
-		document.getElementById('team4GA').innerHTML = team4[4];
-
-  }
-  else if (A.includes("team3") && B.includes("team4")) {
-    // PTS
-    team3[1] += 1; 
-    team4[1] += 1; 
-
-    // GF and GA
-		team3[3] += parseInt(s1); team3[4] += parseInt(s2);
-		team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
-
-     // GD  
-    team3[2] = team3[3] - team3[4];
-    team4[2] = team4[3] - team4[4];
-
-    // display
-		document.getElementById('team3Pts').innerHTML = team3[1];
-		document.getElementById('team3GD').innerHTML = team3[2];
-		document.getElementById('team3GF').innerHTML = team3[3];
-    document.getElementById('team3GA').innerHTML = team3[4];
-    document.getElementById('team4Pts').innerHTML = team4[1];
-		document.getElementById('team4GD').innerHTML = team4[2];
-		document.getElementById('team4GF').innerHTML = team4[3];
-		document.getElementById('team4GA').innerHTML = team4[4];
-
-  }
-  else if (A.includes("team5") && B.includes("team6")) {
-
-// PTS
-team5[1] += 1; 
-team6[1] += 1; 
-
-// GF and GA
-team5[3] += parseInt(s1); team5[4] += parseInt(s2);
-team6[3] += parseInt(s2);	team6[4] += parseInt(s1);
-
-// GD  
-team5[2] = team5[3] - team5[4];
-team6[2] = team6[3] - team6[4];
-
-// display
-document.getElementById('team5Pts').innerHTML = team5[1];
-document.getElementById('team5GD').innerHTML = team5[2];
-document.getElementById('team5GF').innerHTML = team5[3];
-document.getElementById('team5GA').innerHTML = team5[4];
-document.getElementById('team6Pts').innerHTML = team6[1];
-document.getElementById('team6GD').innerHTML = team6[2];
-document.getElementById('team6GF').innerHTML = team6[3];
-document.getElementById('team6GA').innerHTML = team6[4];
-}
-else if (A.includes("team5") && B.includes("team7")) {
-// PTS
-team5[1] += 1; 
-team7[1] += 1;  
-
-// GF and GA
-team5[3] += parseInt(s1); team5[4] += parseInt(s2);
-team7[3] += parseInt(s2);	team7[4] += parseInt(s1);
-
-// GD  
-team5[2] = team5[3] - team5[4];
-team7[2] = team7[3] - team7[4];
-
-// display
-document.getElementById('team5Pts').innerHTML = team5[1];
-document.getElementById('team5GD').innerHTML = team5[2];
-document.getElementById('team5GF').innerHTML = team5[3];
-document.getElementById('team5GA').innerHTML = team5[4];
-document.getElementById('team7Pts').innerHTML = team7[1];
-document.getElementById('team7GD').innerHTML = team7[2];
-document.getElementById('team7GF').innerHTML = team7[3];
-document.getElementById('team7GA').innerHTML = team7[4];
-
-}
-else if (A.includes("team5") && B.includes("team8")) {
-// PTS
-team5[1] += 1; 
-team8[1] += 1; 
-
-// GF and GA
-team5[3] += parseInt(s1); team5[4] += parseInt(s2);
-team8[3] += parseInt(s2);	team8[4] += parseInt(s1);
-
-// GD  
-team5[2] = team5[3] - team5[4];
-team8[2] = team8[3] - team8[4];
-
-// display
-document.getElementById('team5Pts').innerHTML = team5[1];
-document.getElementById('team5GD').innerHTML = team5[2];
-document.getElementById('team5GF').innerHTML = team5[3];
-document.getElementById('team5GA').innerHTML = team5[4];
-document.getElementById('team8Pts').innerHTML = team8[1];
-document.getElementById('team8GD').innerHTML = team8[2];
-document.getElementById('team8GF').innerHTML = team8[3];
-document.getElementById('team8GA').innerHTML = team8[4];
-
-}
-else if (A.includes("team6") && B.includes("team7")) {
-// PTS
-team6[1] += 1; 
-team7[1] += 1; 
-
-// GF and GA
-team6[3] += parseInt(s1); team6[4] += parseInt(s2);
-team7[3] += parseInt(s2);	team7[4] += parseInt(s1);
-
-// GD  
-team6[2] = team6[3] - team6[4];
-team7[2] = team7[3] - team7[4];
-
-// display
-document.getElementById('team6Pts').innerHTML = team6[1];
-document.getElementById('team6GD').innerHTML = team6[2];
-document.getElementById('team6GF').innerHTML = team6[3];
-document.getElementById('team6GA').innerHTML = team6[4];
-document.getElementById('team7Pts').innerHTML = team7[1];
-document.getElementById('team7GD').innerHTML = team7[2];
-document.getElementById('team7GF').innerHTML = team7[3];
-document.getElementById('team7GA').innerHTML = team7[4];
-
-}
-else if (A.includes("team6") && B.includes("team8")) {
-// PTS
-team6[1] += 1; 
-team8[1] += 1; 
-
-// GF and GA
-team6[3] += parseInt(s1); team6[4] += parseInt(s2);
-team8[3] += parseInt(s2);	team8[4] += parseInt(s1);
-
-// GD  
-team6[2] = team6[3] - team6[4];
-team8[2] = team8[3] - team8[4];
-
-// display
-document.getElementById('team6Pts').innerHTML = team6[1];
-document.getElementById('team6GD').innerHTML = team6[2];
-document.getElementById('team6GF').innerHTML = team6[3];
-document.getElementById('team6GA').innerHTML = team6[4];
-document.getElementById('team8Pts').innerHTML = team8[1];
-document.getElementById('team8GD').innerHTML = team8[2];
-document.getElementById('team8GF').innerHTML = team8[3];
-document.getElementById('team8GA').innerHTML = team8[4];
-
-}
-else if (A.includes("team7") && B.includes("team8")) {
-// PTS
-team7[1] += 1; 
-team8[1] += 1; 
-
-// GF and GA
-team7[3] += parseInt(s1); team7[4] += parseInt(s2);
-team8[3] += parseInt(s2);	team8[4] += parseInt(s1);
-
-// GD  
-team7[2] = team7[3] - team7[4];
-team8[2] = team8[3] - team8[4];
-
-// display
-document.getElementById('team7Pts').innerHTML = team7[1];
-document.getElementById('team7GD').innerHTML = team7[2];
-document.getElementById('team7GF').innerHTML = team7[3];
-document.getElementById('team7GA').innerHTML = team7[4];
-document.getElementById('team8Pts').innerHTML = team8[1];
-document.getElementById('team8GD').innerHTML = team8[2];
-document.getElementById('team8GF').innerHTML = team8[3];
-document.getElementById('team8GA').innerHTML = team8[4];
-
-}
-	else {
-		console.log('something didnt work');
+	else if (A.includes("team5") && B.includes("team8")) {
+	// PTS
+	team5[1] += 3; 
+	
+	// GF and GA
+	team5[3] += parseInt(s1); team5[4] += parseInt(s2);
+	team8[3] += parseInt(s2);	team8[4] += parseInt(s1);
+	
+	// GD  
+	team5[2] = team5[3] - team5[4];
+	team8[2] = team8[3] - team8[4];
+	
+	// display
+	document.getElementById('team5Pts').innerHTML = team5[1];
+	document.getElementById('team5GD').innerHTML = team5[2];
+	document.getElementById('team5GF').innerHTML = team5[3];
+	document.getElementById('team5GA').innerHTML = team5[4];
+	document.getElementById('team8Pts').innerHTML = team8[1];
+	document.getElementById('team8GD').innerHTML = team8[2];
+	document.getElementById('team8GF').innerHTML = team8[3];
+	document.getElementById('team8GA').innerHTML = team8[4];
+	
 	}
-}
-
-
-// make UPLOAD button disappear
-function disappear1() {
-	document.getElementById("submit1").style.visibility = "hidden";
-}
-function disappear2() {
-	document.getElementById("submit2").style.visibility = "hidden";
-}
-function disappear3() {
-	document.getElementById("submit3").style.visibility = "hidden";
-}
-function disappear4() {
-	document.getElementById("submit4").style.visibility = "hidden";
-}
-function disappear5() {
-	document.getElementById("submit5").style.visibility = "hidden";
-}
-function disappear6() {
-	document.getElementById("submit6").style.visibility = "hidden";
-}
-
-function disappear7() {
-	document.getElementById("submit7").style.visibility = "hidden";
-}
-function disappear8() {
-	document.getElementById("submit8").style.visibility = "hidden";
-}
-function disappear9() {
-	document.getElementById("submit9").style.visibility = "hidden";
-}
-function disappear10() {
-	document.getElementById("submit10").style.visibility = "hidden";
-}
-function disappear11() {
-	document.getElementById("submit11").style.visibility = "hidden";
-}
-function disappear12() {
-	document.getElementById("submit12").style.visibility = "hidden";
-}
-
-
-
-
-// SORTING ... ???
-
-
-</script>
-
-
-
-
-
-<style>
-	input {
-		width: 30px;
+	else if (A.includes("team6") && B.includes("team7")) {
+	// PTS
+	team6[1] += 3; 
+	
+	// GF and GA
+	team6[3] += parseInt(s1); team6[4] += parseInt(s2);
+	team7[3] += parseInt(s2);	team7[4] += parseInt(s1);
+	
+	// GD  
+	team6[2] = team6[3] - team6[4];
+	team7[2] = team7[3] - team7[4];
+	
+	// display
+	document.getElementById('team6Pts').innerHTML = team6[1];
+	document.getElementById('team6GD').innerHTML = team6[2];
+	document.getElementById('team6GF').innerHTML = team6[3];
+	document.getElementById('team6GA').innerHTML = team6[4];
+	document.getElementById('team7Pts').innerHTML = team7[1];
+	document.getElementById('team7GD').innerHTML = team7[2];
+	document.getElementById('team7GF').innerHTML = team7[3];
+	document.getElementById('team7GA').innerHTML = team7[4];
+	
 	}
-
-	#compartment tr td p{
-		width: 150px;
-		margin-left: 20px;
-		text-align:center;
+	else if (A.includes("team6") && B.includes("team8")) {
+	// PTS
+	team6[1] += 3; 
+	
+	// GF and GA
+	team6[3] += parseInt(s1); team6[4] += parseInt(s2);
+	team8[3] += parseInt(s2);	team8[4] += parseInt(s1);
+	
+	// GD  
+	team6[2] = team6[3] - team6[4];
+	team8[2] = team8[3] - team8[4];
+	
+	// display
+	document.getElementById('team6Pts').innerHTML = team6[1];
+	document.getElementById('team6GD').innerHTML = team6[2];
+	document.getElementById('team6GF').innerHTML = team6[3];
+	document.getElementById('team6GA').innerHTML = team6[4];
+	document.getElementById('team8Pts').innerHTML = team8[1];
+	document.getElementById('team8GD').innerHTML = team8[2];
+	document.getElementById('team8GF').innerHTML = team8[3];
+	document.getElementById('team8GA').innerHTML = team8[4];
+	
 	}
-
-
-	th {
-			border: 1px solid black;
-			cursor: pointer;
+	else if (A.includes("team7") && B.includes("team8")) {
+	// PTS
+	team7[1] += 3; 
+	
+	// GF and GA
+	team7[3] += parseInt(s1); team7[4] += parseInt(s2);
+	team8[3] += parseInt(s2);	team8[4] += parseInt(s1);
+	
+	// GD  
+	team7[2] = team7[3] - team7[4];
+	team8[2] = team8[3] - team8[4];
+	
+	// display
+	document.getElementById('team7Pts').innerHTML = team7[1];
+	document.getElementById('team7GD').innerHTML = team7[2];
+	document.getElementById('team7GF').innerHTML = team7[3];
+	document.getElementById('team7GA').innerHTML = team7[4];
+	document.getElementById('team8Pts').innerHTML = team8[1];
+	document.getElementById('team8GD').innerHTML = team8[2];
+	document.getElementById('team8GF').innerHTML = team8[3];
+	document.getElementById('team8GA').innerHTML = team8[4];
+	
 	}
-</style>
+		
+		else {
+			console.log('something didnt work');
+		}
+	}
+	
+	function compileNumbersIfSecondInputWins(A,B,s1,s2) {
+		if (A.includes("team1") && B.includes("team2")) {
+	
+			// PTS
+			team2[1] += 3; 
+	
+			// GF and GA
+			team1[3] += parseInt(s1); team1[4] += parseInt(s2);
+			team2[3] += parseInt(s2);	team2[4] += parseInt(s1);
+	
+			 // GD  
+			team1[2] = team1[3] - team1[4];
+			team2[2] = team2[3] - team2[4];
+	
+			// display
+			document.getElementById('team1Pts').innerHTML = team1[1];
+			document.getElementById('team1GD').innerHTML = team1[2];
+			document.getElementById('team1GF').innerHTML = team1[3];
+			document.getElementById('team1GA').innerHTML = team1[4];
+			document.getElementById('team2Pts').innerHTML = team2[1];
+			document.getElementById('team2GD').innerHTML = team2[2];
+			document.getElementById('team2GF').innerHTML = team2[3];
+			document.getElementById('team2GA').innerHTML = team2[4];
+		}
+		else if (A.includes("team1") && B.includes("team3")) {
+			// PTS
+			team3[1] += 3; 
+	
+			// GF and GA
+			team1[3] += parseInt(s1); team1[4] += parseInt(s2);
+			team3[3] += parseInt(s2);	team3[4] += parseInt(s1);
+	
+			 // GD  
+			team1[2] = team1[3] - team1[4];
+			team3[2] = team3[3] - team3[4];
+	
+			// display
+			document.getElementById('team1Pts').innerHTML = team1[1];
+			document.getElementById('team1GD').innerHTML = team1[2];
+			document.getElementById('team1GF').innerHTML = team1[3];
+			document.getElementById('team1GA').innerHTML = team1[4];
+			document.getElementById('team3Pts').innerHTML = team3[1];
+			document.getElementById('team3GD').innerHTML = team3[2];
+			document.getElementById('team3GF').innerHTML = team3[3];
+			document.getElementById('team3GA').innerHTML = team3[4];
+	
+		}
+		else if (A.includes("team1") && B.includes("team4")) {
+			// PTS
+			team4[1] += 3; 
+	
+			// GF and GA
+			team1[3] += parseInt(s1); team1[4] += parseInt(s2);
+			team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
+	
+			 // GD  
+			team1[2] = team1[3] - team1[4];
+			team4[2] = team4[3] - team4[4];
+	
+			// display
+			document.getElementById('team1Pts').innerHTML = team1[1];
+			document.getElementById('team1GD').innerHTML = team1[2];
+			document.getElementById('team1GF').innerHTML = team1[3];
+			document.getElementById('team1GA').innerHTML = team1[4];
+			document.getElementById('team4Pts').innerHTML = team4[1];
+			document.getElementById('team4GD').innerHTML = team4[2];
+			document.getElementById('team4GF').innerHTML = team4[3];
+			document.getElementById('team4GA').innerHTML = team4[4];
+	
+		}
+		else if (A.includes("team2") && B.includes("team3")) {
+			// PTS
+			team3[1] += 3; 
+	
+			// GF and GA
+			team2[3] += parseInt(s1); team2[4] += parseInt(s2);
+			team3[3] += parseInt(s2);	team3[4] += parseInt(s1);
+	
+			 // GD  
+			team2[2] = team2[3] - team2[4];
+			team3[2] = team3[3] - team3[4];
+	
+			// display
+			document.getElementById('team2Pts').innerHTML = team2[1];
+			document.getElementById('team2GD').innerHTML = team2[2];
+			document.getElementById('team2GF').innerHTML = team2[3];
+			document.getElementById('team2GA').innerHTML = team2[4];
+			document.getElementById('team3Pts').innerHTML = team3[1];
+			document.getElementById('team3GD').innerHTML = team3[2];
+			document.getElementById('team3GF').innerHTML = team3[3];
+			document.getElementById('team3GA').innerHTML = team3[4];
+	
+		}
+		else if (A.includes("team2") && B.includes("team4")) {
+			// PTS
+			team4[1] += 3; 
+	
+			// GF and GA
+			team2[3] += parseInt(s1); team2[4] += parseInt(s2);
+			team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
+	
+			 // GD  
+			team2[2] = team2[3] - team2[4];
+			team4[2] = team4[3] - team4[4];
+	
+			// display
+			document.getElementById('team2Pts').innerHTML = team2[1];
+			document.getElementById('team2GD').innerHTML = team2[2];
+			document.getElementById('team2GF').innerHTML = team2[3];
+			document.getElementById('team2GA').innerHTML = team2[4];
+			document.getElementById('team4Pts').innerHTML = team4[1];
+			document.getElementById('team4GD').innerHTML = team4[2];
+			document.getElementById('team4GF').innerHTML = team4[3];
+			document.getElementById('team4GA').innerHTML = team4[4];
+	
+		}
+		else if (A.includes("team3") && B.includes("team4")) {
+			// PTS
+			team4[1] += 3; 
+	
+			// GF and GA
+			team3[3] += parseInt(s1); team3[4] += parseInt(s2);
+			team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
+	
+			 // GD  
+			team3[2] = team3[3] - team3[4];
+			team4[2] = team4[3] - team4[4];
+	
+			// display
+			document.getElementById('team3Pts').innerHTML = team3[1];
+			document.getElementById('team3GD').innerHTML = team3[2];
+			document.getElementById('team3GF').innerHTML = team3[3];
+			document.getElementById('team3GA').innerHTML = team3[4];
+			document.getElementById('team4Pts').innerHTML = team4[1];
+			document.getElementById('team4GD').innerHTML = team4[2];
+			document.getElementById('team4GF').innerHTML = team4[3];
+			document.getElementById('team4GA').innerHTML = team4[4];
+	
+		}
+		else if (A.includes("team5") && B.includes("team6")) {
+	
+			// PTS
+			team6[1] += 3; 
+	
+			// GF and GA
+			team5[3] += parseInt(s1); team5[4] += parseInt(s2);
+			team6[3] += parseInt(s2);	team6[4] += parseInt(s1);
+	
+			// GD  
+			team5[2] = team5[3] - team5[4];
+			team6[2] = team6[3] - team6[4];
+	
+			// display
+			document.getElementById('team5Pts').innerHTML = team5[1];
+			document.getElementById('team5GD').innerHTML = team5[2];
+			document.getElementById('team5GF').innerHTML = team5[3];
+			document.getElementById('team5GA').innerHTML = team5[4];
+			document.getElementById('team6Pts').innerHTML = team6[1];
+			document.getElementById('team6GD').innerHTML = team6[2];
+			document.getElementById('team6GF').innerHTML = team6[3];
+			document.getElementById('team6GA').innerHTML = team6[4];
+		}
+	else if (A.includes("team5") && B.includes("team7")) {
+	// PTS
+	team7[1] += 3; 
+	
+	// GF and GA
+	team5[3] += parseInt(s1); team5[4] += parseInt(s2);
+	team7[3] += parseInt(s2);	team7[4] += parseInt(s1);
+	
+	 // GD  
+	team5[2] = team5[3] - team5[4];
+	team7[2] = team7[3] - team7[4];
+	
+	// display
+	document.getElementById('team5Pts').innerHTML = team5[1];
+	document.getElementById('team5GD').innerHTML = team5[2];
+	document.getElementById('team5GF').innerHTML = team5[3];
+	document.getElementById('team5GA').innerHTML = team5[4];
+	document.getElementById('team7Pts').innerHTML = team7[1];
+	document.getElementById('team7GD').innerHTML = team7[2];
+	document.getElementById('team7GF').innerHTML = team7[3];
+	document.getElementById('team7GA').innerHTML = team7[4];
+	
+	}
+	else if (A.includes("team5") && B.includes("team8")) {
+	// PTS
+	team8[1] += 3; 
+	
+	// GF and GA
+	team5[3] += parseInt(s1); team5[4] += parseInt(s2);
+	team8[3] += parseInt(s2);	team8[4] += parseInt(s1);
+	
+	 // GD  
+	team5[2] = team5[3] - team5[4];
+	team8[2] = team8[3] - team8[4];
+	
+	// display
+	document.getElementById('team5Pts').innerHTML = team5[1];
+	document.getElementById('team5GD').innerHTML = team5[2];
+	document.getElementById('team5GF').innerHTML = team5[3];
+	document.getElementById('team5GA').innerHTML = team5[4];
+	document.getElementById('team8Pts').innerHTML = team8[1];
+	document.getElementById('team8GD').innerHTML = team8[2];
+	document.getElementById('team8GF').innerHTML = team8[3];
+	document.getElementById('team8GA').innerHTML = team8[4];
+	
+	}
+	else if (A.includes("team6") && B.includes("team7")) {
+	// PTS
+	team7[1] += 3; 
+	
+	// GF and GA
+	team6[3] += parseInt(s1); team6[4] += parseInt(s2);
+	team7[3] += parseInt(s2);	team7[4] += parseInt(s1);
+	
+	 // GD  
+	team6[2] = team6[3] - team6[4];
+	team7[2] = team7[3] - team7[4];
+	
+	// display
+	document.getElementById('team6Pts').innerHTML = team6[1];
+	document.getElementById('team6GD').innerHTML = team6[2];
+	document.getElementById('team6GF').innerHTML = team6[3];
+	document.getElementById('team6GA').innerHTML = team6[4];
+	document.getElementById('team7Pts').innerHTML = team7[1];
+	document.getElementById('team7GD').innerHTML = team7[2];
+	document.getElementById('team7GF').innerHTML = team7[3];
+	document.getElementById('team7GA').innerHTML = team7[4];
+	
+	}
+	else if (A.includes("team6") && B.includes("team8")) {
+	// PTS
+	team8[1] += 3; 
+	
+	// GF and GA
+	team6[3] += parseInt(s1); team6[4] += parseInt(s2);
+	team8[3] += parseInt(s2);	team8[4] += parseInt(s1);
+	
+	 // GD  
+	team6[2] = team6[3] - team6[4];
+	team8[2] = team8[3] - team8[4];
+	
+	// display
+	document.getElementById('team6Pts').innerHTML = team6[1];
+	document.getElementById('team6GD').innerHTML = team6[2];
+	document.getElementById('team6GF').innerHTML = team6[3];
+	document.getElementById('team6GA').innerHTML = team6[4];
+	document.getElementById('team8Pts').innerHTML = team8[1];
+	document.getElementById('team8GD').innerHTML = team8[2];
+	document.getElementById('team8GF').innerHTML = team8[3];
+	document.getElementById('team8GA').innerHTML = team8[4];
+	
+	}
+	else if (A.includes("team7") && B.includes("team8")) {
+	// PTS
+	team8[1] += 3; 
+	
+	// GF and GA
+	team7[3] += parseInt(s1); team7[4] += parseInt(s2);
+	team8[3] += parseInt(s2);	team8[4] += parseInt(s1);
+	
+	 // GD  
+	team7[2] = team7[3] - team7[4];
+	team8[2] = team8[3] - team8[4];
+	
+	// display
+	document.getElementById('team7Pts').innerHTML = team7[1];
+	document.getElementById('team7GD').innerHTML = team7[2];
+	document.getElementById('team7GF').innerHTML = team7[3];
+	document.getElementById('team7GA').innerHTML = team7[4];
+	document.getElementById('team8Pts').innerHTML = team8[1];
+	document.getElementById('team8GD').innerHTML = team8[2];
+	document.getElementById('team8GF').innerHTML = team8[3];
+	document.getElementById('team8GA').innerHTML = team8[4];
+	
+	}
+		else {
+			console.log('something didnt work');
+		}
+	}
+	
+	function compileNumbersIfTie(A,B,s1,s2) {
+		if (A.includes("team1") && B.includes("team2")) {
+	
+			// PTS
+			team1[1] += 1;
+			team2[1] += 1; 
+	
+			// GF and GA
+			team1[3] += parseInt(s1); team1[4] += parseInt(s2);
+			team2[3] += parseInt(s2);	team2[4] += parseInt(s1);
+	
+			 // GD  
+			team1[2] = team1[3] - team1[4];
+			team2[2] = team2[3] - team2[4];
+	
+			// display
+			document.getElementById('team1Pts').innerHTML = team1[1];
+			document.getElementById('team1GD').innerHTML = team1[2];
+			document.getElementById('team1GF').innerHTML = team1[3];
+			document.getElementById('team1GA').innerHTML = team1[4];
+			document.getElementById('team2Pts').innerHTML = team2[1];
+			document.getElementById('team2GD').innerHTML = team2[2];
+			document.getElementById('team2GF').innerHTML = team2[3];
+			document.getElementById('team2GA').innerHTML = team2[4];
+		}
+		else if (A.includes("team1") && B.includes("team3")) {
+			// PTS
+			team1[1] += 1; 
+			team3[1] += 1; 
+	
+			// GF and GA
+			team1[3] += parseInt(s1); team1[4] += parseInt(s2);
+			team3[3] += parseInt(s2);	team3[4] += parseInt(s1);
+	
+			 // GD  
+			team1[2] = team1[3] - team1[4];
+			team3[2] = team3[3] - team3[4];
+	
+			// display
+			document.getElementById('team1Pts').innerHTML = team1[1];
+			document.getElementById('team1GD').innerHTML = team1[2];
+			document.getElementById('team1GF').innerHTML = team1[3];
+			document.getElementById('team1GA').innerHTML = team1[4];
+			document.getElementById('team3Pts').innerHTML = team3[1];
+			document.getElementById('team3GD').innerHTML = team3[2];
+			document.getElementById('team3GF').innerHTML = team3[3];
+			document.getElementById('team3GA').innerHTML = team3[4];
+	
+		}
+		else if (A.includes("team1") && B.includes("team4")) {
+			// PTS
+			team1[1] += 1; 
+			team4[1] += 1; 
+	
+			// GF and GA
+			team1[3] += parseInt(s1); team1[4] += parseInt(s2);
+			team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
+	
+			 // GD  
+			team1[2] = team1[3] - team1[4];
+			team4[2] = team4[3] - team4[4];
+	
+			// display
+			document.getElementById('team1Pts').innerHTML = team1[1];
+			document.getElementById('team1GD').innerHTML = team1[2];
+			document.getElementById('team1GF').innerHTML = team1[3];
+			document.getElementById('team1GA').innerHTML = team1[4];
+			document.getElementById('team4Pts').innerHTML = team4[1];
+			document.getElementById('team4GD').innerHTML = team4[2];
+			document.getElementById('team4GF').innerHTML = team4[3];
+			document.getElementById('team4GA').innerHTML = team4[4];
+	
+		}
+		else if (A.includes("team2") && B.includes("team3")) {
+			// PTS
+			team2[1] += 1; 
+			team3[1] += 1; 
+	
+			// GF and GA
+			team2[3] += parseInt(s1); team2[4] += parseInt(s2);
+			team3[3] += parseInt(s2);	team3[4] += parseInt(s1);
+	
+			 // GD  
+			team2[2] = team2[3] - team2[4];
+			team3[2] = team3[3] - team3[4];
+	
+			// display
+			document.getElementById('team2Pts').innerHTML = team2[1];
+			document.getElementById('team2GD').innerHTML = team2[2];
+			document.getElementById('team2GF').innerHTML = team2[3];
+			document.getElementById('team2GA').innerHTML = team2[4];
+			document.getElementById('team3Pts').innerHTML = team3[1];
+			document.getElementById('team3GD').innerHTML = team3[2];
+			document.getElementById('team3GF').innerHTML = team3[3];
+			document.getElementById('team3GA').innerHTML = team3[4];
+	
+		}
+		else if (A.includes("team2") && B.includes("team4")) {
+			// PTS
+			team2[1] += 1; 
+			team4[1] += 1; 
+	
+			// GF and GA
+			team2[3] += parseInt(s1); team2[4] += parseInt(s2);
+			team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
+	
+			 // GD  
+			team2[2] = team2[3] - team2[4];
+			team4[2] = team4[3] - team4[4];
+	
+			// display
+			document.getElementById('team2Pts').innerHTML = team2[1];
+			document.getElementById('team2GD').innerHTML = team2[2];
+			document.getElementById('team2GF').innerHTML = team2[3];
+			document.getElementById('team2GA').innerHTML = team2[4];
+			document.getElementById('team4Pts').innerHTML = team4[1];
+			document.getElementById('team4GD').innerHTML = team4[2];
+			document.getElementById('team4GF').innerHTML = team4[3];
+			document.getElementById('team4GA').innerHTML = team4[4];
+	
+		}
+		else if (A.includes("team3") && B.includes("team4")) {
+			// PTS
+			team3[1] += 1; 
+			team4[1] += 1; 
+	
+			// GF and GA
+			team3[3] += parseInt(s1); team3[4] += parseInt(s2);
+			team4[3] += parseInt(s2);	team4[4] += parseInt(s1);
+	
+			 // GD  
+			team3[2] = team3[3] - team3[4];
+			team4[2] = team4[3] - team4[4];
+	
+			// display
+			document.getElementById('team3Pts').innerHTML = team3[1];
+			document.getElementById('team3GD').innerHTML = team3[2];
+			document.getElementById('team3GF').innerHTML = team3[3];
+			document.getElementById('team3GA').innerHTML = team3[4];
+			document.getElementById('team4Pts').innerHTML = team4[1];
+			document.getElementById('team4GD').innerHTML = team4[2];
+			document.getElementById('team4GF').innerHTML = team4[3];
+			document.getElementById('team4GA').innerHTML = team4[4];
+	
+		}
+		else if (A.includes("team5") && B.includes("team6")) {
+	
+	// PTS
+	team5[1] += 1; 
+	team6[1] += 1; 
+	
+	// GF and GA
+	team5[3] += parseInt(s1); team5[4] += parseInt(s2);
+	team6[3] += parseInt(s2);	team6[4] += parseInt(s1);
+	
+	// GD  
+	team5[2] = team5[3] - team5[4];
+	team6[2] = team6[3] - team6[4];
+	
+	// display
+	document.getElementById('team5Pts').innerHTML = team5[1];
+	document.getElementById('team5GD').innerHTML = team5[2];
+	document.getElementById('team5GF').innerHTML = team5[3];
+	document.getElementById('team5GA').innerHTML = team5[4];
+	document.getElementById('team6Pts').innerHTML = team6[1];
+	document.getElementById('team6GD').innerHTML = team6[2];
+	document.getElementById('team6GF').innerHTML = team6[3];
+	document.getElementById('team6GA').innerHTML = team6[4];
+	}
+	else if (A.includes("team5") && B.includes("team7")) {
+	// PTS
+	team5[1] += 1; 
+	team7[1] += 1;  
+	
+	// GF and GA
+	team5[3] += parseInt(s1); team5[4] += parseInt(s2);
+	team7[3] += parseInt(s2);	team7[4] += parseInt(s1);
+	
+	// GD  
+	team5[2] = team5[3] - team5[4];
+	team7[2] = team7[3] - team7[4];
+	
+	// display
+	document.getElementById('team5Pts').innerHTML = team5[1];
+	document.getElementById('team5GD').innerHTML = team5[2];
+	document.getElementById('team5GF').innerHTML = team5[3];
+	document.getElementById('team5GA').innerHTML = team5[4];
+	document.getElementById('team7Pts').innerHTML = team7[1];
+	document.getElementById('team7GD').innerHTML = team7[2];
+	document.getElementById('team7GF').innerHTML = team7[3];
+	document.getElementById('team7GA').innerHTML = team7[4];
+	
+	}
+	else if (A.includes("team5") && B.includes("team8")) {
+	// PTS
+	team5[1] += 1; 
+	team8[1] += 1; 
+	
+	// GF and GA
+	team5[3] += parseInt(s1); team5[4] += parseInt(s2);
+	team8[3] += parseInt(s2);	team8[4] += parseInt(s1);
+	
+	// GD  
+	team5[2] = team5[3] - team5[4];
+	team8[2] = team8[3] - team8[4];
+	
+	// display
+	document.getElementById('team5Pts').innerHTML = team5[1];
+	document.getElementById('team5GD').innerHTML = team5[2];
+	document.getElementById('team5GF').innerHTML = team5[3];
+	document.getElementById('team5GA').innerHTML = team5[4];
+	document.getElementById('team8Pts').innerHTML = team8[1];
+	document.getElementById('team8GD').innerHTML = team8[2];
+	document.getElementById('team8GF').innerHTML = team8[3];
+	document.getElementById('team8GA').innerHTML = team8[4];
+	
+	}
+	else if (A.includes("team6") && B.includes("team7")) {
+	// PTS
+	team6[1] += 1; 
+	team7[1] += 1; 
+	
+	// GF and GA
+	team6[3] += parseInt(s1); team6[4] += parseInt(s2);
+	team7[3] += parseInt(s2);	team7[4] += parseInt(s1);
+	
+	// GD  
+	team6[2] = team6[3] - team6[4];
+	team7[2] = team7[3] - team7[4];
+	
+	// display
+	document.getElementById('team6Pts').innerHTML = team6[1];
+	document.getElementById('team6GD').innerHTML = team6[2];
+	document.getElementById('team6GF').innerHTML = team6[3];
+	document.getElementById('team6GA').innerHTML = team6[4];
+	document.getElementById('team7Pts').innerHTML = team7[1];
+	document.getElementById('team7GD').innerHTML = team7[2];
+	document.getElementById('team7GF').innerHTML = team7[3];
+	document.getElementById('team7GA').innerHTML = team7[4];
+	
+	}
+	else if (A.includes("team6") && B.includes("team8")) {
+	// PTS
+	team6[1] += 1; 
+	team8[1] += 1; 
+	
+	// GF and GA
+	team6[3] += parseInt(s1); team6[4] += parseInt(s2);
+	team8[3] += parseInt(s2);	team8[4] += parseInt(s1);
+	
+	// GD  
+	team6[2] = team6[3] - team6[4];
+	team8[2] = team8[3] - team8[4];
+	
+	// display
+	document.getElementById('team6Pts').innerHTML = team6[1];
+	document.getElementById('team6GD').innerHTML = team6[2];
+	document.getElementById('team6GF').innerHTML = team6[3];
+	document.getElementById('team6GA').innerHTML = team6[4];
+	document.getElementById('team8Pts').innerHTML = team8[1];
+	document.getElementById('team8GD').innerHTML = team8[2];
+	document.getElementById('team8GF').innerHTML = team8[3];
+	document.getElementById('team8GA').innerHTML = team8[4];
+	
+	}
+	else if (A.includes("team7") && B.includes("team8")) {
+	// PTS
+	team7[1] += 1; 
+	team8[1] += 1; 
+	
+	// GF and GA
+	team7[3] += parseInt(s1); team7[4] += parseInt(s2);
+	team8[3] += parseInt(s2);	team8[4] += parseInt(s1);
+	
+	// GD  
+	team7[2] = team7[3] - team7[4];
+	team8[2] = team8[3] - team8[4];
+	
+	// display
+	document.getElementById('team7Pts').innerHTML = team7[1];
+	document.getElementById('team7GD').innerHTML = team7[2];
+	document.getElementById('team7GF').innerHTML = team7[3];
+	document.getElementById('team7GA').innerHTML = team7[4];
+	document.getElementById('team8Pts').innerHTML = team8[1];
+	document.getElementById('team8GD').innerHTML = team8[2];
+	document.getElementById('team8GF').innerHTML = team8[3];
+	document.getElementById('team8GA').innerHTML = team8[4];
+	
+	}
+		else {
+			console.log('something didnt work');
+		}
+	}
+	
+	
+	// make UPLOAD button disappear
+	function disappear1() {
+		document.getElementById("submit1").style.visibility = "hidden";
+	}
+	function disappear2() {
+		document.getElementById("submit2").style.visibility = "hidden";
+	}
+	function disappear3() {
+		document.getElementById("submit3").style.visibility = "hidden";
+	}
+	function disappear4() {
+		document.getElementById("submit4").style.visibility = "hidden";
+	}
+	function disappear5() {
+		document.getElementById("submit5").style.visibility = "hidden";
+	}
+	function disappear6() {
+		document.getElementById("submit6").style.visibility = "hidden";
+	}
+	function disappear7() {
+		document.getElementById("submit7").style.visibility = "hidden";
+	}
+	function disappear8() {
+		document.getElementById("submit8").style.visibility = "hidden";
+	}
+	function disappear9() {
+		document.getElementById("submit9").style.visibility = "hidden";
+	}
+	function disappear10() {
+		document.getElementById("submit10").style.visibility = "hidden";
+	}
+	function disappear11() {
+		document.getElementById("submit11").style.visibility = "hidden";
+	}
+	function disappear12() {
+		document.getElementById("submit12").style.visibility = "hidden";
+	}
+	
+	</script>
