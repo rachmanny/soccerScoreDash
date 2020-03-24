@@ -1,3 +1,6 @@
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script> 
+
 <table id=schedule>
   <tr>
     <td>
@@ -141,6 +144,7 @@
     <th>GA</th>
   </tr>
 
+  <tbody>
   <tr>
     <td id=team1></td>
     <td id=team1Pts></td>
@@ -169,6 +173,7 @@
     <td id=team4GF></td>
     <td id=team4GA></td>
   </tr>
+  </tbody>
 </table>
 
 
@@ -222,6 +227,7 @@ document.getElementById('team4GD').innerHTML = team4[2];
 document.getElementById('team4GF').innerHTML = team4[3];
 document.getElementById('team4GA').innerHTML = team4[4];
 
+$('tbody').sortable();
 
 function submitScore(sc1,sc2,teamA,teamB) {
 	if (sc1>sc2) {
@@ -702,20 +708,7 @@ function disappear6() {
 
 
 
-// SORTING
-const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
-
-const comparer = (idx, asc) => (a, b) => ((v1, v2) => 
-    v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
-    )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
-
-// do the work...
-document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
-    const table = th.closest('table');
-    Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
-        .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
-        .forEach(tr => table.appendChild(tr) );
-})));
+// SORTING ... ???
 
 
 </script>
