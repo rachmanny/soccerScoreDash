@@ -1,0 +1,109 @@
+html
+    <table id=standings>
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Pts</th>
+        <th>GD</th>
+        <th>GF</th>
+        <th>GA</th>
+      </tr>
+      </thead>  
+
+      <tbody>
+      <tr>
+        <td id=team1>Team 2</td>
+        <td id=team1Pts>452</td>
+        <td id=team1GD>18</td>
+        <td id=team1GF>7</td>
+        <td id=team1GA>5</td>
+      </tr>
+      <tr>
+        <td id=team2>Team 4</td>
+        <td id=team2Pts>504</td>
+        <td id=team2GD>18</td>
+        <td id=team2GF>12</td>
+        <td id=team2GA>7</td>
+      </tr>
+      <tr>
+        <td id=team3>Team 1</td>
+        <td id=team3Pts>504</td>
+        <td id=team3GD>12</td>
+        <td id=team3GF>6</td>
+        <td id=team3GA>4</td>
+      </tr>
+      <tr>
+        <td id=team4>Team 3</td>
+        <td id=team4Pts>504</td>
+        <td id=team4GD>18</td>
+        <td id=team4GF>12</td>
+        <td id=team4GA>5</td>
+      </tr>
+      </tbody>
+    </table>
+<br><br>
+<button id="button">Sort</button>
+<button><input TYPE="button" onClick="history.go(0)" VALUE="Refresh" class=""></button>
+
+
+
+css
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  width: 100px;
+  border: 1px solid deepskyblue;
+  text-align: center;
+}
+button {
+  height: 25px;
+  width: 75px;
+}
+
+
+
+
+js
+
+
+let rows = standings.lastElementChild.children;
+
+let heading = standings.firstElementChild.children;
+
+let sortPts = () => {
+  arr = Array.from(rows);
+  arr.sort((A, B) => {
+    A = A.cells[1].firstChild.data;
+    B = B.cells[1].firstChild.data;
+    return Number(B) - Number(A);
+  });
+
+   let n = 1;
+  console.time();
+   while (n < 4) {
+      for (let i = 0; i < arr.length-1; i++) {
+        if (arr[i].cells[n].firstChild.data == arr[i+1].cells[n].firstChild.data) {
+          repeats = arr.splice(i, 2);
+          repeats.sort((A, B) => {
+            A = A.cells[n+1].firstChild.data;
+            B = B.cells[n+1].firstChild.data;
+            return Number(B) - Number(A);
+          });
+          arr.splice(i, 0, ...repeats);
+        }
+      }
+    n++;
+   }
+  console.timeEnd();
+  rows = arr;  
+  standings.append(...rows);
+}
+
+
+
+button.addEventListener('click', e => {
+  sortPts(); 
+})
