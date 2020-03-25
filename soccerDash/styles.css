@@ -61,6 +61,13 @@ input {
 	width: 50px;
 	font-size: 35px;
 	text-align: center;
+	background: rgba(31, 58, 147, .8);
+	color:white;
+	border-top-style: hidden;
+	border-right-style: hidden;
+	border-left-style: hidden;
+	border-bottom-style: hidden;
+	
 }
 
 #compartment tr td p{
