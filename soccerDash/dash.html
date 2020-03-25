@@ -4,6 +4,7 @@
 
 <div class=wrapper>
 	<div class="one">
+		<h1 style=text-align:center;>ACAS CUP 2020 - Games Of The Day</h1>
 		<table id=schedule>
 			<tr>
 				<td>
@@ -285,14 +286,20 @@
 	</div>
 
 	<div class="two">
+		<button id="button24" style='text-align: left; float: left;'>Sort</button>
+		<h1 style=text-align:center;>Group A</h1>
 		<table id=standings>
 			<thead>
 			<tr>
-				<th>Name</th>
+				<th id=groupAname>Name</th>
 				<th>Pts</th>
 				<th>GD</th>
 				<th>GF</th>
 				<th>GA</th>
+				<th>W</th>
+				<th>D</th>
+				<th>L</th>
+				<th>P</th>
 			</tr>
 			</thead>
 		
@@ -303,6 +310,10 @@
 				<td id=team1GD></td>
 				<td id=team1GF></td>
 				<td id=team1GA></td>
+				<td id=team1W></td>
+				<td id=team1D></td>
+				<td id=team1L></td>
+				<td id=team1P></td>
 			</tr>
 			<tr>
 				<td id=team2></td>
@@ -310,6 +321,10 @@
 				<td id=team2GD></td>
 				<td id=team2GF></td>
 				<td id=team2GA></td>
+				<td id=team2W></td>
+				<td id=team2D></td>
+				<td id=team2L></td>
+				<td id=team2P></td>
 			</tr>
 			<tr>
 				<td id=team3></td>
@@ -317,6 +332,10 @@
 				<td id=team3GD></td>
 				<td id=team3GF></td>
 				<td id=team3GA></td>
+				<td id=team3W></td>
+				<td id=team3D></td>
+				<td id=team3L></td>
+				<td id=team3P></td>
 			</tr>
 			<tr>
 				<td id=team4></td>
@@ -324,20 +343,30 @@
 				<td id=team4GD></td>
 				<td id=team4GF></td>
 				<td id=team4GA></td>
+				<td id=team4W></td>
+				<td id=team4D></td>
+				<td id=team4L></td>
+				<td id=team4P></td>
 			</tr>
 			</tbody>
 		</table>
-		<button id="button24">Sort</button>
+		
 	</div>
 
 	<div class="three">
+		<button id="button25" style='text-align: left; float: left;'>Sort</button>
+		<h1 style=text-align:center;>Group B</h1>
 		<table id=standings2>
 			<tr>
-				<th>Name</th>
+				<th id=groupBname>Name</th>
 				<th>Pts</th>
 				<th>GD</th>
 				<th>GF</th>
 				<th>GA</th>
+				<th>W</th>
+				<th>D</th>
+				<th>L</th>
+				<th>P</th>
 			</tr>
 		
 			<tbody>
@@ -347,6 +376,10 @@
 				<td id=team5GD></td>
 				<td id=team5GF></td>
 				<td id=team5GA></td>
+				<td id=team5W></td>
+				<td id=team5D></td>
+				<td id=team5L></td>
+				<td id=team5P></td>
 			</tr>
 			<tr>
 				<td id=team6></td>
@@ -354,6 +387,10 @@
 				<td id=team6GD></td>
 				<td id=team6GF></td>
 				<td id=team6GA></td>
+				<td id=team6W></td>
+				<td id=team6D></td>
+				<td id=team6L></td>
+				<td id=team6P></td>
 			</tr>
 			<tr>
 				<td id=team7></td>
@@ -361,6 +398,10 @@
 				<td id=team7GD></td>
 				<td id=team7GF></td>
 				<td id=team7GA></td>
+				<td id=team7W></td>
+				<td id=team7D></td>
+				<td id=team7L></td>
+				<td id=team7P></td>
 			</tr>
 			<tr>
 				<td id=team8></td>
@@ -368,10 +409,14 @@
 				<td id=team8GD></td>
 				<td id=team8GF></td>
 				<td id=team8GA></td>
+				<td id=team8W></td>
+				<td id=team8D></td>
+				<td id=team8L></td>
+				<td id=team8P></td>
 			</tr>
 			</tbody>
 		</table>
-		<button id="button25">Sort</button>
+		
 		
 	</div>
 </div>
@@ -381,15 +426,15 @@
 <script>
 	// name || pts || gd || gf || ga || w || d || L || played ||
 
-	var team1 = ["SBVP FC", 0, 0, 0, 0];
-	var team2 = ["International FC", 0, 0 ,0, 0];
-	var team3 = ["Gluten Free", 0, 0 ,0, 0];
-	var team4 = ["FC Harul", 0, 0 ,0 ,0];
+	var team1 = ["SBVP FC", 0, 0, 0, 0, 0, 0 ,0 ,0];
+	var team2 = ["International FC", 0, 0 ,0, 0, 0, 0 ,0 ,0];
+	var team3 = ["Gluten Free", 0, 0 ,0, 0, 0, 0 ,0 ,0];
+	var team4 = ["FC Harul", 0, 0 ,0 ,0, 0, 0 ,0 ,0];
 	
-	var team5 = ["Colombia", 0, 0, 0, 0];
-	var team6 = ["Brazil", 0, 0 ,0, 0];
-	var team7 = ["England", 0, 0 ,0, 0];
-	var team8 = ["Spain", 0, 0 ,0 ,0];
+	var team5 = ["ELIMinators", 0, 0, 0, 0, 0, 0 ,0 ,0];
+	var team6 = ["FC New Life", 0, 0 ,0, 0, 0, 0 ,0 ,0];
+	var team7 = ["FC Romania", 0, 0 ,0, 0, 0, 0 ,0 ,0];
+	var team8 = ["Juventus", 0, 0 ,0 ,0, 0, 0 ,0 ,0];
 	
 	document.getElementById('team1').innerHTML = team1[0];
 	document.getElementById('team11').innerHTML = team1[0];
@@ -419,24 +464,40 @@
 	document.getElementById('team1GD').innerHTML = team1[2];
 	document.getElementById('team1GF').innerHTML = team1[3];
 	document.getElementById('team1GA').innerHTML = team1[4];
+	document.getElementById('team1W').innerHTML = team1[5];
+	document.getElementById('team1D').innerHTML = team1[6];
+	document.getElementById('team1L').innerHTML = team1[7];
+	document.getElementById('team1P').innerHTML = team1[8];
 	
 	document.getElementById('team2GD').innerHTML = team2[2];
 	document.getElementById('team2GF').innerHTML = team2[3];
 	document.getElementById('team2GA').innerHTML = team2[4];
+	document.getElementById('team2W').innerHTML = team2[5];
+	document.getElementById('team2D').innerHTML = team2[6];
+	document.getElementById('team2L').innerHTML = team2[7];
+	document.getElementById('team2P').innerHTML = team2[8];
 	
 	document.getElementById('team3GD').innerHTML = team3[2];
 	document.getElementById('team3GF').innerHTML = team3[3];
 	document.getElementById('team3GA').innerHTML = team3[4];
+	document.getElementById('team3W').innerHTML = team3[5];
+	document.getElementById('team3D').innerHTML = team3[6];
+	document.getElementById('team3L').innerHTML = team3[7];
+	document.getElementById('team3P').innerHTML = team2[8];
 	
 	document.getElementById('team4GD').innerHTML = team4[2];
 	document.getElementById('team4GF').innerHTML = team4[3];
 	document.getElementById('team4GA').innerHTML = team4[4];
-	
+	document.getElementById('team4W').innerHTML = team4[5];
+	document.getElementById('team4D').innerHTML = team4[6];
+	document.getElementById('team4L').innerHTML = team4[7];
+	document.getElementById('team4P').innerHTML = team4[8];
 	
 	document.getElementById('team5').innerHTML = team5[0];
 	document.getElementById('team55').innerHTML = team5[0];
 	document.getElementById('team555').innerHTML = team5[0];
 	document.getElementById('team5555').innerHTML = team5[0];
+	
 	
 	document.getElementById('team6').innerHTML = team6[0];
 	document.getElementById('team66').innerHTML = team6[0];
@@ -461,18 +522,34 @@
 	document.getElementById('team5GD').innerHTML = team5[2];
 	document.getElementById('team5GF').innerHTML = team5[3];
 	document.getElementById('team5GA').innerHTML = team5[4];
+	document.getElementById('team5W').innerHTML = team5[5];
+	document.getElementById('team5D').innerHTML = team5[6];
+	document.getElementById('team5L').innerHTML = team5[7];
+	document.getElementById('team5P').innerHTML = team5[8];
 	
 	document.getElementById('team6GD').innerHTML = team6[2];
 	document.getElementById('team6GF').innerHTML = team6[3];
 	document.getElementById('team6GA').innerHTML = team6[4];
+	document.getElementById('team6W').innerHTML = team6[5];
+	document.getElementById('team6D').innerHTML = team6[6];
+	document.getElementById('team6L').innerHTML = team6[7];
+	document.getElementById('team6P').innerHTML = team6[8];
 	
 	document.getElementById('team7GD').innerHTML = team7[2];
 	document.getElementById('team7GF').innerHTML = team7[3];
 	document.getElementById('team7GA').innerHTML = team7[4];
+	document.getElementById('team7W').innerHTML = team7[5];
+	document.getElementById('team7D').innerHTML = team7[6];
+	document.getElementById('team7L').innerHTML = team7[7];
+	document.getElementById('team7P').innerHTML = team7[8];
 	
 	document.getElementById('team8GD').innerHTML = team8[2];
 	document.getElementById('team8GF').innerHTML = team8[3];
 	document.getElementById('team8GA').innerHTML = team8[4];
+	document.getElementById('team8W').innerHTML = team8[5];
+	document.getElementById('team8D').innerHTML = team8[6];
+	document.getElementById('team8L').innerHTML = team8[7];
+	document.getElementById('team8P').innerHTML = team8[8];
 	
 	
 	// $('tbody').sortable();
@@ -509,15 +586,33 @@
 			team1[2] = team1[3] - team1[4];
 			team2[2] = team2[3] - team2[4];
 	
+			// Wins(5) . Draws . Losses (7)
+			team1[5] += 1;
+			team2[7] += 1;
+
+			// Played(8)
+			team1[8] += 1;
+			team2[8] += 1;
+
+
+
 			// display
 			document.getElementById('team1Pts').innerHTML = team1[1];
 			document.getElementById('team1GD').innerHTML = team1[2];
 			document.getElementById('team1GF').innerHTML = team1[3];
 			document.getElementById('team1GA').innerHTML = team1[4];
+			document.getElementById('team1W').innerHTML = team1[5];
+			document.getElementById('team1D').innerHTML = team1[6];
+			document.getElementById('team1L').innerHTML = team1[7];
+			document.getElementById('team1P').innerHTML = team1[8];
 			document.getElementById('team2Pts').innerHTML = team2[1];
 			document.getElementById('team2GD').innerHTML = team2[2];
 			document.getElementById('team2GF').innerHTML = team2[3];
 			document.getElementById('team2GA').innerHTML = team2[4];
+			document.getElementById('team2W').innerHTML = team2[5];
+			document.getElementById('team2D').innerHTML = team2[6];
+			document.getElementById('team2L').innerHTML = team2[7];
+			document.getElementById('team2P').innerHTML = team2[8];
 		}
 		else if (A.includes("team1") && B.includes("team3")) {
 			// PTS
@@ -530,16 +625,32 @@
 			 // GD 
 			team1[2] = team1[3] - team1[4];
 			team3[2] = team3[3] - team3[4];
+
+			// Wins(5) . Draws . Losses(7)
+			team1[5] += 1;
+			team3[7] += 1;
+
+			// Played(8)
+			team1[8] += 1;
+			team3[8] += 1;
 	
 			// display
 			document.getElementById('team1Pts').innerHTML = team1[1];
 			document.getElementById('team1GD').innerHTML = team1[2];
 			document.getElementById('team1GF').innerHTML = team1[3];
 			document.getElementById('team1GA').innerHTML = team1[4];
+			document.getElementById('team1W').innerHTML = team1[5];
+			document.getElementById('team1D').innerHTML = team1[6];
+			document.getElementById('team1L').innerHTML = team1[7];
+			document.getElementById('team1P').innerHTML = team1[8];
 			document.getElementById('team3Pts').innerHTML = team3[1];
 			document.getElementById('team3GD').innerHTML = team3[2];
 			document.getElementById('team3GF').innerHTML = team3[3];
 			document.getElementById('team3GA').innerHTML = team3[4];
+			document.getElementById('team3W').innerHTML = team3[5];
+			document.getElementById('team3D').innerHTML = team3[6];
+			document.getElementById('team3L').innerHTML = team3[7];
+			document.getElementById('team3P').innerHTML = team3[8];
 	
 		}
 		else if (A.includes("team1") && B.includes("team4")) {
@@ -553,16 +664,32 @@
 			 // GD 
 			team1[2] = team1[3] - team1[4];
 			team4[2] = team4[3] - team4[4];
+
+			// Wins(5) . Draws . Losses(7)
+			team1[5] += 1;
+			team4[7] += 1;
+
+			// Played(8)
+			team1[8] += 1;
+			team4[8] += 1;
 	
 			// display
 			document.getElementById('team1Pts').innerHTML = team1[1];
 			document.getElementById('team1GD').innerHTML = team1[2];
 			document.getElementById('team1GF').innerHTML = team1[3];
 			document.getElementById('team1GA').innerHTML = team1[4];
+			document.getElementById('team1W').innerHTML = team1[5];
+			document.getElementById('team1D').innerHTML = team1[6];
+			document.getElementById('team1L').innerHTML = team1[7];
+			document.getElementById('team1P').innerHTML = team1[8];
 			document.getElementById('team4Pts').innerHTML = team4[1];
 			document.getElementById('team4GD').innerHTML = team4[2];
 			document.getElementById('team4GF').innerHTML = team4[3];
 			document.getElementById('team4GA').innerHTML = team4[4];
+			document.getElementById('team4W').innerHTML = team4[5];
+			document.getElementById('team4D').innerHTML = team4[6];
+			document.getElementById('team4L').innerHTML = team4[7];
+			document.getElementById('team4P').innerHTML = team4[8];
 	
 		}
 		else if (A.includes("team2") && B.includes("team3")) {
@@ -576,16 +703,32 @@
 			 // GD 
 			team2[2] = team2[3] - team2[4];
 			team3[2] = team3[3] - team3[4];
+
+			// Wins(5) . Draws . Losses(7)
+			team2[5] += 1;
+			team3[7] += 1;
+
+			// Played(8)
+			team2[8] += 1;
+			team3[8] += 1;
 	
 			// display
 			document.getElementById('team2Pts').innerHTML = team2[1];
 			document.getElementById('team2GD').innerHTML = team2[2];
 			document.getElementById('team2GF').innerHTML = team2[3];
 			document.getElementById('team2GA').innerHTML = team2[4];
+			document.getElementById('team2W').innerHTML = team2[5];
+			document.getElementById('team2D').innerHTML = team2[6];
+			document.getElementById('team2L').innerHTML = team2[7];
+			document.getElementById('team2P').innerHTML = team2[8];
 			document.getElementById('team3Pts').innerHTML = team3[1];
 			document.getElementById('team3GD').innerHTML = team3[2];
 			document.getElementById('team3GF').innerHTML = team3[3];
 			document.getElementById('team3GA').innerHTML = team3[4];
+			document.getElementById('team3W').innerHTML = team3[5];
+			document.getElementById('team3D').innerHTML = team3[6];
+			document.getElementById('team3L').innerHTML = team3[7];
+			document.getElementById('team3P').innerHTML = team3[8];
 	
 		}
 		else if (A.includes("team2") && B.includes("team4")) {
@@ -599,16 +742,32 @@
 			 // GD  
 			team2[2] = team2[3] - team2[4];
 			team4[2] = team4[3] - team4[4];
+
+			// Wins(5) . Draws . Losses(7)
+			team2[5] += 1;
+			team4[7] += 1;
+
+			// Played(8)
+			team2[8] += 1;
+			team4[8] += 1;
 	
 			// display
 			document.getElementById('team2Pts').innerHTML = team2[1];
 			document.getElementById('team2GD').innerHTML = team2[2];
 			document.getElementById('team2GF').innerHTML = team2[3];
 			document.getElementById('team2GA').innerHTML = team2[4];
+			document.getElementById('team2W').innerHTML = team2[5];
+			document.getElementById('team2D').innerHTML = team2[6];
+			document.getElementById('team2L').innerHTML = team2[7];
+			document.getElementById('team2P').innerHTML = team2[8];
 			document.getElementById('team4Pts').innerHTML = team4[1];
 			document.getElementById('team4GD').innerHTML = team4[2];
 			document.getElementById('team4GF').innerHTML = team4[3];
 			document.getElementById('team4GA').innerHTML = team4[4];
+			document.getElementById('team4W').innerHTML = team4[5];
+			document.getElementById('team4D').innerHTML = team4[6];
+			document.getElementById('team4L').innerHTML = team4[7];
+			document.getElementById('team4P').innerHTML = team4[8];
 	
 		}
 		else if (A.includes("team3") && B.includes("team4")) {
@@ -622,16 +781,32 @@
 			 // GD  
 			team3[2] = team3[3] - team3[4];
 			team4[2] = team4[3] - team4[4];
+
+			// Wins(5) . Draws . Losses(7)
+			team3[5] += 1;
+			team4[7] += 1;
+
+			// Played(8)
+			team3[8] += 1;
+			team4[8] += 1;
 	
 			// display
 			document.getElementById('team3Pts').innerHTML = team3[1];
 			document.getElementById('team3GD').innerHTML = team3[2];
 			document.getElementById('team3GF').innerHTML = team3[3];
 			document.getElementById('team3GA').innerHTML = team3[4];
+			document.getElementById('team3W').innerHTML = team3[5];
+			document.getElementById('team3D').innerHTML = team3[6];
+			document.getElementById('team3L').innerHTML = team3[7];
+			document.getElementById('team3P').innerHTML = team3[8];
 			document.getElementById('team4Pts').innerHTML = team4[1];
 			document.getElementById('team4GD').innerHTML = team4[2];
 			document.getElementById('team4GF').innerHTML = team4[3];
 			document.getElementById('team4GA').innerHTML = team4[4];
+			document.getElementById('team4W').innerHTML = team4[5];
+			document.getElementById('team4D').innerHTML = team4[6];
+			document.getElementById('team4L').innerHTML = team4[7];
+			document.getElementById('team4P').innerHTML = team4[8];
 	
 		}
 	
@@ -647,16 +822,32 @@
 	// GD  
 	team5[2] = team5[3] - team5[4];
 	team6[2] = team6[3] - team6[4];
+
+	// Wins(5) . Draws . Losses(7)
+	team5[5] += 1;
+	team6[7] += 1;
+
+	// Played(8)
+	team5[8] += 1;
+	team6[8] += 1;
 	
 	// display
 	document.getElementById('team5Pts').innerHTML = team5[1];
 	document.getElementById('team5GD').innerHTML = team5[2];
 	document.getElementById('team5GF').innerHTML = team5[3];
 	document.getElementById('team5GA').innerHTML = team5[4];
+	document.getElementById('team5W').innerHTML = team5[5];
+	document.getElementById('team5D').innerHTML = team5[6];
+	document.getElementById('team5L').innerHTML = team5[7];
+	document.getElementById('team5P').innerHTML = team5[8];
 	document.getElementById('team6Pts').innerHTML = team6[1];
 	document.getElementById('team6GD').innerHTML = team6[2];
 	document.getElementById('team6GF').innerHTML = team6[3];
 	document.getElementById('team6GA').innerHTML = team6[4];
+	document.getElementById('team6W').innerHTML = team6[5];
+	document.getElementById('team6D').innerHTML = team6[6];
+	document.getElementById('team6L').innerHTML = team6[7];
+	document.getElementById('team6P').innerHTML = team6[8];
 	}
 	else if (A.includes("team5") && B.includes("team7")) {
 	// PTS
@@ -669,16 +860,32 @@
 	// GD  
 	team5[2] = team5[3] - team5[4];
 	team7[2] = team7[3] - team7[4];
+
+	// Wins(5) . Draws . Losses(7)
+	team5[5] += 1;
+	team7[7] += 1;
+
+	// Played(8)
+	team5[8] += 1;
+	team7[8] += 1;
 	
 	// display
 	document.getElementById('team5Pts').innerHTML = team5[1];
 	document.getElementById('team5GD').innerHTML = team5[2];
 	document.getElementById('team5GF').innerHTML = team5[3];
 	document.getElementById('team5GA').innerHTML = team5[4];
+	document.getElementById('team5W').innerHTML = team5[5];
+	document.getElementById('team5D').innerHTML = team5[6];
+	document.getElementById('team5L').innerHTML = team5[7];
+	document.getElementById('team5P').innerHTML = team5[8];
 	document.getElementById('team7Pts').innerHTML = team7[1];
 	document.getElementById('team7GD').innerHTML = team7[2];
 	document.getElementById('team7GF').innerHTML = team7[3];
 	document.getElementById('team7GA').innerHTML = team7[4];
+	document.getElementById('team7W').innerHTML = team7[5];
+	document.getElementById('team7D').innerHTML = team7[6];
+	document.getElementById('team7L').innerHTML = team7[7];
+	document.getElementById('team7P').innerHTML = team7[8];
 	
 	}
 	else if (A.includes("team5") && B.includes("team8")) {
@@ -692,16 +899,32 @@
 	// GD  
 	team5[2] = team5[3] - team5[4];
 	team8[2] = team8[3] - team8[4];
+
+	// Wins(5) . Draws . Losses(7)
+	team5[5] += 1;
+	team8[7] += 1;
+
+	// Played(8)
+	team5[8] += 1;
+	team8[8] += 1;
 	
 	// display
 	document.getElementById('team5Pts').innerHTML = team5[1];
 	document.getElementById('team5GD').innerHTML = team5[2];
 	document.getElementById('team5GF').innerHTML = team5[3];
 	document.getElementById('team5GA').innerHTML = team5[4];
+	document.getElementById('team5W').innerHTML = team5[5];
+	document.getElementById('team5D').innerHTML = team5[6];
+	document.getElementById('team5L').innerHTML = team5[7];
+	document.getElementById('team5P').innerHTML = team5[8];
 	document.getElementById('team8Pts').innerHTML = team8[1];
 	document.getElementById('team8GD').innerHTML = team8[2];
 	document.getElementById('team8GF').innerHTML = team8[3];
 	document.getElementById('team8GA').innerHTML = team8[4];
+	document.getElementById('team8W').innerHTML = team8[5];
+	document.getElementById('team8D').innerHTML = team8[6];
+	document.getElementById('team8L').innerHTML = team8[7];
+	document.getElementById('team8P').innerHTML = team8[8];
 	
 	}
 	else if (A.includes("team6") && B.includes("team7")) {
@@ -715,16 +938,32 @@
 	// GD  
 	team6[2] = team6[3] - team6[4];
 	team7[2] = team7[3] - team7[4];
+
+	// Wins(5) . Draws . Losses(7)
+	team6[5] += 1;
+	team7[7] += 1;
+
+	// Played(8)
+	team6[8] += 1;
+	team7[8] += 1;
 	
 	// display
 	document.getElementById('team6Pts').innerHTML = team6[1];
 	document.getElementById('team6GD').innerHTML = team6[2];
 	document.getElementById('team6GF').innerHTML = team6[3];
 	document.getElementById('team6GA').innerHTML = team6[4];
+	document.getElementById('team6W').innerHTML = team6[5];
+	document.getElementById('team6D').innerHTML = team6[6];
+	document.getElementById('team6L').innerHTML = team6[7];
+	document.getElementById('team6P').innerHTML = team6[8];
 	document.getElementById('team7Pts').innerHTML = team7[1];
 	document.getElementById('team7GD').innerHTML = team7[2];
 	document.getElementById('team7GF').innerHTML = team7[3];
 	document.getElementById('team7GA').innerHTML = team7[4];
+	document.getElementById('team7W').innerHTML = team7[5];
+	document.getElementById('team7D').innerHTML = team7[6];
+	document.getElementById('team7L').innerHTML = team7[7];
+	document.getElementById('team7P').innerHTML = team7[8];
 	
 	}
 	else if (A.includes("team6") && B.includes("team8")) {
@@ -738,16 +977,32 @@
 	// GD  
 	team6[2] = team6[3] - team6[4];
 	team8[2] = team8[3] - team8[4];
+
+	// Wins(5) . Draws . Losses(7)
+	team6[5] += 1;
+	team8[7] += 1;
+
+	// Played(8)
+	team6[8] += 1;
+	team8[8] += 1;
 	
 	// display
 	document.getElementById('team6Pts').innerHTML = team6[1];
 	document.getElementById('team6GD').innerHTML = team6[2];
 	document.getElementById('team6GF').innerHTML = team6[3];
 	document.getElementById('team6GA').innerHTML = team6[4];
+	document.getElementById('team6W').innerHTML = team6[5];
+	document.getElementById('team6D').innerHTML = team6[6];
+	document.getElementById('team6L').innerHTML = team6[7];
+	document.getElementById('team6P').innerHTML = team6[8];
 	document.getElementById('team8Pts').innerHTML = team8[1];
 	document.getElementById('team8GD').innerHTML = team8[2];
 	document.getElementById('team8GF').innerHTML = team8[3];
 	document.getElementById('team8GA').innerHTML = team8[4];
+	document.getElementById('team8W').innerHTML = team8[5];
+	document.getElementById('team8D').innerHTML = team8[6];
+	document.getElementById('team8L').innerHTML = team8[7];
+	document.getElementById('team8P').innerHTML = team8[8];
 	
 	}
 	else if (A.includes("team7") && B.includes("team8")) {
@@ -761,16 +1016,32 @@
 	// GD  
 	team7[2] = team7[3] - team7[4];
 	team8[2] = team8[3] - team8[4];
+
+	// Wins(5) . Draws . Losses(7)
+	team7[5] += 1;
+	team8[7] += 1;
+
+	// Played(8)
+	team7[8] += 1;
+	team8[8] += 1;
 	
 	// display
 	document.getElementById('team7Pts').innerHTML = team7[1];
 	document.getElementById('team7GD').innerHTML = team7[2];
 	document.getElementById('team7GF').innerHTML = team7[3];
 	document.getElementById('team7GA').innerHTML = team7[4];
+	document.getElementById('team7W').innerHTML = team7[5];
+	document.getElementById('team7D').innerHTML = team7[6];
+	document.getElementById('team7L').innerHTML = team7[7];
+	document.getElementById('team7P').innerHTML = team7[8];
 	document.getElementById('team8Pts').innerHTML = team8[1];
 	document.getElementById('team8GD').innerHTML = team8[2];
 	document.getElementById('team8GF').innerHTML = team8[3];
 	document.getElementById('team8GA').innerHTML = team8[4];
+	document.getElementById('team8W').innerHTML = team8[5];
+	document.getElementById('team8D').innerHTML = team8[6];
+	document.getElementById('team8L').innerHTML = team8[7];
+	document.getElementById('team8P').innerHTML = team8[8];
 	
 	}
 		
@@ -792,16 +1063,32 @@
 			 // GD  
 			team1[2] = team1[3] - team1[4];
 			team2[2] = team2[3] - team2[4];
+
+			// Wins(5) . Draws . Losses(7)
+			team2[5] += 1;
+			team1[7] += 1;
+
+			// Played(8)
+			team1[8] += 1;
+			team2[8] += 1;
 	
 			// display
 			document.getElementById('team1Pts').innerHTML = team1[1];
 			document.getElementById('team1GD').innerHTML = team1[2];
 			document.getElementById('team1GF').innerHTML = team1[3];
 			document.getElementById('team1GA').innerHTML = team1[4];
+			document.getElementById('team1W').innerHTML = team1[5];
+			document.getElementById('team1D').innerHTML = team1[6];
+			document.getElementById('team1L').innerHTML = team1[7];
+			document.getElementById('team1P').innerHTML = team1[8];
 			document.getElementById('team2Pts').innerHTML = team2[1];
 			document.getElementById('team2GD').innerHTML = team2[2];
 			document.getElementById('team2GF').innerHTML = team2[3];
 			document.getElementById('team2GA').innerHTML = team2[4];
+			document.getElementById('team2W').innerHTML = team2[5];
+			document.getElementById('team2D').innerHTML = team2[6];
+			document.getElementById('team2L').innerHTML = team2[7];
+			document.getElementById('team2P').innerHTML = team2[8];
 		}
 		else if (A.includes("team1") && B.includes("team3")) {
 			// PTS
@@ -814,16 +1101,32 @@
 			 // GD  
 			team1[2] = team1[3] - team1[4];
 			team3[2] = team3[3] - team3[4];
+
+			// Wins(5) . Draws . Losses(7)
+			team3[5] += 1;
+			team1[7] += 1;
+
+			// Played(8)
+			team1[8] += 1;
+			team3[8] += 1;
 	
 			// display
 			document.getElementById('team1Pts').innerHTML = team1[1];
 			document.getElementById('team1GD').innerHTML = team1[2];
 			document.getElementById('team1GF').innerHTML = team1[3];
 			document.getElementById('team1GA').innerHTML = team1[4];
+			document.getElementById('team1W').innerHTML = team1[5];
+			document.getElementById('team1D').innerHTML = team1[6];
+			document.getElementById('team1L').innerHTML = team1[7];
+			document.getElementById('team1P').innerHTML = team1[8];
 			document.getElementById('team3Pts').innerHTML = team3[1];
 			document.getElementById('team3GD').innerHTML = team3[2];
 			document.getElementById('team3GF').innerHTML = team3[3];
 			document.getElementById('team3GA').innerHTML = team3[4];
+			document.getElementById('team3W').innerHTML = team3[5];
+			document.getElementById('team3D').innerHTML = team3[6];
+			document.getElementById('team3L').innerHTML = team3[7];
+			document.getElementById('team3P').innerHTML = team3[8];
 	
 		}
 		else if (A.includes("team1") && B.includes("team4")) {
@@ -837,16 +1140,32 @@
 			 // GD  
 			team1[2] = team1[3] - team1[4];
 			team4[2] = team4[3] - team4[4];
+
+			// Wins(5) . Draws . Losses(7)
+			team4[5] += 1;
+			team1[7] += 1;
+
+			// Played(8)
+			team1[8] += 1;
+			team4[8] += 1;
 	
 			// display
 			document.getElementById('team1Pts').innerHTML = team1[1];
 			document.getElementById('team1GD').innerHTML = team1[2];
 			document.getElementById('team1GF').innerHTML = team1[3];
 			document.getElementById('team1GA').innerHTML = team1[4];
+			document.getElementById('team1W').innerHTML = team1[5];
+			document.getElementById('team1D').innerHTML = team1[6];
+			document.getElementById('team1L').innerHTML = team1[7];
+			document.getElementById('team1P').innerHTML = team1[8];
 			document.getElementById('team4Pts').innerHTML = team4[1];
 			document.getElementById('team4GD').innerHTML = team4[2];
 			document.getElementById('team4GF').innerHTML = team4[3];
 			document.getElementById('team4GA').innerHTML = team4[4];
+			document.getElementById('team4W').innerHTML = team4[5];
+			document.getElementById('team4D').innerHTML = team4[6];
+			document.getElementById('team4L').innerHTML = team4[7];
+			document.getElementById('team4P').innerHTML = team4[8];
 	
 		}
 		else if (A.includes("team2") && B.includes("team3")) {
@@ -860,16 +1179,32 @@
 			 // GD  
 			team2[2] = team2[3] - team2[4];
 			team3[2] = team3[3] - team3[4];
+
+			// Wins(5) . Draws . Losses(7)
+			team3[5] += 1;
+			team2[7] += 1;
+
+			// Played(8)
+			team2[8] += 1;
+			team3[8] += 1;
 	
 			// display
 			document.getElementById('team2Pts').innerHTML = team2[1];
 			document.getElementById('team2GD').innerHTML = team2[2];
 			document.getElementById('team2GF').innerHTML = team2[3];
 			document.getElementById('team2GA').innerHTML = team2[4];
+			document.getElementById('team2W').innerHTML = team2[5];
+			document.getElementById('team2D').innerHTML = team2[6];
+			document.getElementById('team2L').innerHTML = team2[7];
+			document.getElementById('team2P').innerHTML = team2[8];
 			document.getElementById('team3Pts').innerHTML = team3[1];
 			document.getElementById('team3GD').innerHTML = team3[2];
 			document.getElementById('team3GF').innerHTML = team3[3];
 			document.getElementById('team3GA').innerHTML = team3[4];
+			document.getElementById('team3W').innerHTML = team3[5];
+			document.getElementById('team3D').innerHTML = team3[6];
+			document.getElementById('team3L').innerHTML = team3[7];
+			document.getElementById('team3P').innerHTML = team3[8];
 	
 		}
 		else if (A.includes("team2") && B.includes("team4")) {
@@ -883,16 +1218,32 @@
 			 // GD  
 			team2[2] = team2[3] - team2[4];
 			team4[2] = team4[3] - team4[4];
+
+			// Wins(5) . Draws . Losses(7)
+			team4[5] += 1;
+			team2[7] += 1;
+
+			// Played(8)
+			team2[8] += 1;
+			team4[8] += 1;
 	
 			// display
 			document.getElementById('team2Pts').innerHTML = team2[1];
 			document.getElementById('team2GD').innerHTML = team2[2];
 			document.getElementById('team2GF').innerHTML = team2[3];
 			document.getElementById('team2GA').innerHTML = team2[4];
+			document.getElementById('team2W').innerHTML = team2[5];
+			document.getElementById('team2D').innerHTML = team2[6];
+			document.getElementById('team2L').innerHTML = team2[7];
+			document.getElementById('team2P').innerHTML = team2[8];
 			document.getElementById('team4Pts').innerHTML = team4[1];
 			document.getElementById('team4GD').innerHTML = team4[2];
 			document.getElementById('team4GF').innerHTML = team4[3];
 			document.getElementById('team4GA').innerHTML = team4[4];
+			document.getElementById('team4W').innerHTML = team4[5];
+			document.getElementById('team4D').innerHTML = team4[6];
+			document.getElementById('team4L').innerHTML = team4[7];
+			document.getElementById('team4P').innerHTML = team4[8];
 	
 		}
 		else if (A.includes("team3") && B.includes("team4")) {
@@ -906,16 +1257,32 @@
 			 // GD  
 			team3[2] = team3[3] - team3[4];
 			team4[2] = team4[3] - team4[4];
+
+			// Wins(5) . Draws . Losses(7)
+			team4[5] += 1;
+			team3[7] += 1;
+
+			// Played(8)
+			team4[8] += 1;
+			team3[8] += 1;
 	
 			// display
 			document.getElementById('team3Pts').innerHTML = team3[1];
 			document.getElementById('team3GD').innerHTML = team3[2];
 			document.getElementById('team3GF').innerHTML = team3[3];
 			document.getElementById('team3GA').innerHTML = team3[4];
+			document.getElementById('team3W').innerHTML = team3[5];
+			document.getElementById('team3D').innerHTML = team3[6];
+			document.getElementById('team3L').innerHTML = team3[7];
+			document.getElementById('team3P').innerHTML = team3[8];
 			document.getElementById('team4Pts').innerHTML = team4[1];
 			document.getElementById('team4GD').innerHTML = team4[2];
 			document.getElementById('team4GF').innerHTML = team4[3];
 			document.getElementById('team4GA').innerHTML = team4[4];
+			document.getElementById('team4W').innerHTML = team4[5];
+			document.getElementById('team4D').innerHTML = team4[6];
+			document.getElementById('team4L').innerHTML = team4[7];
+			document.getElementById('team4P').innerHTML = team4[8];
 	
 		}
 		else if (A.includes("team5") && B.includes("team6")) {
@@ -930,16 +1297,32 @@
 			// GD  
 			team5[2] = team5[3] - team5[4];
 			team6[2] = team6[3] - team6[4];
+
+			// Wins(5) . Draws . Losses(7)
+			team6[5] += 1;
+			team5[7] += 1;
+
+			// Played(8)
+			team6[8] += 1;
+			team5[8] += 1;
 	
 			// display
 			document.getElementById('team5Pts').innerHTML = team5[1];
 			document.getElementById('team5GD').innerHTML = team5[2];
 			document.getElementById('team5GF').innerHTML = team5[3];
 			document.getElementById('team5GA').innerHTML = team5[4];
+			document.getElementById('team5W').innerHTML = team5[5];
+			document.getElementById('team5D').innerHTML = team5[6];
+			document.getElementById('team5L').innerHTML = team5[7];
+			document.getElementById('team5P').innerHTML = team5[8];
 			document.getElementById('team6Pts').innerHTML = team6[1];
 			document.getElementById('team6GD').innerHTML = team6[2];
 			document.getElementById('team6GF').innerHTML = team6[3];
 			document.getElementById('team6GA').innerHTML = team6[4];
+			document.getElementById('team6W').innerHTML = team6[5];
+			document.getElementById('team6D').innerHTML = team6[6];
+			document.getElementById('team6L').innerHTML = team6[7];
+			document.getElementById('team6P').innerHTML = team6[8];
 		}
 	else if (A.includes("team5") && B.includes("team7")) {
 	// PTS
@@ -952,16 +1335,32 @@
 	 // GD  
 	team5[2] = team5[3] - team5[4];
 	team7[2] = team7[3] - team7[4];
+
+	// Wins(5) . Draws . Losses(7)
+	team7[5] += 1;
+	team5[7] += 1;
+
+	// Played(8)
+	team7[8] += 1;
+	team5[8] += 1;
 	
 	// display
 	document.getElementById('team5Pts').innerHTML = team5[1];
 	document.getElementById('team5GD').innerHTML = team5[2];
 	document.getElementById('team5GF').innerHTML = team5[3];
 	document.getElementById('team5GA').innerHTML = team5[4];
+	document.getElementById('team5W').innerHTML = team5[5];
+	document.getElementById('team5D').innerHTML = team5[6];
+	document.getElementById('team5L').innerHTML = team5[7];
+	document.getElementById('team5P').innerHTML = team5[8];
 	document.getElementById('team7Pts').innerHTML = team7[1];
 	document.getElementById('team7GD').innerHTML = team7[2];
 	document.getElementById('team7GF').innerHTML = team7[3];
 	document.getElementById('team7GA').innerHTML = team7[4];
+	document.getElementById('team7W').innerHTML = team7[5];
+	document.getElementById('team7D').innerHTML = team7[6];
+	document.getElementById('team7L').innerHTML = team7[7];
+	document.getElementById('team7P').innerHTML = team7[8];
 	
 	}
 	else if (A.includes("team5") && B.includes("team8")) {
@@ -975,16 +1374,32 @@
 	 // GD  
 	team5[2] = team5[3] - team5[4];
 	team8[2] = team8[3] - team8[4];
+
+	// Wins(5) . Draws . Losses(7)
+	team8[5] += 1;
+	team5[7] += 1;
+
+	// Played(8)
+	team5[8] += 1;
+	team8[8] += 1;
 	
 	// display
 	document.getElementById('team5Pts').innerHTML = team5[1];
 	document.getElementById('team5GD').innerHTML = team5[2];
 	document.getElementById('team5GF').innerHTML = team5[3];
 	document.getElementById('team5GA').innerHTML = team5[4];
+	document.getElementById('team5W').innerHTML = team5[5];
+	document.getElementById('team5D').innerHTML = team5[6];
+	document.getElementById('team5L').innerHTML = team5[7];
+	document.getElementById('team5P').innerHTML = team5[8];
 	document.getElementById('team8Pts').innerHTML = team8[1];
 	document.getElementById('team8GD').innerHTML = team8[2];
 	document.getElementById('team8GF').innerHTML = team8[3];
 	document.getElementById('team8GA').innerHTML = team8[4];
+	document.getElementById('team8W').innerHTML = team8[5];
+	document.getElementById('team8D').innerHTML = team8[6];
+	document.getElementById('team8L').innerHTML = team8[7];
+	document.getElementById('team8P').innerHTML = team8[8];
 	
 	}
 	else if (A.includes("team6") && B.includes("team7")) {
@@ -998,16 +1413,32 @@
 	 // GD  
 	team6[2] = team6[3] - team6[4];
 	team7[2] = team7[3] - team7[4];
+
+	// Wins(5) . Draws . Losses(7)
+	team7[5] += 1;
+	team6[7] += 1;
+
+	// Played(8)
+	team6[8] += 1;
+	team7[8] += 1;
 	
 	// display
 	document.getElementById('team6Pts').innerHTML = team6[1];
 	document.getElementById('team6GD').innerHTML = team6[2];
 	document.getElementById('team6GF').innerHTML = team6[3];
 	document.getElementById('team6GA').innerHTML = team6[4];
+	document.getElementById('team6W').innerHTML = team6[5];
+	document.getElementById('team6D').innerHTML = team6[6];
+	document.getElementById('team6L').innerHTML = team6[7];
+	document.getElementById('team6P').innerHTML = team6[8];
 	document.getElementById('team7Pts').innerHTML = team7[1];
 	document.getElementById('team7GD').innerHTML = team7[2];
 	document.getElementById('team7GF').innerHTML = team7[3];
 	document.getElementById('team7GA').innerHTML = team7[4];
+	document.getElementById('team7W').innerHTML = team7[5];
+	document.getElementById('team7D').innerHTML = team7[6];
+	document.getElementById('team7L').innerHTML = team7[7];
+	document.getElementById('team7P').innerHTML = team7[8];
 	
 	}
 	else if (A.includes("team6") && B.includes("team8")) {
@@ -1021,16 +1452,32 @@
 	 // GD  
 	team6[2] = team6[3] - team6[4];
 	team8[2] = team8[3] - team8[4];
+
+	// Wins(5) . Draws . Losses(7)
+	team8[5] += 1;
+	team6[7] += 1;
+
+	// Played(8)
+	team8[8] += 1;
+	team6[8] += 1;
 	
 	// display
 	document.getElementById('team6Pts').innerHTML = team6[1];
 	document.getElementById('team6GD').innerHTML = team6[2];
 	document.getElementById('team6GF').innerHTML = team6[3];
 	document.getElementById('team6GA').innerHTML = team6[4];
+	document.getElementById('team6W').innerHTML = team6[5];
+	document.getElementById('team6D').innerHTML = team6[6];
+	document.getElementById('team6L').innerHTML = team6[7];
+	document.getElementById('team6P').innerHTML = team6[8];
 	document.getElementById('team8Pts').innerHTML = team8[1];
 	document.getElementById('team8GD').innerHTML = team8[2];
 	document.getElementById('team8GF').innerHTML = team8[3];
 	document.getElementById('team8GA').innerHTML = team8[4];
+	document.getElementById('team8W').innerHTML = team8[5];
+	document.getElementById('team8D').innerHTML = team8[6];
+	document.getElementById('team8L').innerHTML = team8[7];
+	document.getElementById('team8P').innerHTML = team8[8];
 	
 	}
 	else if (A.includes("team7") && B.includes("team8")) {
@@ -1045,15 +1492,31 @@
 	team7[2] = team7[3] - team7[4];
 	team8[2] = team8[3] - team8[4];
 	
+	// Wins(5) . Draws . Losses(7)
+	team8[5] += 1;
+	team7[7] += 1;
+
+	// Played(8)
+	team7[8] += 1;
+	team8[8] += 1;
+	
 	// display
 	document.getElementById('team7Pts').innerHTML = team7[1];
 	document.getElementById('team7GD').innerHTML = team7[2];
 	document.getElementById('team7GF').innerHTML = team7[3];
 	document.getElementById('team7GA').innerHTML = team7[4];
+	document.getElementById('team7W').innerHTML = team7[5];
+	document.getElementById('team7D').innerHTML = team7[6];
+	document.getElementById('team7L').innerHTML = team7[7];
+	document.getElementById('team7P').innerHTML = team7[8];
 	document.getElementById('team8Pts').innerHTML = team8[1];
 	document.getElementById('team8GD').innerHTML = team8[2];
 	document.getElementById('team8GF').innerHTML = team8[3];
 	document.getElementById('team8GA').innerHTML = team8[4];
+	document.getElementById('team8W').innerHTML = team8[5];
+	document.getElementById('team8D').innerHTML = team8[6];
+	document.getElementById('team8L').innerHTML = team8[7];
+	document.getElementById('team8P').innerHTML = team8[8];
 	
 	}
 		else {
@@ -1075,16 +1538,32 @@
 			 // GD  
 			team1[2] = team1[3] - team1[4];
 			team2[2] = team2[3] - team2[4];
+
+			// Wins(5) . Draws(6) . Losses(7)
+			team2[6] += 1;
+			team1[6] += 1;
+
+			// Played(8)
+			team1[8] += 1;
+			team2[8] += 1;
 	
 			// display
 			document.getElementById('team1Pts').innerHTML = team1[1];
 			document.getElementById('team1GD').innerHTML = team1[2];
 			document.getElementById('team1GF').innerHTML = team1[3];
 			document.getElementById('team1GA').innerHTML = team1[4];
+			document.getElementById('team1W').innerHTML = team1[5];
+			document.getElementById('team1D').innerHTML = team1[6];
+			document.getElementById('team1L').innerHTML = team1[7];
+			document.getElementById('team1P').innerHTML = team1[8];
 			document.getElementById('team2Pts').innerHTML = team2[1];
 			document.getElementById('team2GD').innerHTML = team2[2];
 			document.getElementById('team2GF').innerHTML = team2[3];
 			document.getElementById('team2GA').innerHTML = team2[4];
+			document.getElementById('team2W').innerHTML = team2[5];
+			document.getElementById('team2D').innerHTML = team2[6];
+			document.getElementById('team2L').innerHTML = team2[7];
+			document.getElementById('team2P').innerHTML = team2[8];
 		}
 		else if (A.includes("team1") && B.includes("team3")) {
 			// PTS
@@ -1098,16 +1577,32 @@
 			 // GD  
 			team1[2] = team1[3] - team1[4];
 			team3[2] = team3[3] - team3[4];
+
+			// Wins(5) . Draws(6) . Losses(7)
+			team3[6] += 1;
+			team1[6] += 1;
+
+			// Played(8)
+			team1[8] += 1;
+			team3[8] += 1;
 	
 			// display
 			document.getElementById('team1Pts').innerHTML = team1[1];
 			document.getElementById('team1GD').innerHTML = team1[2];
 			document.getElementById('team1GF').innerHTML = team1[3];
 			document.getElementById('team1GA').innerHTML = team1[4];
+			document.getElementById('team1W').innerHTML = team1[5];
+			document.getElementById('team1D').innerHTML = team1[6];
+			document.getElementById('team1L').innerHTML = team1[7];
+			document.getElementById('team1P').innerHTML = team1[8];
 			document.getElementById('team3Pts').innerHTML = team3[1];
 			document.getElementById('team3GD').innerHTML = team3[2];
 			document.getElementById('team3GF').innerHTML = team3[3];
 			document.getElementById('team3GA').innerHTML = team3[4];
+			document.getElementById('team3W').innerHTML = team3[5];
+			document.getElementById('team3D').innerHTML = team3[6];
+			document.getElementById('team3L').innerHTML = team3[7];
+			document.getElementById('team3P').innerHTML = team3[8];
 	
 		}
 		else if (A.includes("team1") && B.includes("team4")) {
@@ -1122,16 +1617,32 @@
 			 // GD  
 			team1[2] = team1[3] - team1[4];
 			team4[2] = team4[3] - team4[4];
+
+			// Wins(5) . Draws(6) . Losses(7)
+			team4[6] += 1;
+			team1[6] += 1;
+
+			// Played(8)
+			team1[8] += 1;
+			team4[8] += 1;
 	
 			// display
 			document.getElementById('team1Pts').innerHTML = team1[1];
 			document.getElementById('team1GD').innerHTML = team1[2];
 			document.getElementById('team1GF').innerHTML = team1[3];
 			document.getElementById('team1GA').innerHTML = team1[4];
+			document.getElementById('team1W').innerHTML = team1[5];
+			document.getElementById('team1D').innerHTML = team1[6];
+			document.getElementById('team1L').innerHTML = team1[7];
+			document.getElementById('team1P').innerHTML = team1[8];
 			document.getElementById('team4Pts').innerHTML = team4[1];
 			document.getElementById('team4GD').innerHTML = team4[2];
 			document.getElementById('team4GF').innerHTML = team4[3];
 			document.getElementById('team4GA').innerHTML = team4[4];
+			document.getElementById('team4W').innerHTML = team4[5];
+			document.getElementById('team4D').innerHTML = team4[6];
+			document.getElementById('team4L').innerHTML = team4[7];
+			document.getElementById('team4P').innerHTML = team4[8];
 	
 		}
 		else if (A.includes("team2") && B.includes("team3")) {
@@ -1146,16 +1657,32 @@
 			 // GD  
 			team2[2] = team2[3] - team2[4];
 			team3[2] = team3[3] - team3[4];
+
+			// Wins(5) . Draws(6) . Losses(7)
+			team2[6] += 1;
+			team3[6] += 1;
+
+			// Played(8)
+			team3[8] += 1;
+			team2[8] += 1;
 	
 			// display
 			document.getElementById('team2Pts').innerHTML = team2[1];
 			document.getElementById('team2GD').innerHTML = team2[2];
 			document.getElementById('team2GF').innerHTML = team2[3];
 			document.getElementById('team2GA').innerHTML = team2[4];
+			document.getElementById('team2W').innerHTML = team2[5];
+			document.getElementById('team2D').innerHTML = team2[6];
+			document.getElementById('team2L').innerHTML = team2[7];
+			document.getElementById('team2P').innerHTML = team2[8];
 			document.getElementById('team3Pts').innerHTML = team3[1];
 			document.getElementById('team3GD').innerHTML = team3[2];
 			document.getElementById('team3GF').innerHTML = team3[3];
 			document.getElementById('team3GA').innerHTML = team3[4];
+			document.getElementById('team3W').innerHTML = team3[5];
+			document.getElementById('team3D').innerHTML = team3[6];
+			document.getElementById('team3L').innerHTML = team3[7];
+			document.getElementById('team3P').innerHTML = team3[8];
 	
 		}
 		else if (A.includes("team2") && B.includes("team4")) {
@@ -1170,16 +1697,32 @@
 			 // GD  
 			team2[2] = team2[3] - team2[4];
 			team4[2] = team4[3] - team4[4];
+
+			// Wins(5) . Draws(6) . Losses(7)
+			team2[6] += 1;
+			team4[6] += 1;
+
+			// Played(8)
+			team4[8] += 1;
+			team2[8] += 1;
 	
 			// display
 			document.getElementById('team2Pts').innerHTML = team2[1];
 			document.getElementById('team2GD').innerHTML = team2[2];
 			document.getElementById('team2GF').innerHTML = team2[3];
 			document.getElementById('team2GA').innerHTML = team2[4];
+			document.getElementById('team2W').innerHTML = team2[5];
+			document.getElementById('team2D').innerHTML = team2[6];
+			document.getElementById('team2L').innerHTML = team2[7];
+			document.getElementById('team2P').innerHTML = team2[8];
 			document.getElementById('team4Pts').innerHTML = team4[1];
 			document.getElementById('team4GD').innerHTML = team4[2];
 			document.getElementById('team4GF').innerHTML = team4[3];
 			document.getElementById('team4GA').innerHTML = team4[4];
+			document.getElementById('team4W').innerHTML = team4[5];
+			document.getElementById('team4D').innerHTML = team4[6];
+			document.getElementById('team4L').innerHTML = team4[7];
+			document.getElementById('team4P').innerHTML = team4[8];
 	
 		}
 		else if (A.includes("team3") && B.includes("team4")) {
@@ -1194,16 +1737,32 @@
 			 // GD  
 			team3[2] = team3[3] - team3[4];
 			team4[2] = team4[3] - team4[4];
+
+			// Wins(5) . Draws(6) . Losses(7)
+			team3[6] += 1;
+			team4[6] += 1;
+
+			// Played(8)
+			team3[8] += 1;
+			team4[8] += 1;
 	
 			// display
 			document.getElementById('team3Pts').innerHTML = team3[1];
 			document.getElementById('team3GD').innerHTML = team3[2];
 			document.getElementById('team3GF').innerHTML = team3[3];
 			document.getElementById('team3GA').innerHTML = team3[4];
+			document.getElementById('team3W').innerHTML = team3[5];
+			document.getElementById('team3D').innerHTML = team3[6];
+			document.getElementById('team3L').innerHTML = team3[7];
+			document.getElementById('team3P').innerHTML = team3[8];
 			document.getElementById('team4Pts').innerHTML = team4[1];
 			document.getElementById('team4GD').innerHTML = team4[2];
 			document.getElementById('team4GF').innerHTML = team4[3];
 			document.getElementById('team4GA').innerHTML = team4[4];
+			document.getElementById('team4W').innerHTML = team4[5];
+			document.getElementById('team4D').innerHTML = team4[6];
+			document.getElementById('team4L').innerHTML = team4[7];
+			document.getElementById('team4P').innerHTML = team4[8];
 	
 		}
 		else if (A.includes("team5") && B.includes("team6")) {
@@ -1219,16 +1778,32 @@
 			// GD  
 			team5[2] = team5[3] - team5[4];
 			team6[2] = team6[3] - team6[4];
+
+			// Wins(5) . Draws(6) . Losses(7)
+			team5[6] += 1;
+			team6[6] += 1;
+
+			// Played(8)
+			team5[8] += 1;
+			team6[8] += 1;
 			
 			// display
 			document.getElementById('team5Pts').innerHTML = team5[1];
 			document.getElementById('team5GD').innerHTML = team5[2];
 			document.getElementById('team5GF').innerHTML = team5[3];
 			document.getElementById('team5GA').innerHTML = team5[4];
+			document.getElementById('team5W').innerHTML = team5[5];
+			document.getElementById('team5D').innerHTML = team5[6];
+			document.getElementById('team5L').innerHTML = team5[7];
+			document.getElementById('team5P').innerHTML = team5[8];
 			document.getElementById('team6Pts').innerHTML = team6[1];
 			document.getElementById('team6GD').innerHTML = team6[2];
 			document.getElementById('team6GF').innerHTML = team6[3];
 			document.getElementById('team6GA').innerHTML = team6[4];
+			document.getElementById('team6W').innerHTML = team6[5];
+			document.getElementById('team6D').innerHTML = team6[6];
+			document.getElementById('team6L').innerHTML = team6[7];
+			document.getElementById('team6P').innerHTML = team6[8];
 			}
 			else if (A.includes("team5") && B.includes("team7")) {
 			// PTS
@@ -1242,16 +1817,32 @@
 			// GD  
 			team5[2] = team5[3] - team5[4];
 			team7[2] = team7[3] - team7[4];
+
+			// Wins(5) . Draws(6) . Losses(7)
+			team5[6] += 1;
+			team7[6] += 1;
+
+			// Played(8)
+			team5[8] += 1;
+			team7[8] += 1;
 			
 			// display
 			document.getElementById('team5Pts').innerHTML = team5[1];
 			document.getElementById('team5GD').innerHTML = team5[2];
 			document.getElementById('team5GF').innerHTML = team5[3];
 			document.getElementById('team5GA').innerHTML = team5[4];
+			document.getElementById('team5W').innerHTML = team5[5];
+			document.getElementById('team5D').innerHTML = team5[6];
+			document.getElementById('team5L').innerHTML = team5[7];
+			document.getElementById('team5P').innerHTML = team5[8];
 			document.getElementById('team7Pts').innerHTML = team7[1];
 			document.getElementById('team7GD').innerHTML = team7[2];
 			document.getElementById('team7GF').innerHTML = team7[3];
 			document.getElementById('team7GA').innerHTML = team7[4];
+			document.getElementById('team7W').innerHTML = team7[5];
+			document.getElementById('team7D').innerHTML = team7[6];
+			document.getElementById('team7L').innerHTML = team7[7];
+			document.getElementById('team7P').innerHTML = team7[8];
 			
 			}
 			else if (A.includes("team5") && B.includes("team8")) {
@@ -1266,16 +1857,32 @@
 			// GD  
 			team5[2] = team5[3] - team5[4];
 			team8[2] = team8[3] - team8[4];
+
+			// Wins(5) . Draws(6) . Losses(7)
+			team5[6] += 1;
+			team8[6] += 1;
+
+			// Played(8)
+			team5[8] += 1;
+			team8[8] += 1;
 			
 			// display
 			document.getElementById('team5Pts').innerHTML = team5[1];
 			document.getElementById('team5GD').innerHTML = team5[2];
 			document.getElementById('team5GF').innerHTML = team5[3];
 			document.getElementById('team5GA').innerHTML = team5[4];
+			document.getElementById('team5W').innerHTML = team5[5];
+			document.getElementById('team5D').innerHTML = team5[6];
+			document.getElementById('team5L').innerHTML = team5[7];
+			document.getElementById('team5P').innerHTML = team5[8];
 			document.getElementById('team8Pts').innerHTML = team8[1];
 			document.getElementById('team8GD').innerHTML = team8[2];
 			document.getElementById('team8GF').innerHTML = team8[3];
 			document.getElementById('team8GA').innerHTML = team8[4];
+			document.getElementById('team8W').innerHTML = team8[5];
+			document.getElementById('team8D').innerHTML = team8[6];
+			document.getElementById('team8L').innerHTML = team8[7];
+			document.getElementById('team8P').innerHTML = team8[8];
 			
 			}
 			else if (A.includes("team6") && B.includes("team7")) {
@@ -1290,16 +1897,32 @@
 			// GD  
 			team6[2] = team6[3] - team6[4];
 			team7[2] = team7[3] - team7[4];
+
+			// Wins(5) . Draws(6) . Losses(7)
+			team6[6] += 1;
+			team7[6] += 1;
+
+			// Played(8)
+			team6[8] += 1;
+			team7[8] += 1;
 			
 			// display
 			document.getElementById('team6Pts').innerHTML = team6[1];
 			document.getElementById('team6GD').innerHTML = team6[2];
 			document.getElementById('team6GF').innerHTML = team6[3];
 			document.getElementById('team6GA').innerHTML = team6[4];
+			document.getElementById('team6W').innerHTML = team6[5];
+			document.getElementById('team6D').innerHTML = team6[6];
+			document.getElementById('team6L').innerHTML = team6[7];
+			document.getElementById('team6P').innerHTML = team6[8];
 			document.getElementById('team7Pts').innerHTML = team7[1];
 			document.getElementById('team7GD').innerHTML = team7[2];
 			document.getElementById('team7GF').innerHTML = team7[3];
 			document.getElementById('team7GA').innerHTML = team7[4];
+			document.getElementById('team7W').innerHTML = team7[5];
+			document.getElementById('team7D').innerHTML = team7[6];
+			document.getElementById('team7L').innerHTML = team7[7];
+			document.getElementById('team7P').innerHTML = team7[8];
 			
 			}
 			else if (A.includes("team6") && B.includes("team8")) {
@@ -1314,16 +1937,32 @@
 			// GD  
 			team6[2] = team6[3] - team6[4];
 			team8[2] = team8[3] - team8[4];
+
+			// Wins(5) . Draws(6) . Losses(7)
+			team6[6] += 1;
+			team8[6] += 1;
+
+			// Played(8)
+			team6[8] += 1;
+			team8[8] += 1;
 			
 			// display
 			document.getElementById('team6Pts').innerHTML = team6[1];
 			document.getElementById('team6GD').innerHTML = team6[2];
 			document.getElementById('team6GF').innerHTML = team6[3];
 			document.getElementById('team6GA').innerHTML = team6[4];
+			document.getElementById('team6W').innerHTML = team6[5];
+			document.getElementById('team6D').innerHTML = team6[6];
+			document.getElementById('team6L').innerHTML = team6[7];
+			document.getElementById('team6P').innerHTML = team6[8];
 			document.getElementById('team8Pts').innerHTML = team8[1];
 			document.getElementById('team8GD').innerHTML = team8[2];
 			document.getElementById('team8GF').innerHTML = team8[3];
 			document.getElementById('team8GA').innerHTML = team8[4];
+			document.getElementById('team8W').innerHTML = team8[5];
+			document.getElementById('team8D').innerHTML = team8[6];
+			document.getElementById('team8L').innerHTML = team8[7];
+			document.getElementById('team8P').innerHTML = team8[8];
 			
 			}
 			else if (A.includes("team7") && B.includes("team8")) {
@@ -1338,16 +1977,32 @@
 			// GD  
 			team7[2] = team7[3] - team7[4];
 			team8[2] = team8[3] - team8[4];
+
+			// Wins(5) . Draws(6) . Losses(7)
+			team7[6] += 1;
+			team8[6] += 1;
+
+			// Played(8)
+			team7[8] += 1;
+			team8[8] += 1;
 			
 			// display
 			document.getElementById('team7Pts').innerHTML = team7[1];
 			document.getElementById('team7GD').innerHTML = team7[2];
 			document.getElementById('team7GF').innerHTML = team7[3];
 			document.getElementById('team7GA').innerHTML = team7[4];
+			document.getElementById('team7W').innerHTML = team7[5];
+			document.getElementById('team7D').innerHTML = team7[6];
+			document.getElementById('team7L').innerHTML = team7[7];
+			document.getElementById('team7P').innerHTML = team7[8];
 			document.getElementById('team8Pts').innerHTML = team8[1];
 			document.getElementById('team8GD').innerHTML = team8[2];
 			document.getElementById('team8GF').innerHTML = team8[3];
 			document.getElementById('team8GA').innerHTML = team8[4];
+			document.getElementById('team8W').innerHTML = team8[5];
+			document.getElementById('team8D').innerHTML = team8[6];
+			document.getElementById('team8L').innerHTML = team8[7];
+			document.getElementById('team8P').innerHTML = team8[8];
 			
 	}
 		else {

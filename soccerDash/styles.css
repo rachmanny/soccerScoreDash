@@ -6,7 +6,7 @@ body {
 	background-size: cover;
 
 	color: white;
-	font-style: bold;
+	/* font-style: bold; */
 }
 
 /* input[type=text] {
@@ -67,19 +67,22 @@ input {
 	border-right-style: hidden;
 	border-left-style: hidden;
 	border-bottom-style: hidden;
-	
 }
 
 #compartment tr td p{
 	width: 200px;
 	text-align:center;
-	font-size: 28px;
-	font-weight: bold;
+	font-size: 30px;
+	/* font-weight: bold; */
 }
 
 th {
-	border: 1px solid black;
-	cursor: pointer;	
+	font-size: 30px;
+	border-bottom: 1px solid white;	
+}
+
+#standings, #standings2{
+	width: 100%;
 }
 
 #standings tr td, #standings2 tr td {
@@ -91,15 +94,40 @@ th {
 
 #schedule tr td table {
 	/* border: 5px solid blue; */
-	background: rgba(31, 58, 147, .8);
+	/* background: rgba(31, 58, 147, .8); */
+	background: rgba(0, 0, 0, 0.2);
+	margin: 10px;
 }
 
 .groupAgames {
 	
-	border: 3px solid darkred;
+	/* border: 3px solid darkred; */
+	border-radius: 5px;
 	
 }
 
 .groupBgames {
-	border: 3px solid blue;
+	/* border: 3px solid blue; */
+}
+
+#groupAname, #team1, #team2, #team3,
+#team4 {
+	width: 300px;
+}
+#groupBname, #team5, #team6, #team7,
+#team8 {
+	width: 300px;
+}
+
+#button24, #button25 {
+	color: white;
+	background-color: rgba(31, 58, 147, 0.9); /* Green */
+	border: none;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 10px;
+	margin: 4px 2px;
+	cursor: pointer;
 }
