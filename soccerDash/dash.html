@@ -1,10 +1,10 @@
 <link rel=stylesheet href=styles.css></link>
-<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
-<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script> 
 
 <div class=wrapper>
 	<div class="one">
-		<h1 style=text-align:center;>ACAS CUP 2020 - Games Of The Day</h1>
+		<p id=title>ACAS CUP 2020</p>
 		<table id=schedule>
 			<tr>
 				<td>
@@ -18,12 +18,12 @@
 						</tr>
 					</table>
 				</td>
-		
+
 				<td>
 					<button type=submit id=submit1 onclick="submitScore(document.getElementById('score1').value,
 																									 document.getElementById('score2').value,
 																									 'team1','team2');
-																									 disappear1();">Upload</button>
+																									 disappear1();">A</button>
 				</td>
 		
 			</tr>
@@ -40,11 +40,12 @@
 						</tr>
 					</table>
 				</td>
+				
 				<td>
 					<button type=submit id=submit2 onclick="submitScore(document.getElementById('score3').value,
 																									 document.getElementById('score4').value,
 																									'team3','team4');
-																									disappear2();">Upload</button>
+																									disappear2();">A</button>
 				</td>
 		
 			</tr>
@@ -61,12 +62,12 @@
 						</tr>
 					</table>
 				</td>
-		
+				
 				<td>
 					<button type=submit id=submit7 onclick="submitScore(document.getElementById('score13').value,
 																									 document.getElementById('score14').value,
 																									 'team5','team6');
-																									 disappear7();">Upload</button>
+																									 disappear7();">B</button>
 				</td>
 		
 			</tr>
@@ -83,11 +84,12 @@
 						</tr>
 					</table>
 				</td>
+				
 				<td>
 					<button type=submit id=submit8 onclick="submitScore(document.getElementById('score15').value,
 																									 document.getElementById('score16').value,
 																									'team7','team8');
-																									disappear8();">Upload</button>
+																									disappear8();">B</button>
 				</td>
 		
 			</tr>
@@ -105,12 +107,12 @@
 						</tr>
 					</table>
 				</td>
-		
+				
 				<td>
 					<button type=submit id=submit3 onclick="submitScore(document.getElementById('score5').value,
 																									 document.getElementById('score6').value,
 																									 'team1','team3');
-																									 disappear3();">Upload</button>
+																									 disappear3();">A</button>
 				</td>
 		
 		
@@ -129,11 +131,12 @@
 						</tr>
 					</table>
 				</td>
+				
 				<td>
 					<button type=submit id=submit4 onclick="submitScore(document.getElementById('score7').value,
 																									 document.getElementById('score8').value,
 																									'team2','team4');
-																									disappear4();">Upload</button>
+																									disappear4();">A</button>
 				</td>
 		
 			</tr>
@@ -151,12 +154,12 @@
 						</tr>
 					</table>
 				</td>
-		
+				
 				<td>
 					<button type=submit id=submit9 onclick="submitScore(document.getElementById('score17').value,
 																									 document.getElementById('score18').value,
 																									 'team5','team7');
-																									 disappear9();">Upload</button>
+																									 disappear9();">B</button>
 				</td>
 		
 		
@@ -175,11 +178,12 @@
 						</tr>
 					</table>
 				</td>
+				
 				<td>
 					<button type=submit id=submit10 onclick="submitScore(document.getElementById('score19').value,
 																									 document.getElementById('score20').value,
 																									'team6','team8');
-																									disappear10();">Upload</button>
+																									disappear10();">B</button>
 				</td>
 		
 			</tr>
@@ -197,12 +201,12 @@
 						</tr>
 					</table>
 				</td>
-		
+				
 				<td>
 					<button type=submit id=submit5 onclick="submitScore(document.getElementById('score9').value,
 																									 document.getElementById('score10').value,
 																									 'team1','team4');
-																									 disappear5();">Upload</button>
+																									 disappear5();">A</button>
 				</td>
 		
 				
@@ -221,11 +225,12 @@
 						</tr>
 					</table>
 				</td>
+				
 				<td>
 					<button type=submit id=submit6 onclick="submitScore(document.getElementById('score11').value,
 																									 document.getElementById('score12').value,
 																									'team2','team3');																					
-																									disappear6();">Upload</button>
+																									disappear6();">A</button>
 				</td>
 		
 			</tr>
@@ -248,12 +253,12 @@
 						</tr>
 					</table>
 				</td>
-		
+				
 				<td>
 					<button type=submit id=submit11 onclick="submitScore(document.getElementById('score21').value,
 																									 document.getElementById('score22').value,
 																									 'team5','team8');
-																									 disappear11();">Upload</button>
+																									 disappear11();">B</button>
 				</td>
 		
 				
@@ -272,11 +277,12 @@
 						</tr>
 					</table>
 				</td>
+				
 				<td>
 					<button type=submit id=submit12 onclick="submitScore(document.getElementById('score23').value,
 																									 document.getElementById('score24').value,
 																									'team6','team7');																					
-																									disappear12();">Upload</button>
+																									disappear12();">B</button>
 				</td>
 		
 			</tr>
@@ -286,7 +292,7 @@
 	</div>
 
 	<div class="two">
-		<button id="button24" style='text-align: left; float: left;'>Sort</button>
+		<button id="button24" style='text-align: left; float: left;'>S</button>
 		<h1 style=text-align:center;>Group A</h1>
 		<table id=standings>
 			<thead>
@@ -354,7 +360,7 @@
 	</div>
 
 	<div class="three">
-		<button id="button25" style='text-align: left; float: left;'>Sort</button>
+		<button id="button25" style='text-align: left; float: left;'>S</button>
 		<h1 style=text-align:center;>Group B</h1>
 		<table id=standings2>
 			<tr>
@@ -552,7 +558,7 @@
 	document.getElementById('team8P').innerHTML = team8[8];
 	
 	
-	// $('tbody').sortable();
+	$('tbody').sortable();
 	
 	function submitScore(sc1,sc2,teamA,teamB) {
 		if (sc1>sc2) {
