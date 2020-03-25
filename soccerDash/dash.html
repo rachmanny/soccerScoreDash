@@ -359,6 +359,7 @@
 			</tr>
 			</tbody>
 		</table>
+		<button id="button25">Sort</button>
 		
 	</div>
 </div>
@@ -1388,6 +1389,10 @@
 
 	let heading = standings.firstElementChild.children;
 
+	let rows2 = standings2.lastElementChild.children
+
+	let heading2 = standings2.firstElementChild.children;
+
 	let sortPts = () => {
 	arr = Array.from(rows);
 	arr.sort((A, B) => {
@@ -1416,8 +1421,41 @@
 		standings.append(...rows);
 	}
 
+
+	let sortPts2 = () => {
+	arr = Array.from(rows2);
+	arr.sort((A, B) => {
+		A = A.cells[1].firstChild.data;
+		B = B.cells[1].firstChild.data;
+		return Number(B) - Number(A);
+	});
+
+	let n = 1;
+	while (n < 4) {
+      for (let i = 0; i < arr.length-1; i++) {
+        if (arr[i].cells[n].firstChild.data == arr[i+1].cells[n].firstChild.data) {
+          repeats = arr.splice(i, 2);
+          repeats.sort((a, b) => {
+            const A = a.cells[n+1].firstChild.data;
+            const B = b.cells[n+1].firstChild.data
+            if (a.cells[n+1].id.endsWith("GA")) return Number(A) - Number(B);
+            return Number(B) - Number(A);
+          });
+          arr.splice(i, 0, ...repeats);
+        }
+      }
+    n++;
+   	}
+		rows2 = arr;  
+		standings2.append(...rows2);
+	}
+
+
 	document.getElementById("button24").addEventListener('click', function() {
 		sortPts();
+	});
+	document.getElementById("button25").addEventListener('click', function() {
+		sortPts2();
 	});
 
 
