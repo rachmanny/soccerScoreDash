@@ -1655,7 +1655,7 @@
 	function sortRepeats(arr, n) {
 		const len = arr.length - 1;
 		outer: while (n < 4) {
-            for (let i = 0; i < len; i++) {
+			for (let i = 0; i < len; i++) {
 				if (arr[i].cells[n].firstChild.data == arr[i+1].cells[n].firstChild.data) {
 					repeats = arr.splice(i, 2);
 					repeats.sort((a, b) => {
@@ -1666,7 +1666,7 @@
 					});
 					arr.splice(i, 0, ...repeats);
 				} else if (n == 1 && i == len - 1) break outer;
-            }
+		    }
         	n++;
         }
 	}
