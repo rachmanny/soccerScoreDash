@@ -1645,25 +1645,30 @@
         });
 
         let n = 1;
-        outer: while (n < 4) {
-            for (let i = 0; i < arr.length-1; i++) {
-            if (arr[i].cells[n].firstChild.data == arr[i+1].cells[n].firstChild.data) {
-                repeats = arr.splice(i, 2);
-                repeats.sort((a, b) => {
-                const A = a.cells[n+1].firstChild.data;
-                const B = b.cells[n+1].firstChild.data
-                if (a.cells[n+1].id.endsWith("GA")) return Number(A) - Number(B);
-                return Number(B) - Number(A);
-                });
-                arr.splice(i, 0, ...repeats);
-            } else if (n == 1) break outer;
-            }
-        n++;
+        sortRepeats(arr, n);
+		newRows = arr; 
+		body = document.createElement('tbody');
+		body.append(...newRows); 
+		table.append(body);
+	}
+
+	function sortRepeats(arr, n) {
+		const len = arr.length - 1;
+		outer: while (n < 4) {
+			for (let i = 0; i < len; i++) {
+				if (arr[i].cells[n].firstChild.data == arr[i+1].cells[n].firstChild.data) {
+					repeats = arr.splice(i, 2);
+					repeats.sort((a, b) => {
+					const A = a.cells[n+1].firstChild.data;
+					const B = b.cells[n+1].firstChild.data
+					if (a.cells[n+1].id.endsWith("GA")) return Number(A) - Number(B);
+					return Number(B) - Number(A);
+					});
+					arr.splice(i, 0, ...repeats);
+				} else if (n == 1 && i == len - 1) break outer;
+		    }
+        	n++;
         }
-			newRows = arr; 
-			body = document.createElement('tbody');
-			body.append(...newRows); 
-            table.append(body);
 	}
 
     const buttons = document.getElementsByTagName("button");
