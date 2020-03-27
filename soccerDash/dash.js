@@ -1624,29 +1624,19 @@
 	}
 	
 
-
-
-	let rows = standings.lastElementChild.children;
-
-	let heading = standings.firstElementChild.children;
-
-	let rows2 = standings2.lastElementChild.children
-
-	let heading2 = standings2.firstElementChild.children;
-
 	let sortPts = function () {
 
         let table, bodyRows;
-        switch (this.id) {
-            case 'button24':
-                bodyRows = rows;
+        switch (this.className) {
+            case 'classA':
+                bodyRows = standings.lastElementChild.children;
                 table = standings;
                 break;
-            case 'button25':
-                bodyRows = rows2;
+            case 'classB':
+                bodyRows = standings2.lastElementChild.children;
                 table = standings2;
-                break;
-        }
+				break;
+		}
         let arr = Array.from(bodyRows);
         arr.sort((A, B) => {
             A = A.cells[1].firstChild.data;
@@ -1670,19 +1660,28 @@
             }
         n++;
         }
-            bodyRows = arr;  
-            table.append(...bodyRows);
+			newRows = arr; 
+			body = document.createElement('tbody');
+			body.append(...newRows); 
+            table.append(body);
 	}
 
-    const button24 = document.getElementById("button24");
-    const button25 = document.getElementById("button25");
+    const buttons = document.getElementsByTagName("button");
 
 
-	button24.addEventListener('click', function() {
-		sortPts.call(this);
-	});
+	for (let button of buttons) {
+		if (button.type == 'submit') {
+			if (button.firstChild.data == 'A') button.classList.add('classA'); 
+			if (button.firstChild.data == 'B') button.classList.add('classB');
+		}
+		button.addEventListener('click', function () {
+			setTimeout(() => sortPts.call(this), 1000);
+		});
+		button.addEventListener('keydown', function (e) {
+			if (e.code != "Enter") return;
+			setTimeout(() => sortPts.call(this), 1000);
+		});
+	}
 
-    button25.addEventListener('click', function() {
-		sortPts.call(this);
-	});
+    
 
